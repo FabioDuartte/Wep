@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+html, body, #home{
+    height: 100%;
+ 
+    
+}
+body{
+   /* background: #130b0b url(../imagens/background5.jpg) no-repeat;*/
+    /*background-image: linear-gradient(to right, rgba(255, 140, 26,1),rgba(179, 89, 0,1)); */
+    background-attachment: fixed;
+    font-family: Helvetica, Arial,  sans-serif;
+    background-size: cover;
+  
+}
+#home{
+    background: url(../imagens/drink2.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#cafe{
+    overflow: hidden;
+
+}
+#menu  ul {
+    
+    text-transform: uppercase;
+    font-family: 'Courgette', cursive;   
+    background: #323637;
+    
+        
+   
+ }
+ #cafe .card{
+     box-shadow: 10px 5px 5px  #ccc;
+ }
+#menu ul li a{
+    font-size: 1.2em;
+    padding: 25px;
+    color: white;
+    letter-spacing: 2px;
+   
+}
+#menu ul li a:hover{
+ color: rgb(255, 140, 26)
+   
+}
+
+.cardheader{
+    font-family: 'Courgette', cursive;
+    font-weight: bold;
+    letter-spacing: 5px; 
+}
+.description{
+    font-family: 'Courgette', cursive;
+    font-weight: 300;
+}
+
+
+h1{
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Courgette', cursive;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+
+/*Barra de navegação*/
+nav.nav-transparente{
+    padding: 15px 0px;
+    background: rgb(0, 0, 0,0.5);
+  
+}
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #ffc107;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgba(255,255,255,.5);
+    border-color: rgba(255,255,255,.5);
+}
+.format-link{
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.format-link:hover{
+    color: #ffc107;
+    
+}
+.bonus{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/*CAPA*/
+.capa{
+    text-align: center;
+    color: white;
+}
+
+#foto{
+    border-radius: 360px;
+    width: 34px;
+    height: 34px;
+    display: inline-block;
+}
+
+
+p.legenda{
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    line-height: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    background: #2c2d2f;
+    margin-left: 0px;
+    height: 50px;
+}
+p.legenda:hover{
+    color: #ffc107;
+    
+}
+a:link{
+    text-decoration: none;
+    padding-top: 25px;
+}
+/*Depoimentos*/
+
+#depoimentos {
+    background: url(../imagens/drink.jpg) no-repeat;    
+    background-size: cover;
+   
+    
+}
+#depoimentos {
+    font-family: 'Courgette', cursive;
+    font-weight: bold;
+    letter-spacing: 5px; 
+    color: #802b00;
+    padding-top: 15px;
+    font-size: 1.2em;
+    margin-top: 40px;
+   
+    
+}
+
+.card-deck{
+    margin-bottom: 40px;
+}
+
+#depoimentos .card{
+    box-shadow: 10px 5px 5px black;
+}
+.rodape{
+
+    background: linear-gradient(to right, rgba(19,11,11,1), rgba(15,16,14,1));
+   
+}
+.rodape ul li a{
+    
+    font-size: 1em;
+    color: white;
+    text-transform: uppercase ;
+    font-weight: bold;
+    /*font-family: 'Courgette', cursive;*/
+    letter-spacing: 5px;
+
+
+} 
+.rodape ul li a:hover{
+    color: #802b00;
+}   
+.notas {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 1.1em;
+    font-family: 'Courgette', cursive;
+}
+.notas p{
+    line-height: 8px;
+    margin-top: 5px;
+    color: white;
+    letter-spacing: 4px;    
+}
+#destaques {
+    height: 700px;
+    text-align: center;
+ 
+ }
+ 
+ .texto{
+         margin-top: 30%;
+ }
+ 
+ @media (max-width: 1024px) {/*IpadPro*/
+ 
+     .rodape{
+         background: linear-gradient(to right, rgba(19,11,11,1), rgba(15,16,14,1));
+         margin-top: 110px;
+        
+     }
+     .texto{
+         margin-top: 25%;
+ }
+ 
+  }
