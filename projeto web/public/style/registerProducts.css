@@ -214,6 +214,10 @@ form label{
 .btn{
     letter-spacing: 1.5px;
 }
+.cart{
+    font-size: 23px;
+ 
+ }
  @media (max-width: 1024px) {/*IpadPro*/
  
      .rodape{

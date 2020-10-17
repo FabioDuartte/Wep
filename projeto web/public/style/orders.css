@@ -5,7 +5,7 @@ html, body, #home{
     
 }
 body{
-   /* background: #130b0b url(../imagens/background5.jpg) no-repeat;*/
+    background: #fff;
     /*background-image: linear-gradient(to right, rgba(255, 140, 26,1),rgba(179, 89, 0,1)); */
     background-attachment: fixed;
     font-family: Helvetica, Arial,  sans-serif;
@@ -13,7 +13,7 @@ body{
   
 }
 #home{
-    background: url(../imagens/drink/drink2.jpg) no-repeat;
+    background: #fff;
     background-attachment: fixed;
     background-size: cover;
 }
@@ -44,7 +44,9 @@ body{
  color: rgb(255, 140, 26)
    
 }
-
+.nav-bg{
+    background: rgb(0, 64, 128);
+}
 .cardheader{
     font-family: 'Courgette', cursive;
     font-weight: bold;
@@ -57,9 +59,10 @@ body{
 
 
 h1{
-    margin-bottom: 25px;
+   
+    margin-bottom: 100px;
     font-weight: bold;
-    font-family: 'Courgette', cursive;
+    /*font-family: 'Courgette', cursive;*/
     letter-spacing: 5px;
     text-align: center;
 }
@@ -68,7 +71,7 @@ h1{
 /*Barra de navegação*/
 nav.nav-transparente{
     padding: 15px 0px;
-    background: rgb(0, 0, 0,0.5);
+    /*background: rgb(0, 0, 0,0.5);*/
   
 }
 .navbar-light .navbar-nav .nav-link{
@@ -133,7 +136,7 @@ a:link{
 /*Depoimentos*/
 
 #depoimentos {
-    background: url(../imagens/drink/drink.jpg) no-repeat;    
+    background: url(../imagens/drink.jpg) no-repeat;    
     background-size: cover;
    
     
@@ -159,7 +162,7 @@ a:link{
 }
 .rodape{
 
-    background: linear-gradient(to right, rgba(19,11,11,1), rgba(15,16,14,1));
+  background: rgb(0, 64, 128);
    
 }
 .rodape ul li a{
@@ -193,82 +196,34 @@ a:link{
     text-align: center;
  
  }
- .pesquisa{
-     padding-left: 60px;
-     width: 540px;
- }
- .texto{
-         margin-top: 30%;
- }
- #menu .active{
-    color: #FFD700;
-}
-.cart{
-    font-size: 20px; 
-    
-}
-.cashback{
-    font-size: 1.2em;
-    color: #FFD700;
-    
-}
-/*
-#paginacao .container ul li a {
-    text-decoration: none;
-    box-shadow: 5px 5px 5px #ccc;
-}*/
  
+form label{
+    font-size: 1.1em;
+    font-weight: bold;
+
+}
+.enter{
+    color: white;
+    background: #1c551c;
+}
+.cancel{
+    color: white;
+    background: #661d1d;
+} 
+
+.btn{
+    letter-spacing: 1.5px;
+}
 
  @media (max-width: 1024px) {/*IpadPro*/
  
      .rodape{
-         background: linear-gradient(to right, rgba(19,11,11,1), rgba(15,16,14,1));
+        background: rgb(0, 64, 128);
          margin-top: 110px;
         
      }
      .texto{
          margin-top: 25%;
-    }
-
-    .pesquisa{
-        padding-left: 60px;
-        width: 350px;
-        background-color: #FFF
-    }
-    #menu .active{
-        color: #FFD700;
-    }
-    
-    .cart{
-        font-size: 20px; 
-   
-    }
-
-    .cashback{
-        font-size: 1.2em;
-        color: #FFD700;
-        
-    }
-   
-}
-@media (max-width: 768px) {/*Ipad*/
+ }
  
-    .rodape{
-        background: linear-gradient(to right, rgba(19,11,11,1), rgba(15,16,14,1));
-        margin-top: 110px;
-       
-    }
-    .texto{
-        margin-top: 25%;
-   }
-
-   .pesquisa{
-       padding-left: 60px;
-       width: 210px;
-       background-color: #FFF
-   }
-   #menu .active{
-    color: #FFD700;
-}
-
-}
+  }

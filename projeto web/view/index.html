@@ -42,10 +42,21 @@
                 <i class="fas fa-bars text-dark"></i>
               </button>
               <!--Navegação-->
-              <div class="collapse navbar-collapse " id="nav-principal">              
+              <div class="  mx-5 text-center pesquisa "><!--inicio pesquisa-->
+                <div class="input-group">
+                  <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" style="border-right: none;">
+                  <div class="input-group-append">
+                    <div class="input-group-text" ><button type="submit" class="btn btn-md btn-white"> <i class="fas fa-search"></i></button></div>
+                  </div>
+                </div>
+              </div><!--Fim  pesquisa-->
+              <div class="collapse navbar-collapse " id="nav-principal">       
+                <li>
+                    <span class="text-warning font-weight-bold my-2 cashback">R$ 50,00</span>
+                  </li>       
                   <ul class="navbar-nav ml-auto   ">  
                       <li class="nav-item mx-4 bonus">
-                          <span class="nav-link">&dollar; 50,00</span>
+                        <a href="bill.html" class="text-warning mx-2 my-2 cart"> <i class="fas fa-shopping-cart mx-2"></i>3</a>
                       </li>
                     <img src="../public/imagens/perfil.jpg" id="foto">
                     <li class="nav-link format-link">
@@ -58,9 +69,11 @@
                                 <div class="dropdown-divider"></div>
                                 <a href="../view/orders.html" class="dropdown-item nav-item format-link">Visualizar pedidos</a>
                                 <div class="dropdown-divider"></div>
-                                <a href="" class="dropdown-item nav-item format-link">Conta</a>
+                                <a href="../view/bill.html" class="dropdown-item nav-item format-link">Minha Comanda</a>
                                 <div class="dropdown-divider"></div>
-                                <a href="" class="dropdown-item nav-item format-link">Sair</a>
+                                <a href="editarCadastro.html" class="dropdown-item nav-item format-link">Editar Cadastro</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="../view/login.html" class="dropdown-item nav-item format-link">Sair</a>
                             </div>                                                            
                         </div>   
                     </li>             
@@ -144,29 +157,13 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 ">
-              <ul class="nav justify-content-center ">
-                <li class="  nav-item">
-                  <a class="nav-link " href="../view/index.html">Home</a>
-                </li>
-                <li class="  nav-item">
-                  <a class="nav-link" href="../view/breakfest.html">Café</a>
-                </li>
-                <li class=" nav-item">
-                  <a class="nav-link" href="../view/lunch.html">Almoço</a>
-                </li>
-                <li class=" nav-item">
-                  <a class="nav-link " href="../view/dinner.html">Jantar</a>
-                </li>
-                <li class=" nav-item">
-                  <a class="nav-link " href="../view/drink.html">Bebidas</a>
-                </li>
-              </ul>
+         
             </div> 
             <div class="col-md-12 my-2 notas">
               <div class="text-center ">
                 <p>Endereço: Rua dos alfeneiros nº 4</p>
                 <p>Tel.: (xx) xxxx-xxxx</p>
-                <p>&copy; Copyright Top Restaurante </p>
+                <p>&copy; Copyright Caldeirão Furado </p>
             </div>
           </div>
       

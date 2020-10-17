@@ -200,18 +200,83 @@ a:link{
  }
  
  .texto{
-         margin-top: 30%;
+    margin-top: 30%;
  }
  
- @media (max-width: 1024px) {/*IpadPro*/
- 
-     .rodape{
-         background: linear-gradient(to right, rgba(19,11,11,1), rgba(15,16,14,1));
-         margin-top: 110px;
+.pesquisa{
+    padding-left: 60px;
+    width: 540px;
+}
+#menu .active{
+    color: #FFD700;
+
+}
+.cashback{
+    font-size: 1.2em;
+    color: #FFD700;
+    
+}
+.cart{
+    font-size: 20px; 
+    
+}
+/*
+#paginacao .container ul li a {
+    text-decoration: none;
+    box-shadow: 5px 5px 5px #ccc;
+}*/
+@media (max-width: 1024px) {/*IpadPro*/
+
+    .rodape{
+        background: linear-gradient(to right, rgba(19,11,11,1), rgba(15,16,14,1));
+        margin-top: 110px;
+    
+    }
+    .texto{
+        margin-top: 25%;
+    }
+
+    .pesquisa{
+        padding-left: 60px;
+        width: 350px;
+    }
+    #menu .active{
+        color: #FFD700;
+    
+    }
+
+    .cart{
+        font-size: 20px; 
         
-     }
-     .texto{
-         margin-top: 25%;
- }
+    }
+
+    .cashback{
+        font-size: 1.2em;
+        color: #FFD700;
+        
+    }
+}
+
+@media (max-width: 768px) {/*Ipad*/
  
-  }
+    .rodape{
+        background: linear-gradient(to right, rgba(19,11,11,1), rgba(15,16,14,1));
+        margin-top: 110px;
+       
+    }
+    .texto{
+        margin-top: 25%;
+   }
+
+   .pesquisa{
+       padding-left: 60px;
+       width: 200px;
+       background-color: #FFF
+   }
+   #menu .active{
+    color: #FFD700;
+
+}
+
+}
+

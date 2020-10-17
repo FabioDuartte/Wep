@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Estilo customizado -->
-    <link rel="stylesheet" type="text/css" href="../style/registerProducts.css">
+    <link rel="stylesheet" type="text/css" href="../public/style/registerProducts.css">
 </head>
 
 <body>
@@ -33,7 +33,7 @@
         <div class="container">
           <!--Logo-->
           <a  href="#" class="navbar-brand" style="color: white;">
-           <img src="../imagens/logo-removebg-preview.png" alt="" width="120px" class="logo" >
+           <img src="../public/imagens/logo/logo-removebg-preview.png" alt="" width="120px" class="logo" >
           </a>    
           <!--Menu Hamburguer-->
           <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
@@ -42,10 +42,8 @@
           <!--Navegação-->
           <div class="collapse navbar-collapse " id="nav-principal">              
               <ul class="navbar-nav ml-auto   ">  
-                  <li class="nav-item mx-4 bonus">
-                      <span class="nav-link text-white">&dollar; 50,00</span>
-                  </li>
-                <img src="../imagens/perfil.jpg" id="foto">
+                  
+                <img src="../public/imagens/perfil.jpg" id="foto">
                 <li class="nav-link format-link">
                     <div class="dropdown ">
                         <span class="dropdown-toggle text-white" data-toggle="dropdown">
@@ -56,9 +54,11 @@
                             <div class="dropdown-divider"></div>
                             <a href="../view/orders.html" class="dropdown-item nav-item format-link">Visualizar pedidos</a>
                             <div class="dropdown-divider"></div>
-                            <a href="" class="dropdown-item nav-item format-link">Conta</a>
+                            <a href="../view/bill.html" class="dropdown-item nav-item format-link">Minha Comanda</a>
                             <div class="dropdown-divider"></div>
-                            <a href="" class="dropdown-item nav-item format-link">Sair</a>
+                            <a href="../view/bill.html" class="dropdown-item nav-item format-link">Editar Cdastro</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="../view/login.html" class="dropdown-item nav-item format-link">Sair</a>
                         </div>                                                            
                     </div>   
                 </li>             
@@ -72,7 +72,7 @@
         <div class="container align-self-center"  >
           <div class="container">
             <div class="row ">
-              <div class="col " >
+              <div class="col">
                 
                 <form>
                 <h1 class="display-3  text-dark">Cadastro de produtos</h1>
@@ -81,10 +81,16 @@
                     <label for="tipo">Tipo do produto</label>
                     <select class="form-control" id="tipo">
                       <option value="">Selecione o tipo do produto</option>
-                      <option value="1">Alimentação</option>
-                      <option value="2">Bebida</option>
+                      <option value="1">Café</option>
+                      <option value="2">Almoço</option>
+                      <option value="3">Jantar</option>
+                      <option value="4">Bebida</option>
                    
                     </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="fornecedor ">Nome</label>
+                      <input type="text" class="form-control" id="fornecedor">
                   </div>
                   <div class="form-group">
                     <label for="fornecedor ">Fornecedor</label>
@@ -106,7 +112,7 @@
               
             </div>
     </section>
-    <footer class="rodape ">
+    <footer class="rodape my-5 ">
       <div class="container">
         <div class="row">
           <div class="col-md-12 ">
@@ -132,7 +138,7 @@
             <div class="text-center ">
               <p>Endereço: Rua dos alfeneiros nº 4</p>
               <p>Tel.: (xx) xxxx-xxxx</p>
-              <p>&copy; Copyright Top Restaurante </p>
+              <p>&copy; Copyright Caldeirão Furado </p>
           </div>
         </div>
     

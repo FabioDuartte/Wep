@@ -41,10 +41,22 @@
                 <i class="fas fa-bars text-dark"></i>
               </button>
               <!--Navegação-->
+         >
+              <div class="  mx-5 text-center pesquisa "><!--inicio pesquisa-->
+                <div class="input-group">
+                  <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" style="border-right: none;">
+                  <div class="input-group-append">
+                    <div class="input-group-text" ><button type="submit" class="btn btn-md btn-white"> <i class="fas fa-search"></i></button></div>
+                  </div>
+                </div>
+              </div><!--Fim  pesquisa-->
               <div class="collapse navbar-collapse " id="nav-principal">              
                   <ul class="navbar-nav ml-auto   ">  
+                    <li>
+                      <span class="text-warning font-weight-bold my-2 cashback">R$ 50,00</span>
+                    </li>
                     <li class="nav-item mx-4 bonus">
-                      <span class="nav-link">&dollar; 50,00</span>
+                      <a href="bill.html" class="text-warning mx-2 my-2 cart "> <i class="fas fa-shopping-cart mx-2"></i>3</a>
                   </li>
                     <img src="../public/imagens/perfil.jpg" id="foto">
                     <li class="nav-link format-link">
@@ -57,9 +69,11 @@
                                 <div class="dropdown-divider"></div>
                                 <a href="../view/orders.html" class="dropdown-item nav-item format-link">Visualizar pedidos</a>
                                 <div class="dropdown-divider"></div>
-                                <a href="" class="dropdown-item nav-item format-link">Conta</a>
+                                <a href="../view/bill.html" class="dropdown-item nav-item format-link">Minha Comanda</a>
                                 <div class="dropdown-divider"></div>
-                                <a href="" class="dropdown-item nav-item format-link">Sair</a>
+                                <a href="editarCadastro.html" class="dropdown-item nav-item format-link">Editar Cadastro</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="../view/login.html" class="dropdown-item nav-item format-link">Sair</a>
                             </div>                                                            
                         </div>   
                     </li>             
@@ -87,7 +101,7 @@
             <a class="nav-link" href="breakfest.html">Café</a>
           </li>
           <li class=" nav-item">
-            <a class="nav-link" href="lunch.html ">Almoço</a>
+            <a class="nav-link active" href="lunch.html ">Almoço</a>
           </li>
           <li class=" nav-item">
             <a class="nav-link " href="dinner.html">Jantar</a>
@@ -127,7 +141,7 @@
                         </div>
 
                         <div class="card">
-                            <img class="card-img-top " src="../public/imagens/breakfest5.png" alt="Imagem de capa do card">
+                            <img class="card-img-top " src="../public/imagens/breakfest/breakfest5.png" alt="Imagem de capa do card">
                             <div class="card-body ">
                               <h5 class="cardheader">Omelete</h5>
                               <div class="d-flex my-4 ">
@@ -148,7 +162,7 @@
                           </div>
 
                           <div class="card">
-                            <img class="card-img-top " src="../public/imagens/breakfest5.png" alt="Imagem de capa do card">
+                            <img class="card-img-top " src="../public/imagens/breakfest/breakfest5.png" alt="Imagem de capa do card">
                             <div class="card-body">
                               <h5 class="cardheader">Omelete</h5>
                               <div class="d-flex my-4 ">
@@ -170,7 +184,7 @@
                 </div>
                 <div class="card-deck my-5">
                     <div class="card">
-                      <img class="card-img-top " src="../public/imagens/breakfest5.png" alt="Imagem de capa do card">
+                      <img class="card-img-top " src="../public/imagens/breakfest/breakfest5.png" alt="Imagem de capa do card">
                       <div class="card-body">
                         <h5 class="cardheader">Omelete</h5>
                         <div class="d-flex my-4 ">
@@ -191,7 +205,7 @@
                     </div>
 
                     <div class="card">
-                        <img class="card-img-top " src="../public/imagens/breakfest5.png" alt="Imagem de capa do card">
+                        <img class="card-img-top " src="../public/imagens/breakfest/breakfest5.png" alt="Imagem de capa do card">
                         <div class="card-body">
                           <h5 class="cardheader">Omelete</h5>
                           <div class="d-flex my-4 ">
@@ -212,7 +226,7 @@
                       </div>
                       
                       <div class="card">
-                        <img class="card-img-top " src="../public/imagens/breakfest5.png" alt="Imagem de capa do card">
+                        <img class="card-img-top " src="../public/imagens/breakfest/breakfest5.png" alt="Imagem de capa do card">
                         <div class="card-body">
                           <h5 class="cardheader">Omelete</h5>
                           <div class="d-flex my-4 ">
@@ -234,7 +248,7 @@
             </div>
             <div class="card-deck">
                 <div class="card">
-                  <img class="card-img-top " src="../public/imagens/breakfest5.png" alt="Imagem de capa do card">
+                  <img class="card-img-top " src="../public/imagens/breakfest/breakfest5.png" alt="Imagem de capa do card">
                   <div class="card-body">
                     <h5 class="cardheader">Omelete</h5>
                     <div class="d-flex my-4 ">
@@ -255,7 +269,7 @@
                 </div>
 
                 <div class="card">
-                    <img class="card-img-top " src="../public/imagens/breakfest5.png" alt="Imagem de capa do card">
+                    <img class="card-img-top " src="../public/imagens/breakfest/breakfest5.png" alt="Imagem de capa do card">
                     <div class="card-body">
                       <h5 class="cardheader">Omelete</h5>
                       <div class="d-flex my-4 ">
@@ -276,7 +290,7 @@
                   </div>
                   
                   <div class="card">
-                    <img class="card-img-top " src="../public/imagens/breakfest5.png" alt="Imagem de capa do card">
+                    <img class="card-img-top " src="../public/imagens/breakfest/breakfest5.png" alt="Imagem de capa do card">
                     <div class="card-body">
                       <h5 class="cardheader">Omelete</h5>
                       <div class="d-flex my-4 ">
@@ -294,19 +308,13 @@
                     <div class="card-footer">
                       <button class="btn btn-success btn-lg btn-block">Adicionar à comanda</button>
                     </div>
-                  </div>                        
+                  </div>                       
         </div>
-
-
-
-                
-               
-     
             </div>
         </div>
- 
-      
     </section>
+
+
 
     <section id="depoimentos" >
       <div class="container  ">
@@ -375,7 +383,7 @@
             <div class="text-center ">
               <p>Endereço: Rua dos alfeneiros nº 4</p>
               <p>Tel.: (xx) xxxx-xxxx</p>
-              <p>&copy; Copyright Top Restaurante </p>
+              <p>&copy; Copyright Caldeirão Furado </p>
           </div>
         </div>
     
@@ -383,8 +391,5 @@
         </div>
         
     </footer>
-
-    
-    
 </body>
 </html>
