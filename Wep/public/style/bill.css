@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 html, body, #home{
     height: 100%;
- 
-    
+    overflow-x: hidden;
 }
 body{
-   /* background: #130b0b url(../imagens/background5.jpg) no-repeat;*/
+   /* background: # url(../imagens/background5.jpg) no-repeat;*/
     /*background-image: linear-gradient(to right, rgba(255, 140, 26,1),rgba(179, 89, 0,1)); */
     background-attachment: fixed;
     font-family: Helvetica, Arial,  sans-serif;
@@ -13,27 +12,54 @@ body{
   
 }
 #home{
-    background: url(../imagens/breakfest/coffe3.jpg) no-repeat;
+    background: #fff; /*url(../imagens/background/background.png) no-repeat;*/
     background-attachment: fixed;
     background-size: cover;
+   
+}
+.comanda2{
+ margin-top: 400px;
+
+}
+.img{
+    width: 95px;
+    height: 95px;
+    border-radius: 5px;
+}
+.total{
+    /*background:#ccc;*/
+}
+.cardVisa{
+    font-size: 25px;
+
+}
+.letterSpacing{
+    letter-spacing: 3px;
+}
+.totalAPagar{
+    font-size: 1.4em;
 }
 #cafe{
     overflow: hidden;
-
+    
+}#qtd1, #qtd2, #qtd3{
+    width: 60px;
+}
+h5{
+    font-weight: bold;
+    font-size: 1.4em;
+    font-family: 'Courgette', cursive; 
 }
 #menu  ul {
     
     text-transform: uppercase;
     font-family: 'Courgette', cursive;   
-    background: #130b0b;
+    background: #37090c;
     
         
    
  }
- #cafe .card{
-     box-shadow: 10px 5px 5px  #ccc;
- }
-#menu ul li a{
+#menu ul li  a {
     font-size: 1.2em;
     padding: 25px;
     color: white;
@@ -44,7 +70,15 @@ body{
  color: rgb(255, 140, 26)
    
 }
-
+#menu ul li span{
+    font-size: 1.2em;
+    padding: 25px;
+    color: white;
+    letter-spacing: 2px;
+}
+#menu ul li span:hover{
+    color: rgb(255, 140, 26)
+ }
 .cardheader{
     font-family: 'Courgette', cursive;
     font-weight: bold;
@@ -95,13 +129,17 @@ nav.nav-transparente{
     font-size: 1.2em;
     font-weight: bold;
 }
-
+.card-deck .card{
+    box-shadow: yellow;
+}
+#cafe .card{
+    box-shadow: 10px 5px 5px 5px #ccc;
+}
 /*CAPA*/
 .capa{
     text-align: center;
     color: white;
 }
-
 #foto{
     border-radius: 360px;
     width: 34px;
@@ -133,35 +171,36 @@ a:link{
 /*Depoimentos*/
 
 #depoimentos {
-    background: url(../imagens/breakfest/cafe.jpg) no-repeat;    
+    background: url(../imagens/lunch/lunch9.png) no-repeat;    
     background-size: cover;
-   
-    
 }
 #depoimentos {
     font-family: 'Courgette', cursive;
     font-weight: bold;
     letter-spacing: 5px; 
-    color: #802b00;
+    color: #37090c;
     padding-top: 15px;
     font-size: 1.2em;
-    margin-top: 40px;
-   
-    
 }
 
+
+#depoimentos .card{
+    box-shadow: 10px 5px 5px black;
+}
 .card-deck{
     margin-bottom: 40px;
 }
 
-#depoimentos .card{
-    padding: 15px 0px;
-    box-shadow: 10px 5px 5px black;
-}
+
 .rodape{
     background: linear-gradient(to right, rgba(19,11,11,1), rgba(15,16,14,1));
-   
+    
 }
+
+h3{
+    font-weight: bold;
+}
+
 .rodape ul li a{
     
     font-size: 1em;
@@ -193,26 +232,29 @@ a:link{
     text-align: center;
  
  }
-.texto{
-    margin-top: 30%;
+ 
+ .texto{
+         margin-top: 30%;
+ }
+ 
+ .pesquisa{
+    padding-left: 60px;
+    width: 540px;
 }
 .cashback{
     font-size: 1.2em;
     color: #FFD700;
     
 }
-.pesquisa{
-    padding-left: 60px;
-    width: 540px;
-}
-#menu .active{
-    color: #FFD700;
-}
 .cart{
-    font-size: 20px;
-    margin-right: 10px;
- 
- }
+    font-size: 20px; 
+    
+}
+/*
+#paginacao .container ul li a {
+    text-decoration: none;
+    box-shadow: 5px 5px 5px #ccc;
+}*/
 @media (max-width: 1024px) {/*IpadPro*/
 
     .rodape{
@@ -226,23 +268,11 @@ a:link{
 
     .pesquisa{
         padding-left: 60px;
-        width: 350px;
+        width: 440px;
     }
-
     #menu .active{
         color: #FFD700;
-
-    }
-
-    .cart{
-        font-size: 20px; 
-   
-    }
-
-    .cashback{
-        font-size: 1.2em;
-        color: #FFD700;
-        
+    
     }
 }
 @media (max-width: 768px) {/*Ipad*/
@@ -261,14 +291,10 @@ a:link{
        width: 200px;
        background-color: #FFF
    }
-
    #menu .active{
-    color:#FFD700;
-  }
-  .cart{
-      font-size: 15px;
-  }
-
-
+    color: #FFD700;
 
 }
+
+}
+

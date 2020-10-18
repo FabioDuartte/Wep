@@ -73,10 +73,16 @@ nav.nav-transparente{
     
 }
 .cardapio{
+    
     width: 400px;
-    height: 400px;
+    height: 250px;
    
 }
+.welcome{
+    color: rgb(184, 32, 32);
+    /*color: rgb(229, 231, 129);*/
+}
+
 #foto{
     border-radius: 360px;
     width: 34px;

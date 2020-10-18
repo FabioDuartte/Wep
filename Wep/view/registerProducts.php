@@ -43,22 +43,22 @@
           <div class="collapse navbar-collapse " id="nav-principal">              
               <ul class="navbar-nav ml-auto   ">  
                   
-                <img src="../public/imagens/perfil.jpg" id="foto">
+                
                 <li class="nav-link format-link">
                     <div class="dropdown ">
                         <span class="dropdown-toggle text-white" data-toggle="dropdown">
-                            Perfil
+                            <i class="far fa-user"></i> 
                         </span>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="../view/registerProducts.html" class="dropdown-item nav-item format-link ">Cadastrar produtos</a>
+                            <a href="../view/registerProducts.php" class="dropdown-item nav-item format-link ">Cadastrar produtos</a>
                             <div class="dropdown-divider"></div>
-                            <a href="../view/orders.html" class="dropdown-item nav-item format-link">Visualizar pedidos</a>
+                            <a href="../view/orders.php" class="dropdown-item nav-item format-link">Visualizar pedidos</a>
                             <div class="dropdown-divider"></div>
-                            <a href="../view/bill.html" class="dropdown-item nav-item format-link">Minha Comanda</a>
+                            <a href="../view/bill.php" class="dropdown-item nav-item format-link">Minha Comanda</a>
                             <div class="dropdown-divider"></div>
-                            <a href="../view/bill.html" class="dropdown-item nav-item format-link">Editar Cdastro</a>
+                            <a href="../view/bill.php" class="dropdown-item nav-item format-link">Editar Cdastro</a>
                             <div class="dropdown-divider"></div>
-                            <a href="../view/login.html" class="dropdown-item nav-item format-link">Sair</a>
+                            <a href="../view/login.php" class="dropdown-item nav-item format-link">Sair</a>
                         </div>                                                            
                     </div>   
                 </li>             
@@ -118,19 +118,19 @@
           <div class="col-md-12 ">
             <ul class="nav justify-content-center ">
               <li class="  nav-item">
-                <a class="nav-link " href="index.html">Home</a>
+                <a class="nav-link " href="pagelanding.php">Home</a>
               </li>
               <li class="  nav-item">
-                <a class="nav-link" href="breakfest.html">Café</a>
+                <a class="nav-link" href="breakfest.php">Café</a>
               </li>
               <li class=" nav-item">
-                <a class="nav-link" href="lunch.html">Almoço</a>
+                <a class="nav-link" href="lunch.php">Almoço</a>
               </li>
               <li class=" nav-item">
-                <a class="nav-link " href="dinner.html">Jantar</a>
+                <a class="nav-link " href="dinner.php">Jantar</a>
               </li>
               <li class=" nav-item">
-                <a class="nav-link " href="drink.html">Bebidas</a>
+                <a class="nav-link " href="drink.php">Bebidas</a>
               </li>
             </ul>
           </div> 

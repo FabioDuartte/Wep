@@ -21,11 +21,11 @@
     <section class="login-form">
         <div class="container">
             <div class="row">
-                <form action="">
+                <form action="#" method="POST">
 
                 <div class="col-md-12 login  ">                                    
                     <h2 class="text-center lables">Cadastro</h2>
-                    <form action="" ><!--inicio form-->
+                    <form action="#" method="POST" ><!--inicio form-->
 
                         <div class="form-group input-group"><!--inicio user-->
                             <div class="input-group-prepend">
@@ -47,7 +47,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
                              </div>
-                            <input id="phone" required="required"  name="telefone" class="form-control phone-ddd-mask"   pattern="[0-9]{2}[0-9]{5}[0-9]{4}" placeholder="DDD + telefone"  type="tel">
+                            <input id="phone"  name="telefone" class="form-control phone-ddd-mask"   pattern="[0-9]{2}[0-9]{5}[0-9]{4}" placeholder="DDD + telefone (opcional)"  type="tel">
                         </div><!--fim inicio-->
 
                         <div class="form-group input-group"><!--inicio card-->
@@ -79,14 +79,14 @@
                         </div><!--fim confirma password-->
 
                         <p><!--inicio botões-->
-                            <a href="index.html" type="submit" class="btn btn-primary btn-block bg-primary text-white btn-weight"> <i class="fab fa-twitter "></i>          Criar com o Twitter  </a>
-                            <a href="index.html" type="submit" class="btn btn-primary btn-block bg-primary text-white btn-weight"> <i class="fab fa-facebook-f "></i>       Criar com o facebook  </a>
-                            <a href="index.html" type="submit" class="btn btn-danger btn-block bg-danger text-white btn-weight"> <i class="fab fa-google-plus"></i>       Criar com o google  </a>       
-                            <button type="submit" class="btn btn-block btn-facebook  bg-success text-white btn-weight ">Criar com  conta</button>
+                            <a href="pagelanding.php" type="submit" class="btn btn-primary btn-block bg-primary text-white btn-weight"> <i class="fab fa-twitter "></i>          Criar com o Twitter  </a>
+                            <a href="pagelanding.php" type="submit" class="btn btn-primary btn-block bg-primary text-white btn-weight"> <i class="fab fa-facebook-f "></i>       Criar com o facebook  </a>
+                            <a href="pagelanding.php" type="submit" class="btn btn-danger btn-block bg-danger text-white btn-weight"> <i class="fab fa-google-plus"></i>       Criar com o google  </a>       
+                            <button type="submit" class="btn btn-block btn-facebook  bg-success text-white btn-weight ">Criar conta</button>
                         </p><!--fim botões-->
                         
    
-                        <p class="text-center lables">Já possui uma conta? <a href="login.html">Login</a> </p>  
+                        <p class="text-center lables">Já possui uma conta? <a href="login.php">Login</a> </p>  
 
                         
                 

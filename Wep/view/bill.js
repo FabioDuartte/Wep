@@ -37,7 +37,7 @@ for(let i = 0; i< removeCartButtons.length; i++){
 
 function updateTotal(){
   let cartItemContainer = document.getElementsByClassName('cart-items')[0]
-  let cartRows = cartItemContainer.getElementsByClassName('cart-row')
+  let cartRows = document.getElementsByClassName('cart-row')
   let total = 0
   for(let i = 0; i < cartRows.length; i++){
     let cartRow = cartRows[i]

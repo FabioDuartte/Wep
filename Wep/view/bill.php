@@ -56,24 +56,24 @@
                       <span class="text-warning font-weight-bold my-2 cashback">R$ 50,00</span>
                     </li> 
                     <li class="nav-item mx-4 bonus">
-                        <a href="bill.html" class="text-warning mx-2 my-2 cart"> <i class="fas fa-shopping-cart mx-2"></i>3</a>
+                        <a href="bill.php" class="text-warning mx-2 my-2 cart"> <i class="fas fa-shopping-cart mx-2"></i>3</a>
                   </li>
-                  <img src="../public/imagens/perfil.jpg" id="foto">
+                  
                     <li class="nav-link format-link">
                         <div class="dropdown ">
                             <span class="dropdown-toggle" data-toggle="dropdown">
-                                Perfil
+                            <i class="far fa-user"></i> 
                             </span>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a href="../view/registerProducts.html" class="dropdown-item nav-item format-link ">Cadastrar produtos</a>
+                                <a href="../view/registerProducts.php" class="dropdown-item nav-item format-link ">Cadastrar produtos</a>
                                 <div class="dropdown-divider"></div>
-                                <a href="../view/orders.html" class="dropdown-item nav-item format-link">Visualizar pedidos</a>
+                                <a href="../view/orders.php" class="dropdown-item nav-item format-link">Visualizar pedidos</a>
                                 <div class="dropdown-divider"></div>                                   
-                                <a href="../view/bill.html" class="dropdown-item nav-item format-link">Minha Comanda</a>
+                                <a href="../view/bill.php" class="dropdown-item nav-item format-link">Minha Comanda</a>
                                 <div class="dropdown-divider"></div>                                
-                                <a href="../view/editarCadastro.html" class="dropdown-item nav-item format-link">Editar Cadastro</a>
+                                <a href="../view/editarCadastro.php" class="dropdown-item nav-item format-link">Editar Cadastro</a>
                                 <div class="dropdown-divider"></div>
-                                <a href="../view/login.html" class="dropdown-item nav-item format-link">Sair</a>
+                                <a href="../view/login.php" class="dropdown-item nav-item format-link">Sair</a>
                             </div>                                                            
                         </div>   
                     </li>             
@@ -84,13 +84,13 @@
     </header><!--Fim Header-->
 
     <section id="home" class="d-flex my-5 "> 
-        <div class="container align-self-center"  >
+        <div class="container align-self-center my-5"  >
             <div class="row">
             <div class="col-md-12 capa">
-              <h5 class="display-5 text-dark">Minha Comanda</h5>
+              <h5 class="display-5 text-dark ">Minha Comanda</h5>
            </div>  
-           <div class="container ">
-             <div class="row cart-items ">
+           <div class="container my-5">
+             <div class="row cart-items  ">
                <div class="col-md-9">
                 <table class="table table my-2 ">
                   <thead>
@@ -162,10 +162,10 @@
                     <input type="text" placeholder=" Aplicar bônus"  style="width: 157px;">
                     <input type="submit" class="btn btn-primary btn-sm font-weight-bold text-white space2" value="APLICAR">
                    </div>  -->
-                   
+                  
                    <div class="my-2"> <span class="totalPrice font-weight-bold totalAPagar">Total R$ 28,00</span></div>
                    <div class="my-2">
-                     <a href="index.html"><button type="button" name="keep" id="keep" class="btn btn-block btn-lg btn-info   font-weight-bold">Continuar Comprando</button></a>
+                     <a href="pagelanding.php"><button type="button" name="keep" id="keep" class="btn btn-block btn-lg btn-info   font-weight-bold">Continuar Comprando</button></a>
                    </div>
                    <div class="my-2">
                     <button type="button" name="close" id="close" class="btn btn-block btn-lg btn-success  font-weight-bold">Realizar Pedido</button>
@@ -228,8 +228,8 @@
                   
                     </div>
                     <div class="modal-footer">
-                      <a href="bill.html"><button type="button" class="btn btn-secondary font-weight-bold" data-target="">Fechar</button></a>
-                      <a href="index.html"><button type="button" class="btn btn-success font-weight-bold" >Pagar</button></a>
+                      <a href="bill.php"><button type="button" class="btn btn-secondary font-weight-bold" data-target="">Fechar</button></a>
+                      <a href="pagelanding.php"><button type="button" class="btn btn-success font-weight-bold" >Pagar</button></a>
                     </div>
                   </div>
                 </div>
@@ -239,37 +239,10 @@
 
     <footer class="rodape ">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12 ">
-            <ul class="nav justify-content-center ">
-              <li class="  nav-item">
-                <a class="nav-link " href="index.html">Home</a>
-              </li>
-              <li class="  nav-item">
-                <a class="nav-link" href="breakfest.html">Café</a>
-              </li>
-              <li class=" nav-item">
-                <a class="nav-link" href="lunch.html">Almoço</a>
-              </li>
-              <li class=" nav-item">
-                <a class="nav-link " href="dinner.html">Jantar</a>
-              </li>
-              <li class=" nav-item">
-                <a class="nav-link " href="drink.html">Bebidas</a>
-              </li>
-            </ul>
-          </div> 
-          <div class="col-md-12 my-2 notas">
-            <div class="text-center ">
-              <p>Endereço: Rua dos alfeneiros nº 4</p>
-              <p>Tel.: (xx) xxxx-xxxx</p>
-              <p>&copy; Copyright Caldeirão Furado </p>
-          </div>
-        </div>
-    
-          </div>  
-        </div>
-        
+      <div class="row">
+        <?php include "./include/footer.inc.php" ?>
+      </div>  
+        </div>        
     </footer>
 
     

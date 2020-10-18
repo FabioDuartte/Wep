@@ -54,7 +54,7 @@
                         </div><!--fim confirma password-->
 
                         <p><!--inicio botões-->
-                            <a href="login.html" type="submit" class="btn btn-sucess btn-block bg-success text-white btn-weight"></i>Salvar Alterações</a>
+                            <a href="login.php" type="submit" class="btn btn-sucess btn-block bg-success text-white btn-weight"></i>Salvar Alterações</a>
                             
                         </p><!--fim botões-->
                         

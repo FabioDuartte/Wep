@@ -30,6 +30,10 @@ body{
         
    
  }
+ .welcome{
+    font-size: 100px;
+}
+
  #cafe .card{
      box-shadow: 10px 5px 5px  #ccc;
  }
@@ -195,6 +199,7 @@ a:link{
  }
  .pesquisa{
      padding-left: 60px;
+     
      width: 540px;
  }
  .texto{

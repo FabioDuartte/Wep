@@ -30,10 +30,10 @@
                 <div class="col-md-12 login  "> 
                     <div class="row btn-container">
                         <div class="col-md-6" >
-                            <a href="login.html" type="submit" class="btn  btn-block  text-white my-4- btn-weight btn-front btn-success">Fazer Login  </a>
+                            <a href="login.php" type="submit" class="btn  btn-block  text-white my-4- btn-weight btn-front btn-success">Fazer Login  </a>
                         </div>
                         <div class="col-md-6" >
-                            <a href="login.html" type="submit" class="btn btn-block  text-white my-4- btn-weight btn-front btn-warning text-dark">Vizualizar o Cardápio  </a>
+                            <a href="pagelanding.php" type="submit" class="btn btn-block  text-white my-4- btn-weight btn-front btn-warning text-dark">Vizualizar o Cardápio  </a>
                         </div>
                     </div>
                 </div>

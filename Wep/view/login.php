@@ -13,19 +13,22 @@
 
 
     <!--login.css-->
-    <link rel="stylesheet" type="text/css" href="../public/style/login.css">
+
+    <link rel="stylesheet"  href="../public/style/login.css">
 
     
 </head>
 <body>
     <section class="login-form">
-        <div class="container">
-            <div class="row">
+        <div class="container" style="height: 600px">
+            <div class="row" >
 
                 <div class="col-md-12 login  "> 
                                    
+                    <a href="frontpage.php"><i class="fas fa-long-arrow-alt-left text-white back my-2" style="font-size:40px "></i></a>
                     <h2 class="text-center lables">Login</h2>
-                    <form action="" class=""><!--inicio form-->
+                
+                    <form method="POST" action="<?php  htmlspecialchars($_SERVER["PHP_SELF"]);?>">  <!--inicio form-->
 
                         <div class="form-group input-group"><!--inicio user-->
                             <div class="input-group-prepend">
@@ -48,16 +51,18 @@
                             </label><!--fim remember-->
 
                             <p><!--inicio botões-->
-                                <a href="index.html" type="submit" class="btn btn-primary btn-block bg-primary text-white mb-2 btn-weight"> <i class="fab fa-twitter "></i>          Entrar com o Twitter  </a>
-                                <a href="index.html" type="submit" class="btn btn-primary btn-block bg-primary text-white  mb-2 btn-weight"> <i class="fab fa-facebook-f "></i>       Entrar com o facebook  </a>
-                                <a href="index.html" type="submit" class="btn btn-danger btn-block bg-danger text-white  mb-2 btn-weight"> <i class="fab fa-google-plus"></i>       Entrar com o google  </a>       
-                                <button  type="submit" class="btn btn-block btn-facebook  bg-success text-white btn-weight">Logar</button>
+                                <a href="comingSoon.php" type="submit" class="btn btn-primary btn-block bg-primary text-white mb-2 btn-weight"> <i class="fab fa-twitter "></i>          Entrar com o Twitter  </a>
+                                <a href="comingSoon.php" type="submit" class="btn btn-primary btn-block bg-primary text-white  mb-2 btn-weight"> <i class="fab fa-facebook-f "></i>       Entrar com o facebook  </a>
+                                <a href="comingSoon.php" type="submit" class="btn btn-danger btn-block bg-danger text-white  mb-2 btn-weight"> <i class="fab fa-google-plus"></i>       Entrar com o google  </a>       
+                                <a button type="submit" class="btn btn-block btn-facebook  bg-success text-white btn-weight" href="pagelanding.php">Logar</button>  </a>
+                                
+
                             </p><!--fim botões-->
                            
     
    
-                            <p class="text-center lables">Não possui uma conta?
-                                 <a href="cadastro.html" class="lables-link">Cadastre-se</a><br>
+                            <p class="text-center lables">Não possui uma conta? 
+                                 <a href="cadastro.php" class="lables-link">Cadastre-se</a><br>
                                  <a href="#" class="lables-link">Esqueci minha senha</a><br>
 
                             </p>   

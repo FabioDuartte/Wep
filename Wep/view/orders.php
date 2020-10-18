@@ -43,20 +43,20 @@
           <div class="collapse navbar-collapse " id="nav-principal">              
               <ul class="navbar-nav ml-auto   ">  
                
-                <img src="../public/imagens/perfil.jpg" id="foto">
+               
                 <li class="nav-link format-link">
                     <div class="dropdown ">
                         <span class="dropdown-toggle text-white" data-toggle="dropdown">
-                            Perfil
+                        <i class="far fa-user"></i> 
                         </span>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="../view/registerProducts.html" class="dropdown-item nav-item format-link ">Cadastrar produtos</a>
+                            <a href="../view/registerProducts.php" class="dropdown-item nav-item format-link ">Cadastrar produtos</a>
                             <div class="dropdown-divider"></div>
-                            <a href="../view/orders.html" class="dropdown-item nav-item format-link">Visualizar pedidos</a>
+                            <a href="../view/orders.php" class="dropdown-item nav-item format-link">Visualizar pedidos</a>
                             <div class="dropdown-divider"></div>
-                            <a href="../view/bill.html" class="dropdown-item nav-item format-link">Minha Comanda</a>
+                            <a href="../view/bill.php" class="dropdown-item nav-item format-link">Minha Comanda</a>
                             <div class="dropdown-divider"></div>
-                            <a href="../view/editarCadastro.html" class="dropdown-item nav-item format-link">Editar Cadastro</a>
+                            <a href="../view/editarCadastro.php" class="dropdown-item nav-item format-link">Editar Cadastro</a>
                             <div class="dropdown-divider"></div>
                             <a href="" class="dropdown-item nav-item format-link">Sair</a>
                         </div>                                                            
@@ -99,41 +99,14 @@
               
             </div>
     </section>
+    
     <footer class="rodape ">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12 ">
-            <ul class="nav justify-content-center ">
-              <li class="  nav-item">
-                <a class="nav-link " href="index.html">Home</a>
-              </li>
-              <li class="  nav-item">
-                <a class="nav-link" href="breakfest.html">Café</a>
-              </li>
-              <li class=" nav-item">
-                <a class="nav-link" href="lunch.html">Almoço</a>
-              </li>
-              <li class=" nav-item">
-                <a class="nav-link " href="dinner.html">Jantar</a>
-              </li>
-              <li class=" nav-item">
-                <a class="nav-link " href="drink.html">Bebidas</a>
-              </li>
-            </ul>
-          </div> 
-          <div class="col-md-12 my-2 notas">
-            <div class="text-center ">
-              <p>Endereço: Rua dos alfeneiros nº 4</p>
-              <p>Tel.: (xx) xxxx-xxxx</p>
-              <p>&copy; Copyright Caldeirão furado </p>
-          </div>
-        </div>
-    
-          </div>  
-        </div>
-        
+      <div class="row">
+        <?php include "./include/footer.inc.php" ?>
+      </div>  
+        </div>        
     </footer>
-    
 
 
     
