@@ -54,7 +54,7 @@
                                 <a href="comingSoon.php" type="submit" class="btn btn-primary btn-block bg-primary text-white mb-2 btn-weight"> <i class="fab fa-twitter "></i>          Entrar com o Twitter  </a>
                                 <a href="comingSoon.php" type="submit" class="btn btn-primary btn-block bg-primary text-white  mb-2 btn-weight"> <i class="fab fa-facebook-f "></i>       Entrar com o facebook  </a>
                                 <a href="comingSoon.php" type="submit" class="btn btn-danger btn-block bg-danger text-white  mb-2 btn-weight"> <i class="fab fa-google-plus"></i>       Entrar com o google  </a>       
-                                <a button type="submit" class="btn btn-block btn-facebook  bg-success text-white btn-weight" href="pagelanding.php">Logar</button>  </a>
+                                <a button type="submit"  class="btn btn-block btn-facebook  bg-success text-white btn-weight" href="pagelanding.php">Logar</button>  </a>
                                 
 
                             </p><!--fim botões-->
@@ -63,12 +63,18 @@
    
                             <p class="text-center lables">Não possui uma conta? 
                                  <a href="cadastro.php" class="lables-link">Cadastre-se</a><br>
-                                 <a href="#" class="lables-link">Esqueci minha senha</a><br>
+                                 <a href="recovery.php" class="lables-link" >Esqueci minha senha</a><br>
 
                             </p>   
                                                 
                         </div><!--fim remember-->                       
-                    </form><!--fim form-->   
+                    </form><!--fim form--> 
+                    
+                   
+
+                    
+                    <section>
+           
                 </div>
 
                 <div >
