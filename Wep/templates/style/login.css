@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+body,html {
+    margin: 0;
+    padding: 0;
+    background:  url(../images/background/table.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /*background: linear-gradient(to right, rgba(19,11,11,1), rgba(15,16,14,1)); */    
+    opacity: 90%;
+    height: 100vh;
+    overflow: hidden;
+    
+   
+  }
+.login-form{
+   
+    width:100%;   
+    padding : 50px 0;
+    min-width: 1024px;
+}
+
+h2{
+    margin-bottom: 25px;
+    font-weight: bold;
+    /*font-family: 'Courgette', cursive;*/
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.check{
+    margin-left: 25px;
+}
+.btn-login{
+    font-weight: 600;
+    margin-left: 4px;
+}
+.container{
+    background: linear-gradient(to right, rgba(19,11,11,1), rgba(15,16,14,1)); ;
+    border-radius: 10px;
+    box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+    width: 500px;
+    height: 525px;
+    align-content: center;   
+   
+}
+.login{
+    padding: 50px 30px; position:relative;
+}
+a:link{
+
+    text-decoration: none;
+    padding: 5px ;    
+}
+.social-icon span{
+    font-size: 50px;
+    margin-left: 10px;
+    margin-top: 20px;
+    color: rgb(80, 100, 136);
+    padding: 20px 40px 0 40px;
+}
+.loga-social span{
+    margin-top: 20px;
+    margin-left: 40px;
+    
+}
+.lables{
+    font-weight: bold;
+    color: white;
+    
+}
+.remember-size{
+    font-size: 1em;
+}
+.btn-weight{
+    font-weight: bold;
+}
+
+@media (max-width: 1024px) {/*IpadPro*/
+
+    .container{
+        background: linear-gradient(to right, rgba(19,11,11,1), rgba(15,16,14,1)); ;
+        border-radius: 10px;
+        box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+        width: 450px;
+        height: 600px;
+        align-content: center;   
+        margin-top: 30%;
+       
+       
+       
+    }
+
+
+ }
+
+ @media (max-width: 768px) {/*Ipad*/
+
+    .container{
+        background: linear-gradient(to right, rgba(19,11,11,1), rgba(15,16,14,1)); ;
+        border-radius: 10px;
+        box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+        width: 450px;
+        height: 550px;
+        align-content: center;   
+        margin: 18%;
+      
+       
+    }
+
+
+ }
