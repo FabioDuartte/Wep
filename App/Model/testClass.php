@@ -1,8 +1,8 @@
 <?php
 
-require_once "../../Index.php";
+namespace App\Model;
 
-use App\Model\Client as Client;
+require_once "../../index.php";
 
 $client = new Client();
 
