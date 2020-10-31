@@ -2,13 +2,13 @@
 
 header('Content-Type: text/html; charset=utf-8');
 
-use Library\Restaurant\Core\Autoload as Autoload;
-use Library\Restaurant\Core\Router as Router;
+use Library\Autoload as Autoload;
+use Library\Router as Router;
 
-define('ROOT', __DIR__);
+define('DIR_ROOT', __DIR__);
 define('DS', DIRECTORY_SEPARATOR);
 
-require_once ROOT . DS . 'Library/Restaurant/Core/Autoload.php';
+require_once DIR_ROOT . DS . './Library/Autoload.php';
 
 $autoload = new Autoload();
-$router = new Router();
+// $router = new Router();
