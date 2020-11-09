@@ -4,7 +4,7 @@
     <div class="container ">
         <!--Logo-->
         <a  href="#" class="navbar-brand" style="color: white;">
-        <img src="../public/images/logo/logo-removebg-preview.png" width="120px" alt="">
+        <img src="../images/logo/logo-removebg-preview.png" width="120px" alt="">
         </a>    
         <!--Menu Hamburguer-->
         <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
