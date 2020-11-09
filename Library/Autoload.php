@@ -6,7 +6,7 @@ namespace Library;
  * Carregamento automático de Classes
  *
  * @category Restaurant
- * @package  Core
+ * @package  Library
  *
 **/
 class Autoload
@@ -19,9 +19,9 @@ class Autoload
     /**
      * Carrega outros arquivos
      *
-     * @param string $className a classe a se carregar
+     * @param string $nameSpace da classe a se carregar
      *
-     * @return  retorna uma exceção caso o arquivo não seja encontrado
+     * @return retorna uma exceção caso o arquivo não seja encontrado, carrega o arquivo caso seja.
      *
     **/
     private function load($nameSpace)
