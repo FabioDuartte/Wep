@@ -2,36 +2,25 @@
 
 namespace App\Models;
 
-class Employee extends SystemUser
+class Employee extends SystemUsers
 {
-    private $employeeIdentifierNumber;
-    private $manager;
+    private $position;
 
-    public function __construct($userName, $userEmail, $userPassword, $userPhoneNumber, $employeeIdentifierNumber)
+    public function __construct($userName, $userEmail, $userCpfOrIdEmployee, $userPassword, $userPhoneNumber, $position = "Cozinheiro")
     {
-        parent::__construct($userName, $userEmail, $userPassword, $userPhoneNumber);
-        $this->employeeIdentifierNumber = $employeeIdentifierNumber;
-        $this->manager = false;
+        $userCpfOrIdEmployee .= ".CDN";
+        parent::__construct($userName, $userEmail, $userCpfOrIdEmployee, $userPassword, $userPhoneNumber);
+        $this->position = $position;
     }
 
-    public function getEmployeeIndeterminateNumber()
+    public function getPosition()
     {
-        return $this->employeeIdentifierNumber;
+        return $this->position;
     }
 
-    public function setEmployeeIdentifierNumber($employeeIdentifierNumberNumber)
+    public function setPosition($position)
     {
-        $this->employeeIdentifierNumberNumber = $employeeIdentifierNumberNumber;
-    }
-
-    public function isManager()
-    {
-        return $this->manager;
-    }
-
-    public function setManager($manager)
-    {
-        $this->manager = $manager;
+        $this->position = $position;
     }
 
 }

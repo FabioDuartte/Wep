@@ -4,15 +4,17 @@ namespace App\Models;
 
 class Card
 {
-    protected $cardNumber;
-    protected $cardBrand;
-    protected $cardExpiry;
+    private $cardNumber;
+    private $cardBrand;
+    private $cardExpiry;
+    private $cardCvv;
 
-    public function __construct($cardNumber, $cardBrand, $cardExpiry)
+    public function __construct($cardNumber, $cardBrand, $cardExpiry, $cardCvv)
     {
         $this->cardNumber = $cardNumber;
         $this->cardBrand = $cardBrand;
         $this->cardExpiry = $cardExpiry;
+        $this->cardCvv = $cardCvv;
     }
 
     public function getCardNumber()
@@ -44,5 +46,24 @@ class Card
     {
         $this->cardExpiry = $cardExpiry;
     }
+
+    public function getCardCvv()
+    {
+        return $this->cardCvv;
+    }
+
+    public function setCardCvv($cardCvv)
+    {
+        $this->cardCvv = $cardCvv;
+    }
     
+/*     public function getInstallments()
+    {
+        return $this->installments;
+    }
+
+    public function setInstallments($installments)
+    {
+        $this->installments = $installments;
+    } */
 }
