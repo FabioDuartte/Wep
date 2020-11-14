@@ -9,11 +9,9 @@ class Customer extends SystemUsers
     private $customerBonus = 0;
     private $customerCard = array();
     
-    public function __construct($userName, $userEmail, $userCpfOrIdEmployee, $userPassword,
-    $cardNumber, $cardBrand, $cardExpiry, $cardCvv, $userPhoneNumber = '')
+    public function __construct($userName, $userEmail, $userCpfOrIdEmployee, $userPassword, $userPhoneNumber = '')
     {
         parent::__construct($userName, $userEmail, $userCpfOrIdEmployee, $userPassword, $userPhoneNumber);
-        $this->customerCard[] = new Card($cardNumber, $cardBrand, $cardExpiry, $cardCvv);
     }
 
     public function setNewCustomerCard($cardNumber, $cardBrand, $cardExpiry, $cardCvv)

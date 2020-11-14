@@ -11,8 +11,8 @@ class Bill
 
     public function __construct(/* $customerOwnerBill, */ $orderBill, $installments)
     {
-        // $this->orderBill = $orderBill;
-        $this->customerBill = $customerBill;
+        $this->orderBill = $orderBill;
+        // $this->customerBill = $customerBill;
         $this->installments = 1;
     }
 

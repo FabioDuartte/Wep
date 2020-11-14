@@ -4,11 +4,11 @@ namespace App\Models;
 
 class MenuFoods extends MenuItems
 {
-    private $ingredients = array();
+    private $ingredients;
 
-    public function __construct($menuItemName, $menuItemPrice, $menuItemID, $ingredients)
+    public function __construct($menuItemName, $menuItemPrice, /* $menuItemID, */ $ingredients)
     {
-        parent::__construct($menuItemName, $menuItemPrice, $menuItemID);
+        parent::__construct($menuItemName, $menuItemPrice /* , $menuItemID */);
         $this->ingredients = $ingredients;
     }
 

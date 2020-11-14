@@ -8,7 +8,6 @@ class Employee extends SystemUsers
 
     public function __construct($userName, $userEmail, $userCpfOrIdEmployee, $userPassword, $userPhoneNumber, $position = "Cozinheiro")
     {
-        $userCpfOrIdEmployee .= ".CDN";
         parent::__construct($userName, $userEmail, $userCpfOrIdEmployee, $userPassword, $userPhoneNumber);
         $this->position = $position;
     }
