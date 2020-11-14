@@ -1,25 +1,27 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Database;
 
 use \PDO;
 use \PDOException;
 
 class ConnectionDataBase
 {
+    
+    private $dbh = null;
+
     static public function getConnection()
     {
-        $serverPort = "";
-        $dbUserName = "";
-        $dbPassword = "";
-        $dbName = "";
+        $envPath = 'env.ini';
+        $env = parse_ini_file($envPath);
         try {
-            $dbh = new PDO("mysql:host=$serverPort;dbname=$dbName", $dbUserName, $dbPassword);
+            $dbh = new PDO("mysql:host={$env['serverPort']};dbname={$env['dbName']}", $env['dbUserName'], $env['dbPassword']);
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //return $dbh;
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
-            //return null;
+            //return $dbh;
+            exit();
         }
     }
-} 
+}
