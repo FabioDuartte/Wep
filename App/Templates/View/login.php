@@ -14,7 +14,7 @@
 
     <!--login.css-->
 
-    <link rel="stylesheet"  href="../style/login.css">
+    <link rel="stylesheet"  href="/App/Templates/style/login.css">
 
     
 </head>

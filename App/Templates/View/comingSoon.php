@@ -10,7 +10,7 @@
    
      <!--login.css-->
 
-     <link rel="stylesheet" type="text/css" href="../style/comingSoon.css">
+     <link rel="stylesheet" type="text/css" href="/App/Templates/style/comingSoon.css">
 </head>
 <body>
     <div class="container  " >

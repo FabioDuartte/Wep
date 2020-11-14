@@ -13,7 +13,7 @@
 
 
     <!--login.css-->
-    <link rel="stylesheet" type="text/css" href="../style/editarCadastro.css">
+    <link rel="stylesheet" type="text/css" href="/App/Templates/style/editarCadastro.css">
     
     
 </head>

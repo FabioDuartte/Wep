@@ -27,11 +27,11 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
     <!-- Estilo customizado -->
-    <link rel="stylesheet" type="text/css" href="../style/pagelanding.css">
+    <link rel="stylesheet" type="text/css" href="/App/Templates/style/pagelanding.css">
 </head>
 <body>
     <header><!--Inicio Header-->
-        <?php include './include/header.inc.php'; ?>        
+        <?php include './include/header.inc.php'; ?>
     </header><!--Fim Header-->
 
     <section id="destaques">

@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Estilo customizado -->
-    <link rel="stylesheet" type="text/css" href="../style/lunch.css">
+    <link rel="stylesheet" type="text/css" href="/App/Templates/style/lunch.css">
     
     <!--Fontes-->
     
@@ -33,9 +33,9 @@
 
 <body>
 
-    <header><!--Inicio Header-->
+    <header>
         <?php include './include/header.inc.php'; ?>
-    </header><!--Fim Header-->
+    </header>
 
     <section id="home" class="d-flex "> 
         <div class="container align-self-center"  >

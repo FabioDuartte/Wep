@@ -1,6 +1,6 @@
 <!-- Bootstrap início -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<div class="card ">
+
+<div class="card">
     <img class="card-img-top " src="../images/dinner/breakfest5.png" alt="Imagem de capa do card">
     <div class="card-body">
     <h5 class="cardheader">Omelete</h5>

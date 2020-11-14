@@ -1,11 +1,10 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <nav class="navbar navbar-expand-sm navbar-light fixed-top nav-transparente">
     <div class="container ">
         <!--Logo-->
         <a  href="#" class="navbar-brand" style="color: white;">
         <img src="../images/logo/logo-removebg-preview.png" width="120px" alt="">
-        </a>    
+        </a>
         <!--Menu Hamburguer-->
         <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
             <i class="fas fa-bars text-dark"></i>
@@ -44,7 +43,7 @@
                         <a href="./editarCadastro.php" class="dropdown-item nav-item format-link">Editar Cadastro</a>
                         <div class="dropdown-divider"></div>
                         <a href="./login.php" class="dropdown-item nav-item format-link">Sair</a>
-                    </div>                                                            
+                    </div>
                 </div>   
             </li>             
             </ul>
