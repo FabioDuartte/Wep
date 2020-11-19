@@ -2,6 +2,8 @@
 
 namespace Library;
 
+session_start();
+
 class Router
 {
     private $routes;
@@ -14,8 +16,26 @@ class Router
 
     private function initRoutes()
     {
-        $this->routes['/'] = array('controller' => 'IndexController', 'action' => 'index');
-        $this->routes['/lista'] = array('controller' => 'IndexController', 'action' => 'lista');
+        $this->routes['/Wep'] = array('controller' => 'IndexController', 'action' => 'index');
+        $this->routes['/Wep/login'] = array('controller' => 'LoginController', 'action' => 'login');
+        $this->routes['/Wep/login/nada-para-ver-aqui'] = array('controller' => 'IndexController', 'action' => 'soon');
+        $this->routes['/Wep/cadastro'] = array('controller' => 'RegisterController', 'action' => 'register');
+        $this->routes['/Wep/recuperar-senha'] = array('controller' => 'LoginController', 'action' => 'recovery');
+        $this->routes['/Wep/home'] = array('controller' => 'IndexController', 'action' => 'home');
+        $this->routes['/Wep/home/pratos'] = array('controller' => 'MenuController', 'action' => 'mainCourse');
+        $this->routes['/Wep/home/bebidas'] = array('controller' => 'MenuController', 'action' => 'drinks');
+        switch ($_SESSION['user-type']) {
+            case 'Gerente':
+                $this->routes['/Wep/home/cadastrar-produtos'] = array('controller' => 'MenuItensController', 'action' => 'manageProducts');
+            break;
+            case 'Funcionario':
+                $this->routes['/Wep/home/pedidos-feito'] = array('controller' => 'OrderController', 'action' => 'viewOrders');
+            break;
+            case 'Cliente':
+                $this->routes['/Wep/home/editar-cadastro'] = array('controller' => 'RegisterController', 'action' => 'updateRegistration');
+                $this->routes['/Wep/home/minha-conta'] = array('controller' => 'OrderController', 'action' => 'customerOrders');
+            break;
+        }
     }
 
     private function runRoute($url)
