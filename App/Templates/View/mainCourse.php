@@ -1,9 +1,12 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café</title>
+    <title>Almoço</title>
 
     <!-- Bootstrap início -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -24,64 +27,63 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Estilo customizado -->
-    <link rel="stylesheet" type="text/css" href="/App/Templates/style/breakfest.css">
+    <link rel="stylesheet" type="text/css" href="/Wep/App/Templates/style/lunch.css">
+    
+    <!--Fontes-->
+    
+
 </head>
 
 <body>
-    <header><!--Inicio Header-->
-        <?php include './include/header.inc.php'; ?>
-    </header><!--Fim Header--> 
+
+    <header>
+        <?php include './App/Templates/View/include/header.inc.php'; ?>
+    </header>
 
     <section id="home" class="d-flex "> 
         <div class="container align-self-center"  >
             <div class="row">
             <div class="col-md-12 capa">
-              <h1 class="display-2 text-white" >Café da manhã</h1>
+              <h1 class="display-2 text-white"style="font-family:'Courgette', cursive;  ">Almoço</h1>
             </div>    
     </section>
 
     <section id="menu" class="mt-5">
-      <div class="container " >
+      <div class="container">
         <ul class="nav justify-content-center">
-          <li class="  nav-item">
-            <a class="nav-link " href="pagelanding.php">Home</a>
+          <li class="nav-item">
+            <a class="nav-link " href="/Wep/home">Home</a>
           </li>
-          <li class="  nav-item">
-            <a class="nav-link active" href="breakfest.php">Café</a>
+         <li class="nav-item">
+            <a class="nav-link active" href="/Wep/home/pratos ">Pratos</a>
           </li>
+          
           <li class=" nav-item">
-            <a class="nav-link" href="lunch.php">Almoço</a>
-          </li>
-          <li class=" nav-item">
-            <a class="nav-link " href="dinner.php">Jantar</a>
-          </li>
-          <li class=" nav-item">
-            <a class="nav-link " href="drink.php">Bebidas</a>
+            <a class="nav-link " href="/Wep/home/bebidas">Bebidas</a>
           </li>
         </ul>
         </div>
       </div>
     </section>
 
-    <!-- PRODUTOS-->
     <section id="cafe" class="d-flex">
-        <div class="container ">
+        <div class="container">
             <div id="card" class="row">
                 <div class="col-md-12 ">
                     <div class="card-deck my-5">
-                        <?php include "./include/products.inc.php" ?>
-                        <?php include "./include/products.inc.php" ?>
-                        <?php include "./include/products.inc.php" ?>
+                        <?php include "./App/Templates/View/include/products.inc.php" ?>
+                        <?php include "./App/Templates/View/include/products.inc.php" ?>
+                        <?php include "./App/Templates/View/include/products.inc.php" ?>
                     </div>
                     <div class="card-deck my-5">
-                        <?php include "./include/products.inc.php" ?>
-                        <?php include "./include/products.inc.php" ?>
-                        <?php include "./include/products.inc.php" ?>
+                        <?php include "./App/Templates/View/include/products.inc.php" ?>
+                        <?php include "./App/Templates/View/include/products.inc.php" ?>
+                        <?php include "./App/Templates/View/include/products.inc.php" ?>
                     </div>
                     <div class="card-deck my-5">
-                        <?php include "./include/products.inc.php" ?>
-                        <?php include "./include/products.inc.php" ?>
-                        <?php include "./include/products.inc.php" ?>
+                        <?php include "./App/Templates/View/include/products.inc.php" ?>
+                        <?php include "./App/Templates/View/include/products.inc.php" ?>
+                        <?php include "./App/Templates/View/include/products.inc.php" ?>
                     </div>
                   </div>
                 </div>  
@@ -89,27 +91,15 @@
             <div>
          </div>
     </section>
-    <!--FIM PRODUTOS-->
-    
-    <!-- inicio depoimento-->
-    <section id="depoimentos" >
-      <div class="container  ">
-        <p class="text-center display-4 text-white">Depoimentos</p>
-        <div class="row ">
-          <div class="col-sm-12 my-4">
-          <?php include "./include/depoimentos.inc.php" ?>    
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <footer class="rodape ">
-      <div class="container">
-        <div class="row">
-            <?php include "./include/footer.inc.php" ?>    
-          </div>  
-        </div>        
-    </footer>
-    
+
+    <!--INICIO DEPOIMENTOS-->
+    <?php include "./App/Templates/View/include/depoimentos.inc.php" ?>    
+    <!--FIM DEPOIMENTOS-->
+
+    <!--INICIO RODAPÉ-->
+    <?php include "./App/Templates/View/include/footer.inc.php" ?>
+    <!-- FIM RODAPE-->
+
 </body>
 </html>

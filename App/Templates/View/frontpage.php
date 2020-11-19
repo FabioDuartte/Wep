@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     
     <!--login.css-->
-    <link rel="stylesheet" type="text/css" href="/App/Templates/style/frontpage.css">
+    <link rel="stylesheet" type="text/css" href="/Wep/App/Templates/style/frontpage.css">
 
     
 </head>
@@ -22,26 +25,20 @@
             <h4 class="text-white text-center font-weight-bold" >Seja bem vindo ao Caldeirão Furado</h4>
             <p class="display-4 text-white text-center font-weight-bold"> Escolha uma opção</p>
         </div>
-    
         <div class="container">
-
             <div class="row d-flex justify-content-centers">
-                <div class="col-md-12 login  "> 
+                <div class="col-md-12 login">
                     <div class="row btn-container">
-                        <div class="col-md-6" >
-                            <a href="login.php" type="submit" class="btn  btn-block  text-white my-4- btn-weight btn-front btn-success">Fazer Login  </a>
+                        <div class="col-md-6">
+                            <a href="/Wep/login" type="submit" class="btn  btn-block  text-white my-4- btn-weight btn-front btn-success">Fazer Login  </a>
                         </div>
-                        <div class="col-md-6" >
-                            <a href="pagelanding.php" type="submit" class="btn btn-block  text-white my-4- btn-weight btn-front btn-warning text-dark">Vizualizar o Cardápio  </a>
+                        <div class="col-md-6">
+                            <a href="/Wep/home" type="submit" class="btn btn-block  text-white my-4- btn-weight btn-front btn-warning text-dark">Vizualizar o Cardápio  </a>
                         </div>
                     </div>
                 </div>
-
                 <div >
-
                 </div>
-                
-
             </div>
         </div>
     </section>

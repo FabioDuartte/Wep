@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +27,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Estilo customizado -->
-    <link rel="stylesheet" type="text/css" href="/App/Templates/style/orders.css">
+    <link rel="stylesheet" type="text/css" href="/Wep/App/Templates/style/orders.css">
 </head>
 
 <body>
@@ -103,7 +106,7 @@
     <footer class="rodape ">
       <div class="container">
       <div class="row">
-        <?php include "./include/footer.inc.php" ?>
+        <?php include "./App/Templates/View/include/footer.inc.php" ?>
       </div>  
         </div>        
     </footer>

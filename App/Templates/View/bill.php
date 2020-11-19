@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,17 +27,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Estilo customizado -->
-    <link rel="stylesheet" type="text/css" href="/App/Templates/style/bill.css">
+    <link rel="stylesheet" type="text/css" href="/Wep/App/Templates/style/bill.css">
     
 </head>
 
 <body>
     <header><!--Inicio Header-->
+    <!-- Isso é um problema -->
         <nav class="navbar navbar-expand-sm navbar-light fixed-top bg-dark nav-transparente">
             <div class="container">
               <!--Logo-->
               <a  href="#" class="navbar-brand" style="color: white;">
-                <img src="../images/logo/logo-removebg-preview.png" width="120px" alt="">
+                <img src="/Wep/App/Templates/images/logo/logo-removebg-preview.png" width="120px" alt="">
               </a>    
               <!--Menu Hamburguer-->
               <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
@@ -105,7 +109,7 @@
                     <div class="cart-row ">
                       <div>
                         <tr>
-                          <th scope="row"><img src="../images/breakfest/breakfast3.pg.jpg" alt="" class="img"> <span class="ml-2">Torradas com ovos mexidos</span> </th>
+                          <th scope="row"><img src="/Wep/App/Templates/images/breakfest/breakfast3.pg.jpg" alt="" class="img"> <span class="ml-2">Torradas com ovos mexidos</span> </th>
                           <td class="cart-price">R$ 7,50</td>                     
                           <td>
                             <button class="btn btn-danger btn-sm " type="button" id="menos" onclick="decrementaValor('qtd1')"><i class="fas fa-minus-circle  "></i></button>
@@ -119,7 +123,7 @@
                     <div class="cart-row">
                       <div>
                         <tr>
-                          <th scope="row"><img src="../images/breakfest/breakfest.jpg" alt="" class="img "><span class="ml-2">Panquecas</span></th>
+                          <th scope="row"><img src="/Wep/App/Templates/images/breakfest/breakfest.jpg" alt="" class="img "><span class="ml-2">Panquecas</span></th>
                           <td class="cart-price">R$ 12,00</td> 
                           <div>                                          
                           <td>
@@ -138,7 +142,7 @@
                     <div class="cart-row">
                     <div>
                         <tr> 
-                          <th scope="row"><img src="../images/breakfest/breakfest5.png" alt="" class="img"> <span class="ml-2">Omelete de forno com tomate, abobrinha, cenoura</span> </th>
+                          <th scope="row"><img src="/Wep/App/Templates/images/breakfest/breakfest5.png" alt="" class="img"> <span class="ml-2">Omelete de forno com tomate, abobrinha, cenoura</span> </th>
                           <td class="cart-price">R$ 8,50</td>  
                           <td>
                             <button class="btn btn-danger btn-sm " type="button" id="menos" onclick="decrementaValor('qtd3')"><i class="fas fa-minus-circle" onclick="decrementaValor('qtd3')"></i></button>
@@ -165,11 +169,11 @@
                   
                    <div class="my-2"> <span class="totalPrice font-weight-bold totalAPagar">Total R$ 28,00</span></div>
                    <div class="my-2">
-                     <a href="pagelanding.php"><button type="button" name="keep" id="keep" class="btn btn-block btn-lg btn-info   font-weight-bold">Continuar Comprando</button></a>
+                     <a href="/Wep/home"><button type="button" name="keep" id="keep" class="btn btn-block btn-lg btn-info font-weight-bold">Adicionar mais itens</button></a>
                    </div>
                    <div class="my-2">
-                    <button type="button" name="close" id="close" class="btn btn-block btn-lg btn-success  font-weight-bold">Realizar Pedido</button>
-                    <button type="button" name="close" id="close" data-toggle="modal" data-target="#modal-finalizarCompra" class="btn btn-block btn-lg btn-warning font-weight-bold">Finalizar Pedido</button>
+                    <button type="button" name="close" id="close" class="btn btn-block btn-lg btn-success  font-weight-bold">Efetuar pedido</button>
+                    <button type="button" name="close" id="close" data-toggle="modal" data-target="#modal-finalizarCompra" class="btn btn-block btn-lg btn-warning font-weight-bold">Finalizar Conta</button>
                   </div>
                 </div>
               </div>             
@@ -240,12 +244,12 @@
     <footer class="rodape ">
       <div class="container">
       <div class="row">
-        <?php include "./include/footer.inc.php" ?>
+        <?php include "./App/Templates/View/include/footer.inc.php" ?>
       </div>  
         </div>        
     </footer>
 
     
-    <script src="./scripts/bill.js"></script>
+    <script src="./App/Templates/View/scripts/bill.js"></script>
 </body>
 </html>

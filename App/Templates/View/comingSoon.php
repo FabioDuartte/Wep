@@ -10,18 +10,18 @@
    
      <!--login.css-->
 
-     <link rel="stylesheet" type="text/css" href="/App/Templates/style/comingSoon.css">
+     <link rel="stylesheet" type="text/css" href="/Wep/App/Templates/style/comingSoon.css">
 </head>
 <body>
     <div class="container  " >
         <div class="">
             <div class="" >
-                <img class="center max1024"  src="https://cdn.discordapp.com/attachments/749233340066037761/767121455309258782/depositphotos_47582053-stock-illustration-coming-soon-stamp.png"  alt="Coming Soon" >                
+                <img class="center max1024" src="https://cdn.discordapp.com/attachments/749233340066037761/767121455309258782/depositphotos_47582053-stock-illustration-coming-soon-stamp.png"  alt="Coming Soon" >                
             </div>     
          
         </div>
-        <div class="center "  >
-              <a href="login.php" > <button class="btn btn-dark btn-lg center " >Voltar</button></a>
+        <div class="center ">
+              <a href="/Wep/login"> <button class="btn btn-dark btn-lg center">Voltar</button></a>
         </div>
         
         

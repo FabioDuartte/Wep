@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +17,7 @@
 
 
     <!--login.css-->
-    <link rel="stylesheet" type="text/css" href="/App/Templates/style/cadastro.css">
+    <link rel="stylesheet" type="text/css" href="/Wep/App/Templates/style/editarCadastro.css">
     
     
 </head>
@@ -21,34 +25,17 @@
     <section class="login-form">
         <div class="container">
             <div class="row">
-                <form action="#" method="POST">
+                <form action="">
 
-                <div class="col-md-12 login  ">                                    
-                    <h2 class="text-center lables">Cadastro</h2>
-                    <form action="#" method="POST" ><!--inicio form-->
-
-                        <div class="form-group input-group"><!--inicio user-->
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                             </div>
-                            <input id="user" required="required" name="usuario" class="form-control" placeholder="Nome completo" type="text">
-                        </div><!--fim user-->
-                      
-
+                <div class="col-md-12 login">                                    
+                    <h2 class="text-center lables">Editar Cadastro</h2>
+                    <form action="" ><!--inicio form-->
                         <div class="form-group input-group"><!--inicio email-->
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                             </div>
+                            </div>
                             <input id="email"  required="required" name="email" class="form-control" placeholder="E-mail" type="email">
                         </div><!--fim email-->
-
-                        
-                        <div class="form-group input-group "><!--inicio phone-->
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-                             </div>
-                            <input id="phone"  name="telefone" class="form-control phone-ddd-mask"   pattern="[0-9]{2}[0-9]{5}[0-9]{4}" placeholder="DDD + telefone (opcional)"  type="tel">
-                        </div><!--fim inicio-->
 
                         <div class="form-group input-group"><!--inicio card-->
                             <div class="input-group-prepend">
@@ -58,10 +45,10 @@
                                 <option value="">Selecione</option>
                                 <option value="1">Visa</option>
                                 <option value="2">Mastercard</option>
-
                             </select>
                             <input  id="card" required="required" name="card" class="form-control" pattern="[0-9]{4}[0-9]{4}[0-9]{4}[0-9]{4}" placeholder="Número do cartão" type="tel"><!--isso talvez dê erro depois por causa do tipo-->
                         </div><!--fim card-->
+        
 
                         <div class="form-group input-group"><!--inicio password-->
                             <div class="input-group-prepend">
@@ -69,7 +56,6 @@
                              </div>
                             <input id="password"  required="required" name="password" class="form-control" placeholder="Criar a Senha" type="password">
                         </div><!--fim password-->
-
                         
                         <div class="form-group input-group"><!--inicio confirma password-->
                             <div class="input-group-prepend">
@@ -79,18 +65,9 @@
                         </div><!--fim confirma password-->
 
                         <p><!--inicio botões-->
-                            <a href="./comingSoon.php" type="submit" class="btn btn-primary btn-block bg-primary text-white mb-2 btn-weight"> <i class="fab fa-twitter "></i>          Entrar com o Twitter  </a>
-                            <a href="./comingSoon.php" type="submit" class="btn btn-primary btn-block bg-primary text-white  mb-2 btn-weight"> <i class="fab fa-facebook-f "></i>       Entrar com o facebook  </a>
-                            <a href="./comingSoon.php" type="submit" class="btn btn-danger btn-block bg-danger text-white  mb-2 btn-weight"> <i class="fab fa-google-plus"></i>       Entrar com o google  </a>       
-                            <a button type="submit"  class="btn btn-block btn-facebook  bg-success text-white btn-weight" href="pagelanding.php">Criar conta</button>  </a>
-                        </p><!--fim botões-->
-                        
-   
-                        <p class="text-center lables">Já possui uma conta? <a href="login.php">Login</a> </p>  
-
-                        
-                
-                                         
+                            <a href="/Wep/login" class="btn btn-sucess btn-block bg-success text-white btn-weight"></i>Salvar Alterações</a>
+                            
+                        </p><!--fim botões-->    
                     </form><!--fim form-->   
                 </div>
 

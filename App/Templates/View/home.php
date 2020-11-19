@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,12 +29,14 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
     <!-- Estilo customizado -->
-    <link rel="stylesheet" type="text/css" href="/App/Templates/style/pagelanding.css">
+    <link rel="stylesheet" type="text/css" href="/Wep/App/Templates/style/pagelanding.css">
 </head>
 <body>
-    <header><!--Inicio Header-->
-        <?php include './include/header.inc.php'; ?>
-    </header><!--Fim Header-->
+    <header>
+        <?php
+            include './App/Templates/View/include/header.inc.php';
+        ?>
+    </header>
 
     <section id="destaques">
 		<div class="container ">
@@ -49,52 +53,28 @@
     <section id="cardapios" class="caixa d-flex ml-auto">
         <div class="container">
             <h1>Cardápios</h1>
-            <div class="row justify-content-around">
-                 
-                <div class="col-md-3 ">
-                    <a href="">
 
-                        <div > 
-                            <a href="./breakfest.php"><img class="cardapio  img-fluid" src="../images//breakfest/breakfest2.jpg" alt="café"></a>
-                        </div>
+            <div class="row justify-content-center" >
 
-                        <div >                            
-                            <a href="./breakfest.php"><p class="legenda">café</p></a>
-                        </div>
-                    </a>                                     
-                </div>     
-
-                <div class="col-md-3 " >
+                <div class="col-md-5 " >
                     <a href="">
                         <div >
-                           <a href="./lunch.php" ><img class="cardapio  img-fluid" src="../images/lunch/lunch2.jpg" alt="almoço"></a>
+                            <a href="/Wep/home/pratos"><img class="cardapio img-fluid " src="/Wep/App/Templates/images/dinner/dinner2.jpg" alt="jantar"></a>
                         </div>
 
                         <div >
-                            <a href="./lunch.php"><p class="legenda ">almoço</p></a>
+                            <a href="/Wep/home/pratos"><p class="legenda " style="width:400px" >Pratos</p></a>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-md-3 " >
+                <div class="col-md-5 col-md-3  " >
                     <a href="">
                         <div >
-                            <a href="./dinner.php"><img class="cardapio img-fluid " src="../images/dinner/dinner2.jpg" alt="jantar"></a>
-                        </div>
-
-                        <div >
-                            <a href="./dinner.php"><p class="legenda ">jantar</p></a>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-3 " >
-                    <a href="">
-                        <div >
-                            <a href="./drink.php"><img class="cardapio  img-fluid" src="../images/drink/drink.jpg" alt="bebidas"></a>
+                            <a href="/Wep/home/bebidas"><img class="cardapio   img-fluid" src="/Wep/App/Templates/images/drink/drink.jpg" alt="bebidas"></a>
                         </div>
                        <div >
-                           <a href="./drink.php"><p class="legenda ">bebidas</p></a>
+                           <a href="/Wep/home/bebidas"><p class="legenda " style="width:400px" >Bebidas</p></a>
                         <div>
                     </a>
                 </div>
@@ -104,20 +84,9 @@
 
     </section>
 
-    <footer class="rodape ">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 my-2 notas">
-              <div class="text-center ">
-                <p>Endereço: Rua dos alfeneiros nº 4</p>
-                <p>Tel.: (xx) xxxx-xxxx</p>
-                <p>&copy; Copyright Caldeirão Furado </p>
-               </div>
-          </div>
-            </div>  
-          </div>
-          
-      </footer>
+    <!--INICIO RODAPÉ-->
+    <?php include "./App/Templates/View/include/footer.inc.php" ?>
+    <!-- FIM RODAPE-->
     
     
     
