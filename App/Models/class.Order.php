@@ -4,24 +4,38 @@ namespace App\Models;
 
 class Order
 {
-    // Fazer algo que some todos os pedidos de um mesmo cliente que estão abertos
+    
 
-    // private $orderID;
-    private $totalOrderAmount = 0;
+    private $orderID;
+    private $totalOrderAmount;
     private $orderStatus;
-    private $orderingCustomer;
+    private $orderBill;
     private $orderItems;
-    private $noteAboutOrderItems; // Descrição do pedido
+    private $noteAboutOrderItems;
 
-    public function __construct(/* $orderID ,*/ $orderingCustomer, $orderItems = array())
+    public function __construct($orderID, $orderBill, $noteAboutOrderItems)
     {
-        // $this->orderID = $orderID;
-        $this->orderingCustomer = $orderingCustomer;
-        $this->orderItems = $orderItems;
+        $this->orderID = $orderID;
+        $this->orderingCustomer = $orderBill;
+        $this->noteAboutOrderItems = $noteAboutOrderItems;
+        $this->$totalOrderAmount = 0;
+        $this->orderItems = array();
         $this->orderStatus = true; // Coloquei um valor booleano para representar se está aberto ou fechado
     }
 
-/*     public function getOrderID()
+    public function addFoodToOrder()
+    {
+        $newFood = new MenuFoods();
+        $orderItems[] = $newFood;
+    }
+
+    public function addDrinkToOrder()
+    {
+        $newDrink = new MenuDrinks();
+        $orderItems[] = $newDrink;
+    }
+
+    public function getOrderID()
     {
         return $this->orderID;
     }
@@ -29,7 +43,7 @@ class Order
     public function setOrderID($orderID)
     {
         $this->orderID = $orderID;
-    } */
+    }
 
     public function getTotalOrderAmount()
     {
@@ -48,14 +62,14 @@ class Order
         $this->totalOrderAmount = $totalOrderAmount;
     }
 
-    public function getOrderingCustomer()
+    public function getOrderBill()
     {
-        return $this->orderingCustomer;
+        return $this->orderBill;
     }
 
-    public function setOrderingCustomer($orderingCustomer)
+    public function setOrderBill($orderBill)
     {
-        $this->orderingCustomer = $orderingCustomer;
+        $this->orderBill = $orderBill;
     }
 
     public function isOrderStatus()

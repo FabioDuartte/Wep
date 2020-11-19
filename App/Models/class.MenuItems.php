@@ -7,13 +7,12 @@ abstract class MenuItems
     //Antiga produto
     protected $menuItemName;
     protected $menuItemPrice;
-    /* protected $menuItemID; */
+    protected $menuItemID;
 
-    protected function __construct($menuItemName, $menuItemPrice /* , $menuItemID */)
+    protected function __construct($menuItemName, $menuItemPrice)
     {
         $this->menuItemName = $menuItemName;
         $this->menuItemPrice = $menuItemPrice;
-        /* $this->menuItemID = $menuItemID; */
     }
 
     public function getMenuItemName()
@@ -35,7 +34,7 @@ abstract class MenuItems
     {
         $this->menuItemPrice = $menuItemPrice;
     }
-/* 
+
     public function getMenuItemID()
     {
         return $this->menuItemID;
@@ -45,5 +44,5 @@ abstract class MenuItems
     {
         $this->menuItemID = $menuItemID;
     }
- */
+
 }

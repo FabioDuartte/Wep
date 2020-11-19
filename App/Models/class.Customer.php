@@ -3,31 +3,58 @@
 namespace App\Models;
 
 use App\Models\SystemUsers;
+use App\Models\Database\LoginDAO;
+use App\Models\Database\RegisterDAO;
 
 class Customer extends SystemUsers
 {
+    private $customerId;
     private $customerBonus = 0;
-    private $customerCard = array();
+    private $customerCards = array();
+    private $customerCpf;
     
-    public function __construct($userName, $userEmail, $userCpfOrIdEmployee, $userPassword, $userPhoneNumber = '')
+    public function __construct($userName, $userEmail, $customerCpf, $userPassword)
     {
-        parent::__construct($userName, $userEmail, $userCpfOrIdEmployee, $userPassword, $userPhoneNumber);
+        parent::__construct($userName, $userEmail, $userPassword);
+        $this->customerCpf = $customerCpf;
     }
 
-    public function setNewCustomerCard($cardNumber, $cardBrand, $cardExpiry, $cardCvv)
+    public function loginCustomer()
     {
-        $newCustomerCard = new Card($cardNumber, $cardBrand, $cardExpiry, $cardCvv);
-        $this->customerCard[] = $newCustomerCard;
+        $loginDAO = new LoginDAO();
+        return $loginDAO->checkLoginCustomer($this);
+    }
+
+    public function registerCustomer()
+    {
+        $registerDAO = new RegisterDAO();
+        return $registerDAO->createRegisterCustomer($this);
+    }
+
+    public function checkEmailInDB()
+    {
+        $registerDAO = new RegisterDAO();
+        return $registerDAO->checkEmailInDB($this);
+    }
+
+    public function getCustomerId()
+    {
+        return $this->customerId;
+    }
+
+    public function setCustomerId($customerId)
+    {
+        $this->customerId = $customerId;
     }
     
-    public function getCustomerCard()
+    public function getCustomerCards()
     {
-        return $this->customerCard;
+        return $this->customerCards;
     }
 
     public function setCustomerCard($customerCard)
     {
-        $this->customerCard = $customerCard;
+        $this->customerCards[] = $customerCard;
     }
 
     public function getCustomerBonus()
@@ -38,6 +65,16 @@ class Customer extends SystemUsers
     public function setCustomerBonus($customerBonus)
     {
         $this->customerBonus = $customerBonus;
+    }
+
+    public function getCustomerCpf()
+    {
+        return $this->customerCpf;
+    }
+
+    public function setCustomerCpf($customerCpf)
+    {
+        $this->customerCpf = $customerCpf;
     }
 
 }

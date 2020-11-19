@@ -6,9 +6,9 @@ class MenuDrinks extends MenuItems
 {
     private $supplier;
 
-    public function __construct($menuItemName, $menuItemPrice, /* $menuItemID, */ $supplier)
+    public function __construct($menuItemName, $menuItemPrice, $supplier)
     {
-        parent::__construct($menuItemName, $menuItemPrice /* , $menuItemID */);
+        parent::__construct($menuItemName, $menuItemPrice);
         $this->supplier = $supplier;
     }
 

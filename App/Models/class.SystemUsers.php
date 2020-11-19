@@ -4,19 +4,26 @@ namespace App\Models;
 
 abstract class SystemUsers
 {
+    protected $userId;
     protected $userName;
     protected $userEmail;
     protected $userPassword;
-    protected $userPhoneNumber;
-    protected $userCpfOrIdEmployee; // Talvez eu separe novamente
 
-    protected function __construct($userName, $userEmail, $userCpfOrIdEmployee, $userPassword, $userPhoneNumber)
+    protected function __construct($userName, $userEmail, $userPassword)
     {
         $this->userName = $userName;
         $this->userEmail = $userEmail;
-        $this->userCpfOrIdEmployee = $userCpfOrIdEmployee;
         $this->userPassword = $userPassword;
-        $this->userPhoneNumber = $userPhoneNumber;
+    }
+
+    public function getUserId()
+    {
+        return $this->getUserId;
+    }
+
+    public function setUserId($userId)
+    {
+        $this->UserId = $userId;
     }
 
     public function getUserName()
@@ -39,16 +46,6 @@ abstract class SystemUsers
         $this->userEmail = $userEmail;
     }
 
-    public function getUserCpfOrIdEmployee()
-    {
-        return $this->userCpfOrIdEmployee;
-    }
-
-    public function setUserCpfOrIdEmployee($userCpfOrIdEmployee)
-    {
-        $this->userCpfOrIdEmployee = $userCpfOrIdEmployee;
-    }
-
     public function getUserPassword()
     {
         return $this->userPassword;
@@ -57,16 +54,6 @@ abstract class SystemUsers
     public function setUserPassword($userPassword)
     {
         $this->userPassword = $userPassword;
-    }
-
-    public function getUserPhoneNumber()
-    {
-        return $this->userPhoneNumber;
-    }
-
-    public function setUserPhoneNumber($userPhoneNumber)
-    {
-        $this->userPhoneNumber = $userPhoneNumber;
     }
     
 }

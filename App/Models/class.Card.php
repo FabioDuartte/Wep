@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Database\CardDAO;
+
 class Card
 {
     private $cardNumber;
@@ -15,6 +17,12 @@ class Card
         $this->cardBrand = $cardBrand;
         $this->cardExpiry = $cardExpiry;
         $this->cardCvv = $cardCvv;
+    }
+
+    public function insertIntoCard($idCliente)
+    {
+        $cardDAO = new CardDAO();
+        return $cardDAO->insertIntoCard($this, $idCliente);
     }
 
     public function getCardNumber()
@@ -57,13 +65,4 @@ class Card
         $this->cardCvv = $cardCvv;
     }
     
-/*     public function getInstallments()
-    {
-        return $this->installments;
-    }
-
-    public function setInstallments($installments)
-    {
-        $this->installments = $installments;
-    } */
 }
