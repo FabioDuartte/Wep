@@ -2,16 +2,30 @@
 
 namespace App\Controllers;
 
+session_start();
+
 class IndexController
 {
-    public function index()
+    private $frontController;
+
+    public function __construct()
     {
-        // echo "<h1>Estou na index/IndexController.php</h1>";
-        require '/home/renato/Wep/App/Templates/View/frontpage.php';
+        $this->viewController = new ViewController();
     }
 
-    public function lista()
+    public function index()
     {
-        echo "<h1>Estou na lista/IndexController.php</h1>";
+        $_SESSION = array();
+        $this->viewController->index();
+    }
+
+    public function home()
+    {
+        $this->viewController->home();
+    }
+
+    public function soon()
+    {
+        $this->viewController->soon();
     }
 }
