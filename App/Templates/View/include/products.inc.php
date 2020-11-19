@@ -1,7 +1,5 @@
-<!-- Bootstrap início -->
-
 <div class="card">
-    <img class="card-img-top " src="../images/dinner/breakfest5.png" alt="Imagem de capa do card">
+    <img class="card-img-top " src="/Wep/App/Templates/images/dinner/breakfest5.png" alt="Imagem de capa do card">
     <div class="card-body">
     <h5 class="cardheader">Omelete</h5>
     <div class="d-flex my-4 ">

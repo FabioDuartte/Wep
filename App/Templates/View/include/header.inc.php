@@ -1,9 +1,8 @@
-
 <nav class="navbar navbar-expand-sm navbar-light fixed-top nav-transparente">
     <div class="container ">
         <!--Logo-->
         <a  href="#" class="navbar-brand" style="color: white;">
-        <img src="../images/logo/logo-removebg-preview.png" width="120px" alt="">
+        <a href="/Wep/home"><img src="/Wep/App/Templates/images/logo/logo-removebg-preview.png" width="120px" alt=""></a>
         </a>
         <!--Menu Hamburguer-->
         <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
@@ -18,35 +17,22 @@
             </div>
         </div>
         </div><!--Fim  pesquisa-->
-        <div class="collapse navbar-collapse " id="nav-principal">  
-            
-            <ul class="navbar-nav ml-auto   ">  
-            <li class="">
-                <span class="text-warning font-weight-bold my-2 cashback">Bônus R$ 10,00</span>
-            </li>
-            <li class="nav-item mx-4 bonus">
-                <a href="bill.php" class="text-warning mx-2 my-2 cart "> <i class="fas fa-shopping-cart mx-2"></i>10</a>
-            </li>
-            
-            <li class="nav-link format-link">
-                <div class="dropdown ">
-                    <span class="dropdown-toggle text-white d-flex" data-toggle="dropdown">
-                     <i class="far fa-user"></i> 
-                    </span>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a href="./registerProducts.php" class="dropdown-item nav-item format-link ">Cadastrar produtos</a>
-                        <div class="dropdown-divider"></div>
-                        <a href="./orders.php" class="dropdown-item nav-item format-link">Visualizar pedidos</a>
-                        <div class="dropdown-divider"></div>
-                        <a href="./bill.php" class="dropdown-item nav-item format-link">Minha Comanda</a>
-                        <div class="dropdown-divider"></div>
-                        <a href="./editarCadastro.php" class="dropdown-item nav-item format-link">Editar Cadastro</a>
-                        <div class="dropdown-divider"></div>
-                        <a href="./login.php" class="dropdown-item nav-item format-link">Sair</a>
-                    </div>
-                </div>   
-            </li>             
-            </ul>
-        </div>
+        <?php 
+            switch ($_SESSION['user-type'])
+            {
+                case 'Gerente':
+                    include './App/Templates/View/include/headerManager.inc.php';
+                break;
+                case 'Cliente':
+                    include './App/Templates/View/include/headerCustomer.inc.php';
+                break;
+                case 'Funcionario':
+                    include './App/Templates/View/include/headerEmployee.inc.php';
+                break;
+                default:
+                    include './App/Templates/View/include/headerAnon.inc.php';
+                break;
+            }
+        ?>
     </div>
 </nav>
