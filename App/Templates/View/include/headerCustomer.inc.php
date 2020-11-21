@@ -1,4 +1,4 @@
-<div class="collapse navbar-collapse " id="nav-principal">  
+<div class="collapse navbar-collapse" id="nav-principal">  
                     
     <ul class="navbar-nav ml-auto">  
     <li class="">
@@ -20,7 +20,7 @@
                 <div class="dropdown-divider"></div>
                 <a href="/Wep/home/editar-cadastro" class="dropdown-item nav-item format-link">Editar Cadastro</a>
                 <div class="dropdown-divider"></div>
-                <a href="/Wep" class="dropdown-item nav-item format-link">Sair</a>
+                <a href="/Wep/" class="dropdown-item nav-item format-link">Sair</a>
             </div>
         </div>   
     </li>             

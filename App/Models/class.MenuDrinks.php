@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Database\MenuDAO;
+
 class MenuDrinks extends MenuItems
 {
     private $supplier;
@@ -10,6 +12,13 @@ class MenuDrinks extends MenuItems
     {
         parent::__construct($menuItemName, $menuItemPrice);
         $this->supplier = $supplier;
+    }
+
+    public function addMenuItemToDB()
+    {
+        $menuDAO = new MenuDAO();
+        $idProduct = $menuDAO->addItemToDatabaseMenu($this);
+        return $menuDAO->addDrinkToMenu($this, $idProduct);
     }
 
     public function getSupplier()

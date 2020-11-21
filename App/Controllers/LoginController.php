@@ -10,19 +10,13 @@ session_start();
 
 class LoginController extends DataProcessing
 {
-    private $frontController;
-
-    public function __construct()
-    {
-        $this->viewController = new ViewController();
-    }
-
     public function login()
     {
         if ($_POST) {
             $this->loginValidation();
+        } else {
+            ViewController::login();
         }
-        $this->viewController->login();
     }
 
     public function loginValidation()
@@ -56,7 +50,13 @@ class LoginController extends DataProcessing
                 $this->loginFail();
             } else {
                 if (password_verify($userPassword, $user['senhaCliente'])) {
-                    $this->setSessionCustomer($user);
+                    $_SESSION['id-user'] = $user['idCliente'];
+                    $_SESSION['user-name'] = $user['nomeCliente'];
+                    $_SESSION['user-Bonus'] = $user['bonusCliente'];
+                    $_SESSION['user-type'] = "Cliente";                       
+                    foreach($_SESSION as $qlk){
+                        echo $qlk;
+                    }
                     header("Location: /Wep/home");
                 } else {
                     // echo "Senha incorreta"
@@ -92,7 +92,7 @@ class LoginController extends DataProcessing
 
     public function recovery()
     {
-        $this->viewController->recovery();
+        ViewController::recovery();
     }
 
 }

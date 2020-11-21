@@ -6,26 +6,23 @@ session_start();
 
 class IndexController
 {
-    private $frontController;
-
-    public function __construct()
-    {
-        $this->viewController = new ViewController();
-    }
 
     public function index()
     {
-        $_SESSION = array();
-        $this->viewController->index();
+        $_SESSION = array(); 
+
+        $_SESSION['user-type'] = '';       
+
+        ViewController::index();
     }
 
     public function home()
     {
-        $this->viewController->home();
+        ViewController::home();
     }
 
     public function soon()
     {
-        $this->viewController->soon();
+        ViewController::soon();
     }
 }

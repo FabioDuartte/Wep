@@ -104,7 +104,6 @@ nav.nav-transparente{
     text-align: center;
     color: white;
 }
-
 #foto{
     border-radius: 360px;
     width: 34px;
@@ -161,7 +160,7 @@ a:link{
     box-shadow: 10px 5px 5px black;
 }
 .rodape{
-
+  margin-top: 450px;
   background: rgb(0, 64, 128);
    
 }
@@ -208,9 +207,16 @@ form label{
 }
 .cancel{
     color: white;
+    background: #4e0c0c;
+} 
+.alter{
+    color: white;
+    background: #e43030;
+} 
+.delete{
+    color: white;
     background: #661d1d;
 } 
-
 .btn{
     letter-spacing: 1.5px;
 }

@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,11 +25,10 @@ session_start();
 </head>
 <body>
     <section class="login-form">
-        <div class="container" style="height: 750px">
+        <div class="container" style="height: 780px">
             <div class="row">
                 <div class="col-md-12 login  ">                                    
-                    <h2 class="text-center lables">Cadastro</h2>
-
+                    <h2 class="text-center lables">Cadastro</h2>                   
                     <form action="/Wep/cadastro" method="POST">
                         <div class="form-group input-group"><!--inicio user-->
                             <div class="input-group-prepend">

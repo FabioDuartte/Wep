@@ -1,6 +1,6 @@
-<div class="container ">
+<div class="container" style="width:550px; ">    
     <div class="collapse navbar-collapse " id="nav-principal">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav" style="width:390px; ">
         <li class="nav-item mx-4">
             <span class="text-warning font-weight-bold my-2 cashback">Bônus R$ 0.00 </span>
         </li>

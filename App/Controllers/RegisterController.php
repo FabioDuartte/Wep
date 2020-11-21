@@ -6,24 +6,16 @@ use App\Models\Customer;
 use App\Models\Card;
 use Utils\DataProcessing;
 
-session_start();
+
 
 class RegisterController extends DataProcessing
 {
-
-    private $frontController;
-
-    public function __construct()
-    {
-        $this->viewController = new ViewController();
-    }
-
     public function register()
     {
         if ($_POST) {
             $this->registerValidate();
         } else {
-            $this->viewController->cadastro();
+            ViewController::cadastro();
         }
     }
 
@@ -31,26 +23,47 @@ class RegisterController extends DataProcessing
     {
         $userName = $this->cleanInput($_POST['username']);
         $userCardBrand = $this->cleanInput($_POST['card-brand']);
-        $userCardExpiry = $this->cleanInput($_POST['card-expiring']);
-        $userCardNumber = $this->sanitizeInt($this->cleanInput($_POST['card-number']));
-        $userCardCvv = $this->sanitizeInt($this->cleanInput($_POST['card-cvv']));
-        $userCPF = $this->sanitizeInt($this->cleanInput($_POST['CPF']));
+        $userCardExpiry = $this->ignoreNegative($this->sanitizeInt($this->cleanInput($_POST['card-expiring'])));
+        $userCardNumber = $this->ignoreNegative($this->sanitizeInt($this->cleanInput($_POST['card-number'])));
+        $userCardCvv = $this->ignoreNegative($this->sanitizeInt($this->cleanInput($_POST['card-cvv'])));
+        $userCPF = $this->ignoreNegative($this->sanitizeInt($this->cleanInput($_POST['CPF'])));
         $userEmail = $this->validateEmail($this->cleanInput($_POST['email']));
+
+        if (strlen($userCPF) != 11) {
+           echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
+                                                 Número do CPF inválido!
+                                            </div>';
+            echo $userCPF;
+            $this->registerFail();
+        }
+
+        if (strlen($userCardNumber) < 14) {
+            echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
+                                             Número do cartão inválido!
+                                          </div>';
+            $this->registerFail();
+        }
 
         if ($_POST['password'] === $_POST['re-password']) {
             $userPassword = $_POST['password'];
         } else {
-            // echo "As senhas digitadas não são iguais";
+            echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
+                                              Senha inválida!
+                                          </div>';
             $this->registerFail();
         }
 
-        if (!$userEmail || strpos($userEmail, '@calderaofurado.com')) {
-            // echo "Email invalido";
+        if (!$userEmail || strpos($userEmail, '@caldeiraofurado.com')) {
+            echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
+                                             E-mail inválido!
+                                          </div>';
             $this->registerFail();
         }
 
         if (!$this->validateName($userName)) {
-            // echo "Nome invalido";
+            echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
+                                             Nome inválido!
+                                           </div>';
             $this->registerFail();
         }
 
@@ -60,21 +73,25 @@ class RegisterController extends DataProcessing
         $emailExists = $objCustomer->checkEmailInDB();
 
         if ($emailExists) {
-            // echo "Email já cadastrado";
+           echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
+                                                Email já cadastrado! 
+                                           </div>';
             $this->registerFail();
         }
-
-        $idCliente = $objCustomer->registerCustomer();
 
         if ($userCardNumber && $userCardBrand && $userCardExpiry && $userCardCvv) {
             $card = $this->addCustomerCard($userCardNumber, $userCardBrand, $userCardExpiry, $userCardCvv);
             $objCustomer->setCustomerCard($card);
+            $idCliente = $objCustomer->registerCustomer();
             $this->addCardToBD($objCustomer, $idCliente);
         } else {
-            // echo "Dados do cartão são invalido";
+            echo'<div class="alert alert-danger text-center font-weight-bold" role="alert">
+                                                Dados do cartão são inválidos
+                                            </div>';
             $this->registerFail();
         }
         
+        // echo "Cadastro foi efetuado";
         header("Location: /Wep/login");
 
     }
@@ -97,11 +114,6 @@ class RegisterController extends DataProcessing
     {
         $objCard = new Card($userCardNumber, $userCardBrand, $userCardExpiry, $userCardCvv);
         return $objCard;
-    }
-
-    public function updateRegistration()
-    {
-        $this->viewController->editarCadastro();
     }
     
 }

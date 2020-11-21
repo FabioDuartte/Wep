@@ -15,6 +15,8 @@ abstract class MenuItems
         $this->menuItemPrice = $menuItemPrice;
     }
 
+    abstract protected function addMenuItemToDB();
+
     public function getMenuItemName()
     {
         return $this->menuItemName;

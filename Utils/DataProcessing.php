@@ -14,7 +14,6 @@ class DataProcessing
             return false;
         }
     }
-        
 
     public function passwordToHash($password)
     {
@@ -30,15 +29,30 @@ class DataProcessing
         return $data;
     }
 
+    public function formatDataMoney($data)
+    {
+        $data = (float) str_replace(',', '.', $data);
+        $data = number_format($data, 2);
+        return $data;
+    }
+
     public function sanitizeInt($data)
     {
         return filter_var($data, FILTER_SANITIZE_NUMBER_INT);
     }
 
-    public function validateName($name){
+    public function validateFloat($data)
+    {
+        return filter_var($data, FILTER_VALIDATE_FLOAT, 'decimal');
+    }
+
+    public function validateName($name) 
+    {
         return preg_match("/^[a-zA-Z-' ]*$/",$name);
     }
+
+    public function ignoreNegative($data)
+    {
+        return str_replace('-', '', $data);
+    }
 }
-
-
-// $password = "cdfunc" | "tompero; 
