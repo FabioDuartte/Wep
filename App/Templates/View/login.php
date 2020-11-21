@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +23,7 @@
         <div class="container" style="height: 600px">
             <div class="row" >
                 <div class="col-md-12 login  ">         
-                    <a href="/Wep"><i class="fas fa-long-arrow-alt-left text-white back my-2" style="font-size:40px "></i></a>
+                    <a href="/Wep/"><i class="fas fa-long-arrow-alt-left text-white back my-2" style="font-size:40px "></i></a>
                     <h2 class="text-center lables">Login</h2>                    
                         <form method="POST" action="/Wep/login">
                         

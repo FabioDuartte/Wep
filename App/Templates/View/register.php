@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +10,6 @@ session_start();
     
     <!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
 
     <!--login.css-->
     <link rel="stylesheet" type="text/css" href="/Wep/App/Templates/style/cadastro.css">
@@ -33,7 +28,9 @@ session_start();
             <div class="row">
                 <div class="col-md-12 login  ">                                    
                     <h2 class="text-center lables">Cadastro</h2>
-
+                    <?php if ($_SESSION['error-register']) 
+                            echo $_SESSION['error-register'];
+                            $_SESSION['error-register'] = ''; ?>
                     <form action="/Wep/cadastro" method="POST">
                         <div class="form-group input-group"><!--inicio user-->
                             <div class="input-group-prepend">

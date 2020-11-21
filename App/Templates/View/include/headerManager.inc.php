@@ -10,7 +10,7 @@
                 <div class="dropdown-menu dropdown-menu-right">
                     <a href="/Wep/home/cadastrar-produtos" class="dropdown-item nav-item format-link ">Cadastrar produtos</a>                   
                     <div class="dropdown-divider"></div>
-                    <a href="/Wep" class="dropdown-item nav-item format-link">Sair</a>
+                    <a href="/Wep/" class="dropdown-item nav-item format-link">Sair</a>
                 </div>
             </div>   
         </li>             

@@ -2,14 +2,23 @@
 
 namespace App\Models;
 
+use App\Models\Database\MenuDAO;
+
 class MenuFoods extends MenuItems
 {
     private $ingredients;
 
-    public function __construct($menuItemName, $menuItemPrice, $ingredients)
+    public function __construct($menuItemName, $menuItemPrice, $menuItemImg, $ingredients)
     {
-        parent::__construct($menuItemName, $menuItemPrice);
+        parent::__construct($menuItemName, $menuItemPrice, $menuItemImg);
         $this->ingredients = $ingredients;
+    }
+
+    public function addMenuItemToDB()
+    {
+        $menuDAO = new MenuDAO();
+        $idProduct = $menuDAO->addItemToDatabaseMenu($this);
+        return $menuDAO->addFoodToMenu($this, $idProduct);
     }
 
     public function getIngredients()

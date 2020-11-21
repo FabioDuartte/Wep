@@ -13,16 +13,14 @@
             <span class="dropdown-toggle text-white d-flex" data-toggle="dropdown">
             <i class="far fa-user"></i> 
             </span>
-            <div class="dropdown-menu dropdown-menu-right">                        
-                <!-- <a href="/Wep/home/pedidos-feito" class="dropdown-item nav-item format-link">Visualizar pedidos</a>
-                <div class="dropdown-divider"></div> -->
+            <div class="dropdown-menu dropdown-menu-right">
                 <a href="/Wep/home/minha-conta" class="dropdown-item nav-item format-link">Minha Comanda</a>
                 <div class="dropdown-divider"></div>
                 <a href="/Wep/home/editar-cadastro" class="dropdown-item nav-item format-link">Editar Cadastro</a>
                 <div class="dropdown-divider"></div>
-                <a href="/Wep" class="dropdown-item nav-item format-link">Sair</a>
+                <a href="/Wep/" class="dropdown-item nav-item format-link">Sair</a>
             </div>
-        </div>   
-    </li>             
+        </div>
+    </li>
     </ul>
 </div>

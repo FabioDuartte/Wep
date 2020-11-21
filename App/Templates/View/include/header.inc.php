@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light fixed-top nav-transparente">
     <div class="container ">
         <!--Logo-->
-        <a  href="#" class="navbar-brand" style="color: white;">
         <a href="/Wep/home"><img src="/Wep/App/Templates/images/logo/logo-removebg-preview.png" width="120px" alt=""></a>
         </a>
         <!--Menu Hamburguer-->
@@ -13,7 +12,7 @@
         <div class="input-group">
             <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" style="border-right: none;">
             <div class="input-group-append">
-            <div class="input-group-text" ><button type="submit" class="btn btn-md btn-white"> <i class="fas fa-search"></i></button></div>
+            <div class="input-group-text"><button type="submit" class="btn btn-md btn-white"> <i class="fas fa-search"></i></button></div>
             </div>
         </div>
         </div><!--Fim  pesquisa-->

@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,57 +13,58 @@ session_start();
 
 
     <!--login.css-->
-    <link rel="stylesheet" type="text/css" href="/Wep/App/Templates/style/editarCadastro.css">
+    <link rel="stylesheet" type="text/css" href="/Wep/App/Templates/style/cadastro.css">
     
+    <style>
+        body,html{
+            overflow-y: visible;
+        }
+
+    </style>
     
 </head>
 <body>
     <section class="login-form">
-        <div class="container">
+        <div class="container" style="height: 550px">
             <div class="row">
-                <form action="">
-
-                <div class="col-md-12 login">                                    
-                    <h2 class="text-center lables">Editar Cadastro</h2>
-                    <form action="" ><!--inicio form-->
+                <div class="col-md-12 login  ">                                    
+                    <h2 class="text-center lables">Editar Cadastro</h2>                   
+                    <form action="/Wep/home/editar-cadastro" method="POST">
+                        <div class="form-group input-group"><!--inicio user-->
+                                                   
                         <div class="form-group input-group"><!--inicio email-->
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                            </div>
-                            <input id="email"  required="required" name="email" class="form-control" placeholder="E-mail" type="email">
-                        </div><!--fim email-->
-
-                        <div class="form-group input-group"><!--inicio card-->
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-credit-card"></i> </span>
                              </div>
-                             <select name="cartoes" id="cartoes" style="max-width: 120px">                                
-                                <option value="">Selecione</option>
-                                <option value="1">Visa</option>
-                                <option value="2">Mastercard</option>
-                            </select>
-                            <input  id="card" required="required" name="card" class="form-control" pattern="[0-9]{4}[0-9]{4}[0-9]{4}[0-9]{4}" placeholder="Número do cartão" type="tel"><!--isso talvez dê erro depois por causa do tipo-->
-                        </div><!--fim card-->
-        
+                            <input id="email" name="new-Email" value="" class="form-control" placeholder="Novo e-mail" type="email">
+                        </div><!--fim email-->                                                
+      
+                        <div class="form-group input-group"><!--inicio password atual-->
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                             </div>
+                            <input id="CurrentPassword" value="" required="required" name="old-Password" class="form-control" placeholder="Informe sua Senha atual" type="password">
+                        </div><!--fim password atual-->
 
                         <div class="form-group input-group"><!--inicio password-->
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                              </div>
-                            <input id="password"  required="required" name="password" class="form-control" placeholder="Criar a Senha" type="password">
+                            <input id="password" value="" name="new-Password" class="form-control" placeholder="Digite sua nova senha" type="password">
                         </div><!--fim password-->
                         
                         <div class="form-group input-group"><!--inicio confirma password-->
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                              </div>
-                            <input id="password"  required="required" name="password" class="form-control" placeholder="Repita a Senha" type="password">
+                            <input id="Confirmpassword" value="" name="re-newPassword" class="form-control" placeholder="Re-escreva a nova senha" type="password">
                         </div><!--fim confirma password-->
-
-                        <p><!--inicio botões-->
-                            <a href="/Wep/login" class="btn btn-sucess btn-block bg-success text-white btn-weight"></i>Salvar Alterações</a>
-                            
-                        </p><!--fim botões-->    
+                         <p><!--inicio botões-->                                   
+                            <button type="submit"  class="btn btn-block btn-facebook  bg-success text-white btn-weight" style="width:350px">Salvar alterações</button>
+                            <button type="reset"  class="btn btn-block btn-facebook  bg-danger text-white btn-weight" style="width:350px">Cancelar</button>
+                        </p><!--fim botões-->
+                        
+                        <p class="text-center lables" style="margin-left: 115px">Voltar para <a href="/Wep/home">Home</a> </p>           
                     </form><!--fim form-->   
                 </div>
 
@@ -75,9 +72,10 @@ session_start();
 
                 </div>
                 
-
             </div>
         </div>
     </section>
+
+    <script src="./App/Templates/View/scripts/validaForm.js"></script>
 </body>
 </html>

@@ -4,62 +4,62 @@ namespace App\Controllers;
 
 class ViewController
 {
-    public function index()
+    static public function index()
     {
         require './App/Templates/View/frontpage.php';
     }
 
-    public function home()
+    static public function home()
     {
         require './App/Templates/View/home.php';
     }
     
-    public function login()
+    static public function login()
     {
         require './App/Templates/View/login.php';
     }
 
-    public function pratos()
+    static public function pratos()
     {
         require './App/Templates/View/mainCourse.php';
     }
 
-    public function bebidas()
+    static public function bebidas()
     {
         require './App/Templates/View/drinks.php';
     }
 
-    public function cadastro()
+    static public function cadastro()
     {
         require './App/Templates/View/register.php';
     }
 
-    public function editarCadastro()
+    static public function editarCadastro()
     {
         require './App/Templates/View/updateRegistration.php';
     }
 
-    public function bill()
+    static public function bill()
     {
         require './App/Templates/View/bill.php';
     }
     
-    public function soon()
+    static public function soon()
     {
         require './App/Templates/View/comingSoon.php';
     }
 
-    public function orders()
+    static public function orders()
     {
         require './App/Templates/View/orders.php';
     }
 
-    public function recovery()
+    static public function recovery()
     {
         require './App/Templates/View/recovery.php';
     }
 
-    public function registerItems()
+    static public function registerItems()
     {
         require './App/Templates/View/registerProducts.php';
     }
