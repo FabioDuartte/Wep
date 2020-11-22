@@ -21,6 +21,17 @@ class MenuFoods extends MenuItems
         return $menuDAO->addFoodToMenu($this, $idProduct);
     }
 
+    static public function selectAllMenuItems()
+    {
+        $menuDAO = new MenuDAO();
+        $menuItems = $menuDAO->selectForTypeMenuItemFood();
+            foreach ($menuItems as $menuItem) {
+                $menuItem += $menuDAO->selectAllMenuItems($menuItem['Produto_idProduto']);
+                $define[] = $menuItem;
+            }
+        return $define;
+    }
+
     public function getIngredients()
     {
         return $this->ingredients;

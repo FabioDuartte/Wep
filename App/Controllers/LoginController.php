@@ -55,13 +55,7 @@ class LoginController extends DataProcessing
 
             } else {
                 if (password_verify($userPassword, $user['senhaCliente'])) {
-                    $_SESSION['id-user'] = $user['idCliente'];
-                    $_SESSION['user-name'] = $user['nomeCliente'];
-                    $_SESSION['user-Bonus'] = $user['bonusCliente'];
-                    $_SESSION['user-type'] = "Cliente";                       
-                    foreach($_SESSION as $qlk){
-                        echo $qlk;
-                    }
+                    $this->setSessionCustomer($user);
                     header("Location: /Wep/home");
 
                 } else {

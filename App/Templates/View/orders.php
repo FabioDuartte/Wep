@@ -25,91 +25,88 @@
 
     <!-- Estilo customizado -->
     <link rel="stylesheet" type="text/css" href="/Wep/App/Templates/style/orders.css">
+
+    <style>
+     .format-link{
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+        color: white;
+      }
+      .format-link:hover{
+        color: #ffc107;    
+        /*background:#ffc107;*/
+      }
+    
+
+    </style>
+
 </head>
 
 <body>
-  <header ><!--Inicio Header-->
-    <nav class="navbar navbar-expand-sm navbar-warning nav-bg  nav-transparente">
-        <div class="container">
-          <!--Logo-->
-          <a  href="#" class="navbar-brand" style="color: white;">
-           <img src="../images/logo/logo-removebg-preview.png" alt="" width="120px" class="logo" >
-          </a>    
-          <!--Menu Hamburguer-->
-          <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
-            <i class="fas fa-bars text-dark"></i>
-          </button>
-          <!--Navegação-->
-          <div class="collapse navbar-collapse " id="nav-principal">              
-              <ul class="navbar-nav ml-auto   ">  
-               
-               
-                <li class="nav-link format-link">
-                    <div class="dropdown ">
-                        <span class="dropdown-toggle text-white" data-toggle="dropdown">
-                        <i class="far fa-user"></i> 
-                        </span>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a href="./registerProducts.php" class="dropdown-item nav-item format-link ">Cadastrar produtos</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="./orders.php" class="dropdown-item nav-item format-link">Visualizar pedidos</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="./bill.php" class="dropdown-item nav-item format-link">Minha Comanda</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="./editarCadastro.php" class="dropdown-item nav-item format-link">Editar Cadastro</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="./login.php" class="dropdown-item nav-item format-link">Sair</a>
-                        </div>                                                            
-                    </div>   
-                </li>             
-              </ul>
-          </div>
-        </div>
-    </nav>        
-</header><!--Fim Header-->
+<header ><!--Inicio Header-->
+     
+     <nav class="class=navbar navbar-expand-sm navbar-warning nav-bg  nav-transparente">
+     <div class="container">
+       <!--Logo-->
+       <a  href="#" class="navbar-brand" style="color: white;">
+        <img src="/Wep/App/Templates/images/logo/logo-removebg-preview.png" alt="" width="120px" class="logo" >
+       </a>
+       <!--Menu Hamburguer-->
+       <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
+         <i class="fas fa-bars text-dark"></i>
+       </button>
+       <!--Navegação-->
+       <div class="collapse navbar-collapse " id="nav-principal">
+         <ul class="navbar-nav ml-auto">
+             <a href="/Wep/home" class=" nav-link nav-item format-link" >Home</a>
+             <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>                 
+             <a href="/Wep/home/cadastrar-produtos" class=" nav-link nav-item format-link">Pedidos em Aberto</a>
+             <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>                  
+             <a href="/Wep/" class=" nav-link nav-item format-link">Sair</a>
+</header>
+
 
     <section id="home" class="d-flex "> 
         <div class="container align-self-center"  >
           <div class="container">
             <div class="row ">
-              <div class="col " >
-                
-                <form>
-                <h1 class="display-3  text-dark">Pedidos</h1>
-                
-                  <div class="form-group">
-                    <select class="form-control" >
-                      <option value="">Selecione o tipo do pedido</option>
-                      <option value="1">Todos os pedidos</option>
-                      <option value="2">Pedidos em aberto</option>
-                      <option value="3">Pedidos fechados</option>                   
-                    </select>
-                  </div>
-               
-                  <table class="table"> 
-                    <thead class="bg-dark text-white">
-                      <tr>
-                        <th>Nº do pedido</th>
-                        <th>Nº da mesa</th>
-                        <th>Situação do pedido</th>
-                      </tr>
-                    </thead>
-
-                  </table>
-              
-            </div>
-    </section>
+              <div class="col " >               
+              <form action="">
+                <h1 class="display-3  text-dark">Pedidos em Aberto</h1>
+                    <table class="table"> 
+                      <thead class="bg-dark text-white">
+                        <tr>
+                          <th>Id do pedido</th>                          
+                          <th>Nome do prato </th>
+                          <th>Descrição</th>
+                          <th>Situação do pedido</th>
+                        </tr>                        
+                      </thead>
+                      <tbody>
+                        <div>
+                          <div>
+                              <tr>
+                                  <td class="cart-price">#1</td>
+                                  <td>Omelete</td>                                
+                                  <td>Omelete de forno </td> 
+                                  <td><input type="button" class="btn btn-md btn-warning font-weight-bold" id="change" onclick=changeStatus() value="Em aberto" style="width: 152px"></button></td>
+                              </tr>
+                          </div>                     
+                        </div>
+                      </tbody>
+                    </table>
+                  </form>
+               </div>
+      </section>
     
-    <footer class="rodape ">
+    <footer class="rodape">
       <div class="container">
-      <div class="row">
+      <div>
         <?php include "./App/Templates/View/include/footer.inc.php" ?>
       </div>  
         </div>        
     </footer>
-
-
-    
-    
+    <script src="/Wep/App/Templates/View/scripts/situationButton.js"> </script>
 </body>
 </html>

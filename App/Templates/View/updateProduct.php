@@ -80,30 +80,30 @@
         <div class="container align-self-center"  >
           <div class="container">
             <div class="row ">
-              <div class="col">
+              <div class="col-md-12">
                 
                 <form method="POST" action="/Wep/home/cadastrar-produtos">
                 <h1 class="display-3  text-dark my-2" style="padding-top:25px">Alterar produtos</h1>
                 
                   <div class="form-group">
-                    <label for="tipo">Tipo do produto</label>
-                    <select name="product-type" class="form-control" id="tipo" onchange="disableInput()">
+                    <label for="tipoUpdate">Tipo do produto</label>
+                    <select name="product-type" class="form-control" id="tipoUpdate" onchange="disableInput()">
                     <option value="">Selecione uma opção</option>
-                      <option value="mainCourse">Alterar Prato</option>
-                      <option value="drink"> Bebida</option>
+                      <option value="mainCourseUpdate">Alterar Prato</option>
+                      <option value="drinkUpdate"> Alterar Bebida</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="fornecedor">Nome do produto</label>
-                      <input disabled="" name="product-name" type="text" value='' class="form-control" id="nome">
+                      <input disabled name="product-name" type="text" value='' class="form-control" id="nome">
                   </div>
                   <div class="form-group">
                     <label for="fornecedor">Nome do novo produto</label>
-                      <input name="product-newName" type="text" value='' class="form-control" id="novo-nome">
+                      <input disable name="product-newName" type="text" value='' class="form-control" id="novo-nome">
                   </div>
                   <div class="form-group">
                     <label for="fornecedor">Preço</label>
-                      <input disabled="" placeholder="00.00" name="product-price" type="text" value='' class="form-control" id="preco">
+                      <input disabled placeholder="00.00" name="product-price" type="text" value='' class="form-control" id="preco">
                   </div>
                   <div class="input-group mb-3">
                     <div class="custom-file">
@@ -113,13 +113,13 @@
                   </div>
                   <div class="form-group">
                     <label for="fornecedor">Fornecedor</label>
-                      <input disabled="" name="drink-supplier" type="text" value='' class="form-control" id="fornecedor">
+                      <input disabled name="drink-supplier" type="text" value='' class="form-control" id="fornecedor">
                   </div>
                   <div class="form-group">
                     <label for="descricao">Ingredientes</label>
-                    <textarea disabled="" placeholder="Adicione os ingredientes separados por virgula" value='' name="food-ingredients" class="form-control" id="ingredientes" ></textarea>
+                    <textarea disabled placeholder="Adicione os ingredientes separados por virgula" value='' name="food-ingredients" class="form-control" id="ingredientes" ></textarea>
                   </div>
-                  <input disabled="" id="submitAlter" type="submit" class="btn btn-lg  btn-success bg-success btn-block font-weight-bold" value="Salvar alterações" style="background: yellow">
+                  <input disabled id="submitAlter" type="submit" class="btn btn-lg  btn-success bg-success btn-block font-weight-bold" value="Salvar alterações" style="background: yellow">
                   <input type="reset" class="btn  btn-lg cancel btn-block font-weight-bold" value="Cancelar">
                 </form>
                 <div>
@@ -158,7 +158,7 @@
         
     </footer>
 
-    <script src="/Wep/App/Templates/View/scripts/disableButtons.js"> </script>
+    <script src="/Wep/App/Templates/View/scripts/disableUpdateProduct.js"> </script>
     
 </body>
 </html>

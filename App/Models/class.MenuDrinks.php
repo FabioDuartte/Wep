@@ -21,6 +21,17 @@ class MenuDrinks extends MenuItems
         return $menuDAO->addDrinkToMenu($this, $idProduct);
     }
 
+    static public function selectAllMenuItems()
+    {
+        $menuDAO = new MenuDAO();
+        $menuItems = $menuDAO->selectForTypeMenuItemDrinks();
+            foreach ($menuItems as $menuItem) {
+                $menuItem += $menuDAO->selectAllMenuItems($menuItem['Produto_idProduto']);
+                $define[] = $menuItem;
+            }
+        return $define;
+    }
+
     public function getSupplier()
     {
         return $this->supplier;

@@ -66,21 +66,9 @@
             <div id="card" class="row">
                 <div class="col-md-12 ">
                     <div class="card-deck my-5">
-                        <?php include "./App/Templates/View/include/products.inc.php" ?>
-                        <?php include "./App/Templates/View/include/products.inc.php" ?>
-                        <?php include "./App/Templates/View/include/products.inc.php" ?>
+                        <?php include "./App/Templates/View/include/productsDrinks.inc.php" ?>
+                        
                     </div>
-                    <div class="card-deck my-5">
-                        <?php include "./App/Templates/View/include/products.inc.php" ?>
-                        <?php include "./App/Templates/View/include/products.inc.php" ?>
-                        <?php include "./App/Templates/View/include/products.inc.php" ?>
-                    </div>
-                    <div class="card-deck my-5">
-                        <?php include "./App/Templates/View/include/products.inc.php" ?>
-                        <?php include "./App/Templates/View/include/products.inc.php" ?>
-                        <?php include "./App/Templates/View/include/products.inc.php" ?>
-                    </div>
-                  </div>
                 </div>  
               </div>
             <div>

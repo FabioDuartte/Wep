@@ -60,4 +60,52 @@ class MenuDAO
 
         $dbh = null;
     }
+
+    public function selectAllMenuItems($idProduct)
+    {
+        try {
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare("SELECT * FROM Produtos WHERE idProduto = :idProduct");
+            $query->bindParam("idProduct", $idProduct);
+            $query->execute();
+            $rows = $query->fetch();
+            return $rows;
+        } catch (PDOException $e) {
+            echo "<script>alert('Erro');</script>";
+            return null;
+        }
+
+        $dbh = null;
+    }
+
+    public function selectForTypeMenuItemFood()
+    {
+        $dbh = ConnectionDatabase::getConnection();
+        try {
+            $query = $dbh->prepare("SELECT * FROM Comidas");
+            $query->execute();
+            return $query->fetchAll();
+        } catch (PDOException $e) {
+            echo "<script>alert('Erro');</script>";
+            return null;
+        }
+
+        $dbh = null;
+    }
+
+    public function selectForTypeMenuItemDrinks()
+    {
+        $dbh = ConnectionDatabase::getConnection();
+        try {
+            $query = $dbh->prepare("SELECT * FROM Bebidas");
+            $query->execute();
+            return $query->fetchAll();
+        } catch (PDOException $e) {
+            echo "<script>alert('Erro');</script>";
+            return null;
+        }
+
+        $dbh = null;
+    }
+
 }

@@ -18,6 +18,7 @@ abstract class MenuItems
     }
 
     abstract protected function addMenuItemToDB();
+    abstract static protected function selectAllMenuItems();
 
     public function getMenuItemName()
     {
