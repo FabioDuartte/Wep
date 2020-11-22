@@ -10,10 +10,14 @@ class CardDAO
             $conn = ConnectionDatabase::getConnection();
             $query = $conn->prepare("INSERT INTO Cartoes (numeroCartao, bandeiraCartao, validadeCartao, cvvCartao, Clientes_idCliente)
             Values (:numeroCartao, :bandeiraCartao, :validadeCartao, :cvvCartao, :Clientes_idCliente)");
-            $query->bindParam("numeroCartao", $objCard->getCardNumber());
-            $query->bindParam("bandeiraCartao", $objCard->getCardBrand());
-            $query->bindParam("validadeCartao", $objCard->getCardExpiry());
-            $query->bindParam("cvvCartao", $objCard->getCardCvv());
+            $cardNumber = $objCard->getCardNumber();
+            $cardBrand = $objCard->getCardBrand();
+            $cardExpiry = $objCard->getCardExpiry();
+            $cardCvv = $objCard->getCardCvv();
+            $query->bindParam("numeroCartao", $cardNumber);
+            $query->bindParam("bandeiraCartao", $cardBrand);
+            $query->bindParam("validadeCartao", $cardExpiry);
+            $query->bindParam("cvvCartao", $cardCvv);
             $query->bindParam("Clientes_idCliente", $idCliente);
             $query->execute();
             $lastID = $conn->lastInsertId();

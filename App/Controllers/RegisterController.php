@@ -29,18 +29,25 @@ class RegisterController extends DataProcessing
         $userCPF = $this->ignoreNegative($this->sanitizeInt($this->cleanInput($_POST['CPF'])));
         $userEmail = $this->validateEmail($this->cleanInput($_POST['email']));
 
-        if (strlen($userCPF) != 11) {
-           echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
-                                                 Número do CPF inválido!
-                                            </div>';
-            echo $userCPF;
+        if (!is_numeric($userCPF) || strlen($userCPF) != 11) {
+            echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
+                                CPF invalido
+                            </div>';
+            
             $this->registerFail();
         }
 
-        if (strlen($userCardNumber) < 14) {
+        if (!is_numeric($userCardNumber) || strlen($userCardNumber) < 14) {
             echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
-                                             Número do cartão inválido!
-                                          </div>';
+                    Número do cartão inválido
+                  </div>';
+            $this->registerFail();
+        }
+
+        if (!is_numeric($userCardCvv) || !is_numeric($userCardExpiry)) {
+            echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
+                    Dados do Cartão invalido;
+                </div>';
             $this->registerFail();
         }
 
@@ -48,15 +55,15 @@ class RegisterController extends DataProcessing
             $userPassword = $_POST['password'];
         } else {
             echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
-                                              Senha inválida!
-                                          </div>';
+                                     Senha inválida
+                                </div>';
             $this->registerFail();
         }
 
         if (!$userEmail || strpos($userEmail, '@caldeiraofurado.com')) {
             echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
-                                             E-mail inválido!
-                                          </div>';
+                            Nome inválido
+                    </div>';
             $this->registerFail();
         }
 

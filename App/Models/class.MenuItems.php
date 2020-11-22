@@ -8,11 +8,13 @@ abstract class MenuItems
     protected $menuItemName;
     protected $menuItemPrice;
     protected $menuItemID;
+    protected $menuItemImg;
 
-    protected function __construct($menuItemName, $menuItemPrice)
+    protected function __construct($menuItemName, $menuItemPrice, $menuItemImg)
     {
         $this->menuItemName = $menuItemName;
         $this->menuItemPrice = $menuItemPrice;
+        $this->menuItemImg = $menuItemImg;
     }
 
     abstract protected function addMenuItemToDB();
@@ -45,6 +47,16 @@ abstract class MenuItems
     public function setMenuItemID($menuItemID)
     {
         $this->menuItemID = $menuItemID;
+    }
+
+    public function getMenuItemImg()
+    {
+        return $this->menuItemImg;
+    }
+
+    public function setMenuItemImg($menuItemImg)
+    {
+        $this->menuItemImg = $menuItemImg;
     }
 
 }

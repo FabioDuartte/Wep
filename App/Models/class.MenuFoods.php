@@ -8,9 +8,9 @@ class MenuFoods extends MenuItems
 {
     private $ingredients;
 
-    public function __construct($menuItemName, $menuItemPrice, $ingredients)
+    public function __construct($menuItemName, $menuItemPrice, $menuItemImg, $ingredients)
     {
-        parent::__construct($menuItemName, $menuItemPrice);
+        parent::__construct($menuItemName, $menuItemPrice, $menuItemImg);
         $this->ingredients = $ingredients;
     }
 

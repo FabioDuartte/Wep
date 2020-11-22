@@ -14,7 +14,7 @@ class DataProcessing
             return false;
         }
     }
-
+        
     public function passwordToHash($password)
     {
         $password = password_hash($password, PASSWORD_BCRYPT, ['cost' => 10]);
@@ -50,9 +50,13 @@ class DataProcessing
     {
         return preg_match("/^[a-zA-Z-' ]*$/",$name);
     }
-
+        
     public function ignoreNegative($data)
     {
         return str_replace('-', '', $data);
     }
 }
+
+
+
+ 

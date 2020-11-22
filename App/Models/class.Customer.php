@@ -25,6 +25,12 @@ class Customer extends SystemUsers
         return $loginDAO->checkLoginCustomer($this);
     }
 
+    public function verifyPassword()
+    {
+        $registerDAO = new RegisterDAO();
+        return $registerDAO->verifyPassword($this);
+    }
+
     public function registerCustomer()
     {
         $registerDAO = new RegisterDAO();
@@ -35,6 +41,18 @@ class Customer extends SystemUsers
     {
         $registerDAO = new RegisterDAO();
         return $registerDAO->checkEmailInDB($this);
+    }
+
+    public function updateRegisterEmailCustomer()
+    {
+        $registerDAO = new RegisterDAO();
+        return $registerDAO->updateRegisterEmailCustomer($this);
+    }
+
+    public function updateRegisterPasswordCustomer()
+    {
+        $registerDAO = new RegisterDAO();
+        return $registerDAO->updateRegisterPasswordCustomer($this);
     }
 
     public function getCustomerId()
