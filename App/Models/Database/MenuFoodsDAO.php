@@ -2,6 +2,9 @@
 
 namespace App\Models\Database;
 
+use \PDO;
+use \PDOException;
+
 class MenuFoodsDAO
 {
     public function insertIntoFood($objMenuFood)

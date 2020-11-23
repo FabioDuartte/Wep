@@ -12,7 +12,7 @@ $src = '/Wep/App/Templates/Gallery/' . $item['imgProduto'];
             <i class="star fas fa-star text-warning "></i>
             <i class="star fas fa-star text-warning "></i> <span class="badge badge-pill badge-secondary ml-2">5.0</span>
         </div>
-        <p class="card-text description"> <?php echo $item['fornecedor']; ?> </p>
+        <p class="card-text description">Fornecedor: <?php echo $item['fornecedor']; ?> </p>
         <div>
             <p class="h5 font-weight-bold text-dark">Preço: R$ <?php echo $item['precoProduto']; ?> </p>
         </div>

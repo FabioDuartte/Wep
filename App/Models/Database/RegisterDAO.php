@@ -2,6 +2,9 @@
 
 namespace App\Models\Database;
 
+use \PDO;
+use \PDOException;
+
 class RegisterDAO
 {
 
@@ -39,7 +42,7 @@ class RegisterDAO
             $idCustomer = $objCustomer->getCustomerId();
             $query->bindParam("idCustomer", $idCustomer);
             $query->execute();
-            return $query->fetch();
+            return $query->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo  "<script>alert('Erro');</script>";
             return 0;

@@ -4,6 +4,8 @@ namespace App\Models\Database;
 
 use App\Models\Employee;
 use App\Models\Customer;
+use \PDO;
+use \PDOException;
 
 class LoginDAO
 {
@@ -15,7 +17,7 @@ class LoginDAO
             $email = $objEmployee->getUserEmail();
             $query->bindParam("email", $email);
             $query->execute();
-            $employees = $query->fetch();
+            $employees = $query->fetch(PDO::FETCH_ASSOC);
             return $employees;
         } catch (PDOException $e) {
             echo  "<script>alert('Erro');</script>";
@@ -32,7 +34,7 @@ class LoginDAO
             $email = $objCustomer->getUserEmail();
             $query->bindParam("email", $email);
             $query->execute();
-            $customers = $query->fetch();
+            $customers = $query->fetch(PDO::FETCH_ASSOC);
             return $customers;
         } catch (PDOException $e) {
             echo  "<script>alert('Erro');</script>";

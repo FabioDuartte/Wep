@@ -2,6 +2,9 @@
 
 namespace App\Models\Database;
 
+use \PDO;
+use \PDOException;
+
 class MenuDAO
 {
     public function addItemToDatabaseMenu($objMenu)
@@ -68,7 +71,7 @@ class MenuDAO
             $query = $dbh->prepare("SELECT * FROM Produtos WHERE idProduto = :idProduct");
             $query->bindParam("idProduct", $idProduct);
             $query->execute();
-            $rows = $query->fetch();
+            $rows = $query->fetch(PDO::FETCH_ASSOC);
             return $rows;
         } catch (PDOException $e) {
             echo "<script>alert('Erro');</script>";
@@ -84,7 +87,7 @@ class MenuDAO
         try {
             $query = $dbh->prepare("SELECT * FROM Comidas");
             $query->execute();
-            return $query->fetchAll();
+            return $query->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo "<script>alert('Erro');</script>";
             return null;
@@ -99,7 +102,7 @@ class MenuDAO
         try {
             $query = $dbh->prepare("SELECT * FROM Bebidas");
             $query->execute();
-            return $query->fetchAll();
+            return $query->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo "<script>alert('Erro');</script>";
             return null;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almoço</title>
+    <title>Pratos</title>
 
     <!-- Bootstrap início -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -41,7 +41,7 @@
         <div class="container align-self-center"  >
             <div class="row">
             <div class="col-md-12 capa">
-              <h1 class="display-2 text-white"style="font-family:'Courgette', cursive;  ">Almoço</h1>
+              <h1 class="display-2 text-white"style="font-family:'Courgette', cursive;  ">Pratos</h1>
             </div>    
     </section>
 
