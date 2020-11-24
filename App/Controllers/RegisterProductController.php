@@ -5,7 +5,6 @@ namespace App\Controllers;
 use Utils\DataProcessing;
 use App\Models\MenuFoods;
 use App\Models\MenuDrinks;
-use App\Models\Database\MenuDAO;
 
 session_start();
 
@@ -31,8 +30,13 @@ class RegisterProductController extends DataProcessing
             $this->addMenuItemsFail();
         }
 
+        if (!$this->validateName($menuItemName)) {
+            // echo "Nome inválido! Tente um nome que esteja entre: [a-zA-Z-' ]";
+            $this->addMenuItemsFail();
+        }
 
-        if (!is_numeric($menuItemPrice) || !$this->validateFloat($menuItemPrice)) {
+
+        if (!is_numeric($menuItemPrice) || !$this->validateFloat($menuItemPrice) || $menuItemPrice < 0) {
             // echo "Preço inserido é invalido";
             $this->addMenuItemsFail();
         }

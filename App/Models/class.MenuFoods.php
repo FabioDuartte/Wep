@@ -32,12 +32,24 @@ class MenuFoods extends MenuItems
         return $define;
     }
 
+    public function updateRegisterIngredientsFood()
+    {
+        $menuDAO = new MenuDAO();
+        return $menuDAO->updateRegisterIngredientsFood($this);
+    }
+
+    public function removeItemFood($idProduct)
+    {
+        $menuDAO = new MenuDAO();
+        return $menuDAO->removeItemFood($idProduct);
+    }
+
     public function getIngredients()
     {
         return $this->ingredients;
     }
 
-    public function setIngredients()
+    public function setIngredients($ingredients)
     {
         $this->ingredients = $ingredients;
     }

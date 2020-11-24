@@ -31,9 +31,9 @@ class DataProcessing
 
     public function formatDataMoney($data)
     {
-        $data = (float) str_replace(',', '.', $data);
-        $data = number_format($data, 2);
-        return $data;
+        $data = str_replace(',', '.', $data);
+        $data = number_format((float) $data, 2);
+        return (float) $data;
     }
 
     public function sanitizeInt($data)
@@ -46,7 +46,7 @@ class DataProcessing
         return filter_var($data, FILTER_VALIDATE_FLOAT, 'decimal');
     }
 
-    public function validateName($name) 
+    public function validateName($name)
     {
         return preg_match("/^[a-zA-Z-' ]*$/",$name);
     }

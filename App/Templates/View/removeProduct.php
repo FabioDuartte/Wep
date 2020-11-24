@@ -63,11 +63,11 @@
             <ul class="navbar-nav ml-auto">
                 <a href="/Wep/home" class=" nav-link nav-item format-link" >Home</a>
                 <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>                 
-                <a href="/Wep/home/cadastrar-produtos" class=" nav-link nav-item format-link">Cadastrar Produto</a>                
+                <a href="/Wep/home/cadastrar-produtos" class=" nav-link nav-item format-link">Adicionar produto ao cardápio</a>                
                 <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>
-                <a href="/Wep/home/alterar-produto" class=" nav-link nav-item format-link">Alterar Produto</a>                  
+                <a href="/Wep/home/alterar-produto" class=" nav-link nav-item format-link">Alterar produto do cardápio</a>                  
                 <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>
-                <a href="/Wep/home/deletar-produto" class=" nav-link nav-item format-link">Excluir Produto</a>                  
+                <a href="/Wep/home/remover-produto" class=" nav-link nav-item format-link">Remover produto do cardápio</a>    
                 <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>
                 <a href="/Wep/" class=" nav-link nav-item format-link">Sair</a>
             </ul>            
@@ -80,8 +80,15 @@
           <div class="container">
             <div class="row ">
               <div class="col">                
-                <form method="POST" action="/Wep/home/cadastrar-produtos">
-                    <h1 class="display-3  text-dark my-2" style="padding-top:25px">Deletar produtos</h1>                 
+                <form method="POST" action="/Wep/home/remover-produto">
+                    <h1 class="display-3  text-dark my-2" style="padding-top:25px">Remover produto</h1>                 
+                    <div class="form-group">                   
+                    <select name="product-type" class="form-control" id="tipoDelete">
+                      <option value="">Selecione uma opção</option>
+                      <option value="mainCourseDelete">Remover um prato</option>
+                      <option value="drinkDelete">Remover uma bebida</option>
+                    </select>
+                  </div>   
                     <div class="form-group">
                         <label for="fornecedor">Nome do produto</label>
                         <input  name="product-name" type="text" value='' class="form-control" id="nome">

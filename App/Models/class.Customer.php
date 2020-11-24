@@ -25,10 +25,10 @@ class Customer extends SystemUsers
         return $loginDAO->checkLoginCustomer($this);
     }
 
-    public function verifyPassword()
+    public function getPassword()
     {
         $registerDAO = new RegisterDAO();
-        return $registerDAO->verifyPassword($this);
+        return $registerDAO->getPassword($this);
     }
 
     public function registerCustomer()

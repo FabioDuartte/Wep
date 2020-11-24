@@ -32,6 +32,18 @@ class MenuDrinks extends MenuItems
         return $define;
     }
 
+    public function updateRegisterSupplierDrink()
+    {
+        $menuDAO = new MenuDAO();
+        return $menuDAO->updateRegisterSupplierDrink($this);
+    }
+
+    public function removeItemDrink($idProduct)
+    {
+        $menuDAO = new MenuDAO();
+        return $menuDAO->removeItemDrink($idProduct);
+    }
+
     public function getSupplier()
     {
         return $this->supplier;

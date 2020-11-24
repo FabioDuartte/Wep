@@ -11,8 +11,8 @@ class RegisterDAO
     public function createRegisterCustomer($objCustomer)
     {
         try {
-            $conn = ConnectionDatabase::getConnection();
-            $query = $conn->prepare("INSERT INTO Clientes (nomeCliente, emailCliente, senhaCliente, bonusCliente, cpfCliente)
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare("INSERT INTO Clientes (nomeCliente, emailCliente, senhaCliente, bonusCliente, cpfCliente)
              VALUES (:nomeCliente, :emailCliente, :senhaCliente, :bonusCliente, :cpfCliente)");
             $name = $objCustomer->getUserName();
             $email = $objCustomer->getUserEmail();
@@ -25,20 +25,20 @@ class RegisterDAO
             $query->bindParam("bonusCliente", $bonus);
             $query->bindParam("cpfCliente", $cpf);
             $query->execute();
-            $lastID = $conn->lastInsertId();
+            $lastID = $dbh->lastInsertId();
             return $lastID;
         } catch (PDOException $e) {
             echo  "<script>alert('Erro');</script>";
             return 0;
         }
-        $conn = null;
+        $dbh = null;
     }
 
-    public function verifyPassword($objCustomer)
+    public function getPassword($objCustomer)
     {
         try {
-            $conn = ConnectionDatabase::getConnection();
-            $query = $conn->prepare("SELECT senhaCliente FROM Clientes WHERE idCliente = :idCustomer");
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare("SELECT senhaCliente FROM Clientes WHERE idCliente = :idCustomer");
             $idCustomer = $objCustomer->getCustomerId();
             $query->bindParam("idCustomer", $idCustomer);
             $query->execute();
@@ -48,14 +48,14 @@ class RegisterDAO
             return 0;
         }
 
-        $conn = null;
+        $dbh = null;
     }
 
     public function updateRegisterEmailCustomer($objCustomer)
     {
         try {
-            $conn = ConnectionDatabase::getConnection();
-            $query = $conn->prepare('UPDATE Clientes SET emailCliente = :email WHERE idCliente = :idCustomer');
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare('UPDATE Clientes SET emailCliente = :email WHERE idCliente = :idCustomer');
             $email = $objCustomer->getUserEmail();
             $idCustomer = $objCustomer->getCustomerId();
             $query->bindParam("email", $email);
@@ -66,14 +66,14 @@ class RegisterDAO
             echo  "<script>alert('Erro');</script>";
             return 0;
         }
-        $conn = null;
+        $dbh = null;
     }
 
     public function updateRegisterPasswordCustomer($objCustomer)
     {
         try {
-            $conn = ConnectionDatabase::getConnection();
-            $query = $conn->prepare('UPDATE Clientes SET senhaCliente = :pssword WHERE idCliente = :idCustomer');
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare('UPDATE Clientes SET senhaCliente = :pssword WHERE idCliente = :idCustomer');
             $password = $objCustomer->getUserPassword();
             $idCustomer = $objCustomer->getCustomerId();
             $query->bindParam('pssword', $password);
@@ -84,14 +84,14 @@ class RegisterDAO
             echo  "<script>alert('Erro');</script>";
             return 0;
         }
-        $conn = null;
+        $dbh = null;
     }
 
     public function checkEmailInDB($objCustomer)
     {
         try {
-            $conn = ConnectionDatabase::getConnection();
-            $query = $conn->prepare('SELECT emailCliente FROM Clientes WHERE emailCliente = :email');
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare('SELECT emailCliente FROM Clientes WHERE emailCliente = :email');
             $email = $objCustomer->getUserEmail();
             $query->bindParam('email', $email);
             $query->execute();
@@ -101,7 +101,7 @@ class RegisterDAO
             echo  "<script>alert('Erro');</script>";
             return 0;
         }
-        $conn = null;
+        $dbh = null;
     }
 
 }

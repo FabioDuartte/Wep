@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Database\MenuDAO;
+
 abstract class MenuItems
 {
     //Antiga produto
@@ -19,6 +21,24 @@ abstract class MenuItems
 
     abstract protected function addMenuItemToDB();
     abstract static protected function selectAllMenuItems();
+
+    public function selectItemByName($name)
+    {
+        $menuDAO = new MenuDAO();
+        return $menuDAO->selectItemByName($name);
+    }
+
+    public function updateProduct()
+    {
+        $menuDAO = new MenuDAO();
+        return $menuDAO->updateProduct($this);
+    }
+
+    public function removeProduct()
+    {
+        $menuDAO = new MenuDAO();
+        return $menuDAO->removeProduct($this);
+    }
 
     public function getMenuItemName()
     {

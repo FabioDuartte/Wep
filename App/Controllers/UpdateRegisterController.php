@@ -47,7 +47,7 @@ class UpdateRegisterController extends DataProcessing
             // echo "Email já cadastrado";
             $this->updateRegistrationFail();
         } else {
-            $userPassword = $objCustomer->verifyPassword();
+            $userPassword = $objCustomer->getPassword();
             if (password_verify($oldPassword, $userPassword['senhaCliente'])) {
                 if ($newEmail) {
                     $objCustomer->setUserEmail($newEmail);

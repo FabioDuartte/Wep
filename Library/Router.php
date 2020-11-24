@@ -25,8 +25,8 @@ class Router
         $this->routes['/Wep/home/pedidos-feito'] = array('controller' => 'OrderController', 'action' => 'viewOrders');
         $this->routes['/Wep/home/editar-cadastro'] = array('controller' => 'UpdateRegisterController', 'action' => 'updateRegistration');
         $this->routes['/Wep/home/minha-conta'] = array('controller' => 'OrderController', 'action' => 'customerOrders');
-        $this->routes['/Wep/home/alterar-produto'] = array('controller' => 'UpdateProductController', 'action' => 'updateProduct');
-        $this->routes['/Wep/home/deletar-produto'] = array('controller' => 'DeleteProductController', 'action' => 'deleteProduct');
+        $this->routes['/Wep/home/alterar-produto'] = array('controller' => 'UpdateProductMenuController', 'action' => 'updateProduct');
+        $this->routes['/Wep/home/remover-produto'] = array('controller' => 'RemoveProductMenuController', 'action' => 'removeProduct');
     }
 
     private function runRoute($url)

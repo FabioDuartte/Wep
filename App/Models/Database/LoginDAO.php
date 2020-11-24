@@ -12,8 +12,8 @@ class LoginDAO
     public function checkLoginEmployee($objEmployee)
     {
         try {
-            $conn = ConnectionDatabase::getConnection();
-            $query = $conn->prepare("SELECT * FROM Funcionarios WHERE emailFuncionario = :email");
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare("SELECT * FROM Funcionarios WHERE emailFuncionario = :email");
             $email = $objEmployee->getUserEmail();
             $query->bindParam("email", $email);
             $query->execute();
@@ -23,14 +23,14 @@ class LoginDAO
             echo  "<script>alert('Erro');</script>";
             return 0;
         }
-        $conn = null;
+        $dbh = null;
     }
 
     public function checkLoginCustomer($objCustomer)
     {
         try {
-            $conn = ConnectionDatabase::getConnection();
-            $query = $conn->prepare("SELECT * FROM Clientes WHERE emailCliente = :email");
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare("SELECT * FROM Clientes WHERE emailCliente = :email");
             $email = $objCustomer->getUserEmail();
             $query->bindParam("email", $email);
             $query->execute();
@@ -40,7 +40,7 @@ class LoginDAO
             echo  "<script>alert('Erro');</script>";
             return 0;
         }
-        $conn = null;
+        $dbh = null;
     }
 
 }

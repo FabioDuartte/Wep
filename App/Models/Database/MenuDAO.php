@@ -111,4 +111,127 @@ class MenuDAO
         $dbh = null;
     }
 
+    public function selectItemByName($name)
+    {
+        try {
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare("SELECT * FROM Produtos WHERE nomeProduto = :name");
+            $query->bindParam("name", $name);
+            $query->execute();
+            return $query->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo "<script>alert('Erro');</scripy>";
+            return null;
+        }
+        $dbh = null;
+    }
+
+    public function updateRegisterIngredientsFood($objMenu)
+    {
+        try {
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare('UPDATE Comidas SET ingredientes = :ingredients WHERE Produto_idProduto = :idProduct');
+            $ingredients = $objMenu->getIngredients();
+            $idProduct = $objMenu->getMenuItemID();
+            $query->bindParam("ingredients", $ingredients);
+            $query->bindParam("idProduct", $idProduct);
+            $query->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+            return 0;
+        }
+        $dbh = null;
+    }
+
+    public function updateRegisterSupplierDrink($objMenu)
+    {
+        try {
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare('UPDATE Bebidas SET fornecedor = :supplier WHERE Produto_idProduto = :idProduct');
+            $supplier = $objMenu->getSupplier();
+            $idProduct = $objMenu->getMenuItemID();
+            $query->bindParam("supplier", $supplier);
+            $query->bindParam("idProduct", $idProduct);
+            $query->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo  "<script>alert('Erro');</script>";
+            return 0;
+        }
+        $dbh = null;
+    }
+
+    public function updateProduct($objMenu)
+    {
+        try {
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare("UPDATE Produtos SET nomeProduto = :productName, precoProduto = :productPrice, imgProduto = :productImg WHERE idProduto = :idProduct");
+            $productName = $objMenu->getMenuItemName();
+            $productPrice = $objMenu->getMenuItemPrice();
+            $productImg = $objMenu->getMenuItemImg();
+            $productID = $objMenu->getMenuItemID();
+            $query->bindParam("productName", $productName);
+            $query->bindParam("productPrice", $productPrice);
+            $query->bindParam("productImg", $productImg);
+            $query->bindParam("idProduct", $productID);
+            $query->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+            return null;
+        }
+
+        $dbh = null;
+    }
+
+    public function removeProduct($objMenu)
+    {
+        try {
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare('DELETE FROM Produtos WHERE idProduto = :idProduct');
+            $idProduct = $objMenu->getMenuItemID();
+            $query->bindParam("idProduct", $idProduct);
+            $query->execute();
+            return true;
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+            return null;
+        }
+
+        $dbh = null;
+    }
+
+    public function removeItemFood($idProduct)
+    {
+        try {
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare('DELETE FROM Comidas WHERE Produto_idProduto = :idProduct');
+            $query->bindParam("idProduct", $idProduct);
+            $query->execute();
+            return $query->rowCount();
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+            return null;
+        }
+
+        $dbh = null;
+    }
+
+    public function removeItemDrink($idProduct)
+    {
+        try {
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare('DELETE FROM Bebidas WHERE Produto_idProduto = :idProduct');
+            $query->bindParam("idProduct", $idProduct);
+            $query->execute();
+            return $query->rowCount();
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+            return null;
+        }
+
+        $dbh = null;
+    }
+
 }

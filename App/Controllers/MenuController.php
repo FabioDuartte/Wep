@@ -21,7 +21,6 @@ class MenuController
     {
         $_SESSION['lista-item'] = array();
         $_SESSION['lista-item'] = MenuDrinks::selectAllMenuItems();
-        
         ViewController::bebidas();
     }
 }

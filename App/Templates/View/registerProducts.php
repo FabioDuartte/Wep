@@ -60,11 +60,11 @@
             <ul class="navbar-nav ml-auto">
                 <a href="/Wep/home" class=" nav-link nav-item format-link" >Home</a>
                 <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>                 
-                <a href="/Wep/home/cadastrar-produtos" class=" nav-link nav-item format-link">Cadastrar Produto</a>                
+                <a href="/Wep/home/cadastrar-produtos" class=" nav-link nav-item format-link">Adicionar produto ao cardápio</a>                
                 <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>
-                <a href="/Wep/home/alterar-produto" class=" nav-link nav-item format-link">Alterar Produto</a>                  
+                <a href="/Wep/home/alterar-produto" class=" nav-link nav-item format-link">Alterar produto do cardápio</a>                  
                 <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>
-                <a href="/Wep/home/deletar-produto" class=" nav-link nav-item format-link">Excluir Produto</a>                  
+                <a href="/Wep/home/remover-produto" class=" nav-link nav-item format-link">Remover produto do cardápio</a>                  
                 <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>
                 <a href="/Wep/" class=" nav-link nav-item format-link">Sair</a>
             </ul>            

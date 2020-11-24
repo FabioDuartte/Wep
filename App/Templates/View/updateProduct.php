@@ -63,11 +63,11 @@
             <ul class="navbar-nav ml-auto">
                 <a href="/Wep/home" class=" nav-link nav-item format-link" >Home</a>
                 <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>                 
-                <a href="/Wep/home/cadastrar-produtos" class=" nav-link nav-item format-link">Cadastrar Produto</a>                
+                <a href="/Wep/home/cadastrar-produtos" class=" nav-link nav-item format-link">Adicionar produto ao cardápio</a>                
                 <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>
-                <a href="/Wep/home/alterar-produto" class=" nav-link nav-item format-link">Alterar Produto</a>                  
+                <a href="/Wep/home/alterar-produto" class=" nav-link nav-item format-link">Alterar produto do cardápio</a>                  
                 <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>
-                <a href="/Wep/home/deletar-produto" class=" nav-link nav-item format-link">Excluir Produto</a>                  
+                <a href="/Wep/home/remover-produto" class=" nav-link nav-item format-link">Remover produto do cardápio</a>                  
                 <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>
                 <a href="/Wep/" class=" nav-link nav-item format-link">Sair</a>
             </ul>            
@@ -82,7 +82,7 @@
             <div class="row ">
               <div class="col-md-12">
                 
-                <form method="POST" action="/Wep/home/cadastrar-produtos">
+                <form method="POST" action="/Wep/home/alterar-produto">
                 <h1 class="display-3  text-dark my-2" style="padding-top:25px">Alterar produtos</h1>
                 
                   <div class="form-group">
@@ -94,30 +94,30 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="fornecedor">Nome do produto</label>
-                      <input disabled name="product-name" type="text" value='' class="form-control" id="nome">
+                    <label for="fornecedor">Insira o nome do produto que deseja mudar</label>
+                      <input disabled name="product-oldName" type="text" value='' class="form-control" id="nome">
                   </div>
                   <div class="form-group">
-                    <label for="fornecedor">Nome do novo produto</label>
-                      <input disable name="product-newName" type="text" value='' class="form-control" id="novo-nome">
+                    <label for="fornecedor">Insira o novo nome do novo produto</label>
+                      <input disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo" name="product-newName" type="text" value='' class="form-control" id="novo-nome">
                   </div>
                   <div class="form-group">
-                    <label for="fornecedor">Preço</label>
-                      <input disabled placeholder="00.00" name="product-price" type="text" value='' class="form-control" id="preco">
+                    <label for="fornecedor">Insira o novo preço do produto</label>
+                      <input disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo: 00.00" name="product-price" type="text" value='' class="form-control" id="preco">
                   </div>
                   <div class="input-group mb-3">
                     <div class="custom-file">
-                      <label class="custom-file-label" for="addImg" aria-describedby="addImg">Adcionar imagem do produto</label>
+                      <label class="custom-file-label" for="addImg" aria-describedby="addImg">Insira uma nova imagem apenas se quiser mudar esse campo</label>
                       <input type="file" name="product-src" value='' class="custom-file-input" id="addImg">               
                     </div>                   
                   </div>
                   <div class="form-group">
                     <label for="fornecedor">Fornecedor</label>
-                      <input disabled name="drink-supplier" type="text" value='' class="form-control" id="fornecedor">
+                      <input disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo" name="drink-supplier" type="text" value='' class="form-control" id="fornecedor">
                   </div>
                   <div class="form-group">
                     <label for="descricao">Ingredientes</label>
-                    <textarea disabled placeholder="Adicione os ingredientes separados por virgula" value='' name="food-ingredients" class="form-control" id="ingredientes" ></textarea>
+                    <textarea disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo" placeholder="Adicione os ingredientes separados por virgula" value='' name="food-ingredients" class="form-control" id="ingredientes" ></textarea>
                   </div>
                   <input disabled id="submitAlter" type="submit" class="btn btn-lg  btn-success bg-success btn-block font-weight-bold" value="Salvar alterações" style="background: yellow">
                   <input type="reset" class="btn  btn-lg cancel btn-block font-weight-bold" value="Cancelar">

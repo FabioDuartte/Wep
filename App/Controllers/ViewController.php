@@ -67,9 +67,9 @@ class ViewController
     {
         require './App/Templates/View/updateProduct.php';
     }
-    static public function deleteProduct()
+    static public function removeProduct()
     {
-        require './App/Templates/View/deleteProduct.php';
+        require './App/Templates/View/removeProduct.php';
     }
 
 
