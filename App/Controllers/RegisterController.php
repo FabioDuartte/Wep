@@ -6,13 +6,14 @@ use App\Models\Customer;
 use App\Models\Card;
 use Utils\DataProcessing;
 
-
+session_start();
 
 class RegisterController extends DataProcessing
 {
     public function register()
     {
         if ($_POST) {
+            $_SESSION['error']='';
             $this->registerValidate();
         } else {
             ViewController::cadastro();
@@ -30,47 +31,39 @@ class RegisterController extends DataProcessing
         $userEmail = $this->validateEmail($this->cleanInput($_POST['email']));
 
         if (!is_numeric($userCPF) || strlen($userCPF) != 11) {
-            echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
-                                CPF invalido
-                            </div>';
-            
+            $_SESSION['error'] = "CPF invalido";            
             $this->registerFail();
         }
 
         if (!is_numeric($userCardNumber) || strlen($userCardNumber) < 14) {
-            echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
-                    Número do cartão inválido
-                  </div>';
+            $_SESSION['error'] = "Número do cartão Inválido";
             $this->registerFail();
         }
 
         if (!is_numeric($userCardCvv) || !is_numeric($userCardExpiry)) {
-            echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
-                    Dados do Cartão invalido;
-                </div>';
+            $_SESSION['error'] = "Usuário ou  CVV inválidos";
+            $this->registerFail();
+        }
+
+        if (is_numeric($userName)) {
+            $_SESSION['error'] = "Nome invalido";
             $this->registerFail();
         }
 
         if ($_POST['password'] === $_POST['re-password']) {
             $userPassword = $_POST['password'];
         } else {
-            echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
-                                     Senha inválida
-                                </div>';
+            $_SESSION['error'] = "O campo senha e confirmar senha não conferem ";
             $this->registerFail();
         }
 
         if (!$userEmail || strpos($userEmail, '@caldeiraofurado.com')) {
-            echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
-                            Nome inválido
-                    </div>';
+            $_SESSION['error'] = "Email invalido";
             $this->registerFail();
         }
 
         if (!$this->validateName($userName)) {
-            echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
-                                             Nome inválido!
-                                           </div>';
+            $_SESSION['error'] = "Nome inválido";
             $this->registerFail();
         }
 
@@ -80,9 +73,7 @@ class RegisterController extends DataProcessing
         $emailExists = $objCustomer->checkEmailInDB();
 
         if ($emailExists) {
-           echo '<div class="alert alert-danger text-center font-weight-bold" role="alert">
-                                                Email já cadastrado! 
-                                           </div>';
+            $_SESSION['error'] = "Email já cadastrado";
             $this->registerFail();
         }
 
@@ -92,13 +83,11 @@ class RegisterController extends DataProcessing
             $idCliente = $objCustomer->registerCustomer();
             $this->addCardToBD($objCustomer, $idCliente);
         } else {
-            echo'<div class="alert alert-danger text-center font-weight-bold" role="alert">
-                                                Dados do cartão são inválidos
-                                            </div>';
+            $_SESSION['error'] = "Dados do cartão inválido";
             $this->registerFail();
         }
         
-        // echo "Cadastro foi efetuado";
+        $_SESSION['success'] = "Cadastro foi efetuado com sucesso";
         header("Location: /Wep/login");
 
     }

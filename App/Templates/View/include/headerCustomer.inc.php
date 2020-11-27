@@ -1,13 +1,11 @@
 <div class="collapse navbar-collapse" id="nav-principal">  
-                    
     <ul class="navbar-nav ml-auto">  
     <li class="">
         <span class="text-warning font-weight-bold my-2 cashback">Bônus R$ <?php echo $_SESSION['user-Bonus']; ?> </span>
     </li>
     <li class="nav-item mx-4 bonus">
-        <a href="/Wep/home/minha-conta" class="text-warning mx-2 my-2 cart "> <i class="fas fa-shopping-cart mx-2"></i>0</a>
+        <a href="/Wep/home/minha-conta" class="text-warning mx-2 my-2 cart "> <i class="fas fa-shopping-cart mx-2"></i><?php echo count($_SESSION['cart-values']); ?></a>
     </li>
-    
     <li class="nav-link format-link">
         <div class="dropdown ">
             <span class="dropdown-toggle text-white d-flex" data-toggle="dropdown">

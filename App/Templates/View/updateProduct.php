@@ -46,8 +46,7 @@
 </head>
 
 <body>
-<header ><!--Inicio Header-->
-     
+<header ><!--Inicio Header-->     
         <nav class="class=navbar navbar-expand-sm navbar-warning nav-bg  nav-transparente">
         <div class="container">
           <!--Logo-->
@@ -76,89 +75,107 @@
     </div>
 </header><!--Fim Header-->
 
-    <section id="home" class="d-flex "> 
-        <div class="container align-self-center"  >
-          <div class="container">
-            <div class="row ">
-              <div class="col-md-12">
-                
-                <form method="POST" action="/Wep/home/alterar-produto">
-                <h1 class="display-3  text-dark my-2" style="padding-top:25px">Alterar produtos</h1>
-                
-                  <div class="form-group">
-                    <label for="tipoUpdate">Tipo do produto</label>
-                    <select name="product-type" class="form-control" id="tipoUpdate" onchange="disableInput()">
-                    <option value="">Selecione uma opção</option>
-                      <option value="mainCourseUpdate">Alterar Prato</option>
-                      <option value="drinkUpdate"> Alterar Bebida</option>
-                    </select>
+<section id="home" class="d-flex "> 
+<div class="container align-self-center"  >
+<div class="container">
+  <div class="row ">
+    <div class="col-md-12">                
+      <form method="POST" action="/Wep/home/alterar-produto">
+      <h1 class="display-3  text-dark my-2" style="padding-top:25px">Alterar produtos</h1>
+              <?php if (isset($_SESSION['error']) && !empty($_SESSION['error'])) { ?>
+                  <div id="info"class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                      <strong > <?php echo $_SESSION['error']; ?> </strong>                                
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
                   </div>
-                  <div class="form-group">
-                    <label for="fornecedor">Insira o nome do produto que deseja mudar</label>
-                      <input disabled name="product-oldName" type="text" value='' class="form-control" id="nome">
+              <?php
+              } else if (isset($_SESSION['success']) && !empty($_SESSION['success'])) { ?>
+                  <div id="info"class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                      <strong > <?php echo $_SESSION['success']; ?> </strong>                                
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
                   </div>
-                  <div class="form-group">
-                    <label for="fornecedor">Insira o novo nome do novo produto</label>
-                      <input disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo" name="product-newName" type="text" value='' class="form-control" id="novo-nome">
-                  </div>
-                  <div class="form-group">
-                    <label for="fornecedor">Insira o novo preço do produto</label>
-                      <input disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo: 00.00" name="product-price" type="text" value='' class="form-control" id="preco">
-                  </div>
-                  <div class="input-group mb-3">
-                    <div class="custom-file">
-                      <label class="custom-file-label" for="addImg" aria-describedby="addImg">Insira uma nova imagem apenas se quiser mudar esse campo</label>
-                      <input type="file" name="product-src" value='' class="custom-file-input" id="addImg">               
-                    </div>                   
-                  </div>
-                  <div class="form-group">
-                    <label for="fornecedor">Fornecedor</label>
-                      <input disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo" name="drink-supplier" type="text" value='' class="form-control" id="fornecedor">
-                  </div>
-                  <div class="form-group">
-                    <label for="descricao">Ingredientes</label>
-                    <textarea disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo" placeholder="Adicione os ingredientes separados por virgula" value='' name="food-ingredients" class="form-control" id="ingredientes" ></textarea>
-                  </div>
-                  <input disabled id="submitAlter" type="submit" class="btn btn-lg  btn-success bg-success btn-block font-weight-bold" value="Salvar alterações" style="background: yellow">
-                  <input type="reset" class="btn  btn-lg cancel btn-block font-weight-bold" value="Cancelar">
-                </form>
-                <div>
-                  
-                </div>
-              </div>
+              <?php
+              }
+              $_SESSION['success'] = "";
+              $_SESSION['error'] = "";
+              ?>                 
+            <div class="form-group">
+              <label for="tipoUpdate">Tipo do produto</label>
+              <select name="product-type" class="form-control" id="tipoUpdate" onchange="disableInput()">
+              <option value="">Selecione uma opção</option>
+                <option value="mainCourseUpdate">Alterar Prato</option>
+                <option value="drinkUpdate"> Alterar Bebida</option>
+              </select>
             </div>
-    </section>
-
-    <footer class="rodape my-5 ">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 ">
-            <ul class="nav justify-content-center ">
-              <li class="  nav-item">
-                <a class="nav-link " href="/Wep/home">Home</a>
-              </li>
-              <li class=" nav-item">
-                <a class="nav-link " href="/Wep/home/pratos">Pratos</a>
-              </li>
-              <li class=" nav-item">
-                <a class="nav-link " href="/Wep/home/bebidas">Bebidas</a>
-              </li>
-            </ul>
-          </div> 
-          <div class="col-md-12 my-2 notas">
-            <div class="text-center ">
-              <p>Endereço: Rua dos alfeneiros nº 4</p>
-              <p>Tel.: (xx) xxxx-xxxx</p>
-              <p>&copy; Copyright Caldeirão Furado </p>
+            <div class="form-group">
+              <label for="fornecedor">Insira o nome do produto que deseja mudar</label>
+                <input disabled name="product-oldName" type="text" value='' class="form-control" id="nome">
+            </div>
+            <div class="form-group">
+              <label for="fornecedor">Insira o novo nome do novo produto</label>
+                <input disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo" name="product-newName" type="text" value='' class="form-control" id="novo-nome">
+            </div>
+            <div class="form-group">
+              <label for="fornecedor">Insira o novo preço do produto</label>
+                <input disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo: 00.00" name="product-price" type="text" value='' class="form-control" id="preco">
+            </div>
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <label class="custom-file-label" for="addImg" aria-describedby="addImg">Insira uma nova imagem apenas se quiser mudar esse campo</label>
+                <input type="file" name="product-src" value='' class="custom-file-input" id="addImg">               
+              </div>                   
+            </div>
+            <div class="form-group">
+              <label for="fornecedor">Fornecedor</label>
+                <input disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo" name="drink-supplier" type="text" value='' class="form-control" id="fornecedor">
+            </div>
+            <div class="form-group">
+              <label for="descricao">Ingredientes</label>
+              <textarea disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo" placeholder="Adicione os ingredientes separados por virgula" value='' name="food-ingredients" class="form-control" id="ingredientes" ></textarea>
+            </div>
+            <input disabled id="submitAlter" type="submit" class="btn btn-lg  btn-success bg-success btn-block font-weight-bold" value="Salvar alterações" style="background: yellow">
+            <input type="reset" class="btn  btn-lg cancel btn-block font-weight-bold" value="Cancelar">
+          </form>
+          <div>
+            
           </div>
         </div>
-    
-          </div>  
-        </div>
-        
-    </footer>
+      </div>
+</section>
 
-    <script src="/Wep/App/Templates/View/scripts/disableUpdateProduct.js"> </script>
+<footer class="rodape my-5 ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 ">
+        <ul class="nav justify-content-center ">
+          <li class="  nav-item">
+            <a class="nav-link " href="/Wep/home">Home</a>
+          </li>
+          <li class=" nav-item">
+            <a class="nav-link " href="/Wep/home/pratos">Pratos</a>
+          </li>
+          <li class=" nav-item">
+            <a class="nav-link " href="/Wep/home/bebidas">Bebidas</a>
+          </li>
+        </ul>
+      </div> 
+      <div class="col-md-12 my-2 notas">
+        <div class="text-center ">
+          <p>Endereço: Rua dos alfeneiros nº 4</p>
+          <p>Tel.: (xx) xxxx-xxxx</p>
+          <p>&copy; Copyright Caldeirão Furado </p>
+      </div>
+    </div>
+
+      </div>  
+    </div>
     
+</footer>
+
+<script src="/Wep/App/Templates/View/scripts/disableUpdateProduct.js"> </script>
+
 </body>
 </html>

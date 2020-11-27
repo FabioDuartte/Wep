@@ -28,16 +28,32 @@ abstract class MenuItems
         return $menuDAO->selectItemByName($name);
     }
 
+    static public function selectItemLikeName($nameToSearch)
+    {
+        $menuDAO = new MenuDAO();
+        $menuItems = $menuDAO->selectItemLikeName($nameToSearch);
+        $items = array();
+            foreach ($menuItems as $menuItem) {
+                if ($menuDAO->verifyTypeByID($menuItem['idProduto'])) {
+                    $menuItem += $menuDAO->selectSupplier($menuItem['idProduto']);
+                } else {
+                    $menuItem += $menuDAO->selectIgredients($menuItem['idProduto']);
+                }
+                $items[] = $menuItem;
+            }
+        return $items;
+    }
+
     public function updateProduct()
     {
         $menuDAO = new MenuDAO();
         return $menuDAO->updateProduct($this);
     }
 
-    public function removeProduct()
+    public function removeProduct($idProduct)
     {
         $menuDAO = new MenuDAO();
-        return $menuDAO->removeProduct($this);
+        return $menuDAO->removeProduct($idProduct);
     }
 
     public function getMenuItemName()

@@ -1,4 +1,4 @@
-<div class="container ">
+<div class="container" style="width:30px;">
     <!--Logo-->  
     <div class="collapse navbar-collapse " id="nav-principal">             
         <ul class="navbar-nav ml-auto   "> 

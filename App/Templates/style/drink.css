@@ -137,7 +137,7 @@ a:link{
 /*Depoimentos*/
 
 #depoimentos {
-    background: url(../imagens/drink/drink.jpg) no-repeat;    
+    background: url(/Wep/App/Templates/imagens/drink/drink.jpg) no-repeat;    
     background-size: cover;
    
     

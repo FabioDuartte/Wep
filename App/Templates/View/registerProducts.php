@@ -81,7 +81,26 @@
                 
                 <form method="POST" action="/Wep/home/cadastrar-produtos">
                 <h1 class="display-3  text-dark my-2" style="padding-top:25px">Cadastrar produtos</h1>
-                
+                <?php if (isset($_SESSION['error']) && !empty($_SESSION['error'])) { ?>
+                            <div id="info"class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                                <strong > <?php echo $_SESSION['error']; ?> </strong>                                
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php
+                        } else if (isset($_SESSION['success']) && !empty($_SESSION['success'])) { ?>
+                            <div id="info"class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                                <strong > <?php echo $_SESSION['success']; ?> </strong>                                
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php
+                        }
+                        $_SESSION['success'] = "";
+                        $_SESSION['error'] = "";
+                        ?> 
                   <div class="form-group">
                     <label for="tipo">Tipo do produto</label>
                     <select name="product-type" class="form-control" id="tipo" onchange="disableInput()">

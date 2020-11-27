@@ -16,6 +16,7 @@ class IndexController
 
     public function home()
     {
+        $_SESSION['cart-values'] = array();
         ViewController::home();
     }
 

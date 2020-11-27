@@ -56,7 +56,7 @@
                       <span class="text-warning font-weight-bold my-2 cashback">Bonus R$ <?php echo $_SESSION['user-Bonus']; ?></span>
                     </li> 
                     <li class="nav-item mx-4 bonus">
-                        <a href="bill.php" class="text-warning mx-2 my-2 cart"> <i class="fas fa-shopping-cart mx-2"></i>3</a>
+                        <a href="bill.php" class="text-warning mx-2 my-2 cart"> <i class="fas fa-shopping-cart mx-2"></i><?php echo count($_SESSION['cart-values']); ?></a>
                   </li>
                   
                     <li class="nav-link format-link">

@@ -126,6 +126,71 @@ class MenuDAO
         $dbh = null;
     }
 
+    public function selectItemLikeName($nameToSearch)
+    {
+        try {
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare('SELECT * FROM Produtos WHERE nomeProduto LIKE :nameToSearch');
+            $nameToSearch = '%' . $nameToSearch . '%';
+            $query->bindParam("nameToSearch", $nameToSearch);
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOExeception $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+            return null;
+        }
+
+        $dbh = null;
+    }
+
+    public function selectIgredients($idProduct)
+    {
+        try {
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare('SELECT ingredientes FROM Comidas WHERE Produto_idProduto = :idProduto');
+            $query->bindParam("idProduto", $idProduct);
+            $query->execute();
+            return $query->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+            return null;
+        }
+        
+        $dbh = null;
+    }
+
+    public function selectSupplier($idProduct)
+    {
+        try{
+            $dbh = ConnectionDatabase::getConnection();   
+            $query = $dbh->prepare('SELECT fornecedor FROM Bebidas WHERE Produto_idProduto = :idProduto');
+            $query->bindParam("idProduto", $idProduct);
+            $query->execute();
+            return $query->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+            return null;
+        }
+        
+        $dbh = null;
+    }
+
+    public function verifyTypeByID($idProduct)
+    {
+        $dbh = ConnectionDatabase::getConnection();
+        try {
+            $query = $dbh->prepare("SELECT fornecedor FROM Bebidas WHERE Produto_idProduto = :idProduto");
+            $query->bindParam("idProduto", $idProduct);
+            $query->execute();
+            return $query->rowCount();
+        } catch (PDOException $e) {
+            echo "<script>alert('Erro');</script>";
+            return null;
+        }
+
+        $dbh = null;
+    }
+
     public function updateRegisterIngredientsFood($objMenu)
     {
         try {
@@ -185,12 +250,11 @@ class MenuDAO
         $dbh = null;
     }
 
-    public function removeProduct($objMenu)
+    public function removeProduct($idProduct)
     {
         try {
             $dbh = ConnectionDatabase::getConnection();
             $query = $dbh->prepare('DELETE FROM Produtos WHERE idProduto = :idProduct');
-            $idProduct = $objMenu->getMenuItemID();
             $query->bindParam("idProduct", $idProduct);
             $query->execute();
             return true;
@@ -233,5 +297,7 @@ class MenuDAO
 
         $dbh = null;
     }
+
+
 
 }

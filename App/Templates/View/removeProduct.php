@@ -81,9 +81,29 @@
             <div class="row ">
               <div class="col">                
                 <form method="POST" action="/Wep/home/remover-produto">
-                    <h1 class="display-3  text-dark my-2" style="padding-top:25px">Remover produto</h1>                 
+                    <h1 class="display-3  text-dark my-2" style="padding-top:25px">Remover produto</h1>
+                    <?php if (isset($_SESSION['error']) && !empty($_SESSION['error'])) { ?>
+                            <div id="info"class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                                <strong > <?php echo $_SESSION['error']; ?> </strong>                                
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php
+                        } else if (isset($_SESSION['success']) && !empty($_SESSION['success'])) { ?>
+                            <div id="info"class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                                <strong > <?php echo $_SESSION['success']; ?> </strong>                                
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php
+                        }
+                        $_SESSION['success'] = "";
+                        $_SESSION['error'] = "";
+                        ?>                  
                     <div class="form-group">                   
-                    <select name="product-type" class="form-control" id="tipoDelete">
+                    <select name="product-type" class="form-control" id="tipoDelete" onchange='disableinput()'>
                       <option value="">Selecione uma opção</option>
                       <option value="mainCourseDelete">Remover um prato</option>
                       <option value="drinkDelete">Remover uma bebida</option>
@@ -91,9 +111,9 @@
                   </div>   
                     <div class="form-group">
                         <label for="fornecedor">Nome do produto</label>
-                        <input  name="product-name" type="text" value='' class="form-control" id="nome">
+                        <input   disable  name="product-name" type="text" value=''class="form-control" id="nome">
                     </div>                  
-                    <input  id="submitAlter" type="submit" class="btn btn-lg  btn-dark bg-dark btn-block font-weight-bold" value="Excluir item" style="background: yellow">                  
+                    <button  disable='' id="submitDel"  type="submit" class="btn btn-lg  btn-dark bg-dark btn-block font-weight-bold" value="">Excluir item</button>                  
                 </form>
                <div>
             </div>
@@ -130,7 +150,7 @@
         
     </footer>
 
-    <script src="/Wep/App/Templates/View/scripts/disableButtons.js"> </script>
+    <script src="/Wep/App/Templates/View/scripts/disableDelete.js"> </script>
     
 </body>
 </html>

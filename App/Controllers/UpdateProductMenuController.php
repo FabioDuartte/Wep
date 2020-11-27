@@ -6,11 +6,14 @@ use App\Models\MenuFoods;
 use App\Models\MenuDrinks;
 use Utils\DataProcessing;
 
+session_start();
+
 class UpdateProductMenuController extends DataProcessing
 {
     public function updateProduct()
     {
         if ($_POST) {
+            $_SESSION['error'] = '';
             $this->updateProductValidate();
         } else {
             ViewController::updateProduct();
@@ -25,7 +28,7 @@ class UpdateProductMenuController extends DataProcessing
         $newProductImg = $this->cleanInput($_POST['product-src']);
 
         if (!$currentProductName) {
-            // echo "Você precisa escolher qual produto será alterado";
+            $_SESSION['error'] = "Você precisa escolher qual produto será alterado";
             $this->updateProductFail();
         }
 
@@ -52,13 +55,13 @@ class UpdateProductMenuController extends DataProcessing
             if ($newProductSupplier) {
                 $objMenu->setSupplier($newProductSupplier);
                 if (!$objMenu->updateRegisterSupplierDrink()) {
-                    // echo "Problema na atualização do fornecedor tente novamente";
+                    $_SESSION['error'] = "Problema na atualização do fornecedor tente novamente";
                     $this->updateProductFail();
                 }
             }
         }
 
-        // echo "Produto alterado com sucesso";
+        $_SESSION['success'] = "Produto alterado com sucesso";
         header("Location: /Wep/home/alterar-produto");
 
     }
@@ -75,7 +78,7 @@ class UpdateProductMenuController extends DataProcessing
     {
         $item = $objMenu->selectItemByName($currentProductName);
         if (!$item) {
-            // echo "Nome escolhido não se encontra em um produto do menu verifique os pratos para ter certeza do nome escolhido";
+            $_SESSION['error'] = "Nome escolhido não se encontra em um produto do menu verifique os pratos para ter certeza do nome escolhido";
             $this->updateProductFail();
         } else {
             $objMenu->setMenuItemName($item['nomeProduto']);
@@ -89,7 +92,7 @@ class UpdateProductMenuController extends DataProcessing
             
             if ($newProductPrice) {
                 if (!is_numeric($newProductPrice) || !$this->validateFloat($newProductPrice) || $newProductPrice < 0) {
-                    // echo "Preço inserido é invalido";
+                    $_SESSION['error'] = "Preço inserido é invalido";
                     $this->updateProductFail();
                 }
                 $objMenu->setMenuItemPrice($newProductPrice);
@@ -100,7 +103,7 @@ class UpdateProductMenuController extends DataProcessing
             }
 
             if (!$objMenu->updateProduct()) {
-                // echo "Produto não foi atualizado com sucesso tente outra vez ou verifique se ocorreu tudo bem";
+                $_SESSION['error'] = "Produto não foi atualizado com sucesso tente outra vez ou verifique se ocorreu tudo bem";
                 $this->updateProductFail();
             }
 

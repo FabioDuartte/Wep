@@ -9,10 +9,8 @@
                 <div class="dropdown-menu dropdown-menu-right">
                     <a href="/Wep/home/" class="dropdown-item nav-item format-link ">Home</a>                   
                     <div class="dropdown-divider"></div>
-                    <a href="/Wep/home/cadastrar-produtos" class="dropdown-item nav-item format-link ">Cadastrar produtos</a>                   
-                    <div class="dropdown-divider"></div>
-                    <a href="/Wep/home/alterar-produto" class="dropdown-item nav-item format-link ">Alterar Produto</a>
-                    <div class="dropdown-divider"></div>
+                    <a href="/Wep/home/cadastrar-produtos" class="dropdown-item nav-item format-link ">Gerenciar produtos</a>                   
+                    <div class="dropdown-divider"></div>                   
                     <a href="/Wep/" class="dropdown-item nav-item format-link">Sair</a>
                 </div>
             </div>   

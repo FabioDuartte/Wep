@@ -26,10 +26,13 @@
     <!-- Estilo customizado -->
     <link rel="stylesheet" type="text/css" href="/Wep/App/Templates/style/drink.css">
 
-    
-    
+   <style>
+      #depoimentos {
+          background: url(./App/Templates/imagens/drink/drink.jpg) no-repeat ;    
+          background-size: cover;
+      }
+   </style>
 </head>
-
 <body>
     <header><!--Inicio Header-->
        <?php include "./App/Templates/View/include/header.inc.php";?>
@@ -49,10 +52,10 @@
           <li class="nav-item">
             <a class="nav-link " href="/Wep/home">Home</a>
           </li>
-         
+
           <li class=" nav-item">
             <a class="nav-link" href="/Wep/home/pratos">Pratos</a>
-          </li>          
+          </li>
           <li class=" nav-item">
             <a class="nav-link active" href="/Wep/home/bebidas">Bebidas</a>
           </li>
@@ -62,16 +65,10 @@
     </section>
 
     <section id="cafe" class="d-flex">
-        <div class="container ">
-            <div id="card" class="row">
-                <div class="col-md-12 ">
-                    <div class="card-deck my-5">
-                        <?php include "./App/Templates/View/include/productsDrinks.inc.php" ?>
-                        
-                    </div>
-                </div>  
-              </div>
-            <div>
+        <div class="container">
+            <div id="card" class="row justify-content-center">
+                  <?php include "./App/Templates/View/include/products.inc.php" ?>                        
+            </div>
          </div>
     </section>
 

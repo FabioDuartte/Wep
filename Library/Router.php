@@ -1,6 +1,7 @@
 <?php
 
 namespace Library;
+
 class Router
 {
     private $routes;
@@ -13,7 +14,12 @@ class Router
 
     private function initRoutes()
     {
-        $this->routes['/Wep/'] = array('controller' => 'IndexController', 'action' => 'index');
+        $this->routes['/Wep/'] = 
+        array(
+            'controller' => 'IndexController'
+            , 'action' => 'index'
+        );
+
         $this->routes['/Wep/login'] = array('controller' => 'LoginController', 'action' => 'login');
         $this->routes['/Wep/login/nada-para-ver-aqui'] = array('controller' => 'IndexController', 'action' => 'soon');
         $this->routes['/Wep/cadastro'] = array('controller' => 'RegisterController', 'action' => 'register');
@@ -34,7 +40,7 @@ class Router
         if (array_key_exists($url, $this->routes)) {
             $instanceClass = "\\App\\Controllers\\" . $this->routes[$url]['controller'];
             $controller = new $instanceClass;
-            $action = $this->routes[$url]['action'];
+            $action = $this->routes[$url]['action'];           
             $controller->$action();
         }
     }

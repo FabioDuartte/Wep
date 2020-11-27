@@ -25,11 +25,12 @@ class MenuFoods extends MenuItems
     {
         $menuDAO = new MenuDAO();
         $menuItems = $menuDAO->selectForTypeMenuItemFood();
+        $items = array();    
             foreach ($menuItems as $menuItem) {
                 $menuItem += $menuDAO->selectAllMenuItems($menuItem['Produto_idProduto']);
-                $define[] = $menuItem;
+                $items[] = $menuItem;
             }
-        return $define;
+        return $items;
     }
 
     public function updateRegisterIngredientsFood()

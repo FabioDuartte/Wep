@@ -6,11 +6,14 @@ use App\Models\MenuFoods;
 use App\Models\MenuDrinks;
 use Utils\DataProcessing;
 
+session_start();
+
 class RemoveProductMenuController extends DataProcessing
 {
     public function removeProduct()
     {
         if ($_POST) {
+            $_SESSION['error']='';
             $this->removeProductValidate();
         } else {
             ViewController::removeProduct();
@@ -30,13 +33,13 @@ class RemoveProductMenuController extends DataProcessing
             $objMenu = new MenuFoods("", "", "", "");
             $itemToRemove = $objMenu->selectItemByName($nameToRemove);
             if (!$itemToRemove) {
-                echo "Não há nenhum item cadastrado com esse nome";
+                $_SESSION['error'] = "Não há nenhum item cadastrado com esse nome!";
                 $this->removeProductFail();
             } else {
                 if ($objMenu->removeItemFood($itemToRemove['idProduto'])) {
-                    $objMenu->removeProduct();
+                    $objMenu->removeProduct($itemToRemove['idProduto']);
                 } else {
-                    echo "O produto ao qual se refere não é um Prato, pode ser uma Bebidas ou não está contido no cardápio";
+                    $_SESSION['error'] =  "O produto ao qual se refere não é um Prato, pode ser uma Bebidas ou não está contido no cardápio";
                     $this->removeProductFail();
                 }
             }
@@ -45,22 +48,19 @@ class RemoveProductMenuController extends DataProcessing
             $objMenu = new MenuDrinks("", "", "", "");
             $itemToRemove = $objMenu->selectItemByName($nameToRemove);
             if (!$itemToRemove) {
-                echo "Não há nenhum item cadastrado com esse nome";
+                $_SESSION['error'] =  "Não há nenhum item cadastrado com esse nome";
                 $this->removeProductFail();
             } else {
                 if ($objMenu->removeItemDrink($itemToRemove['idProduto'])) {
-                    $objMenu->removeProduct();
+                    $objMenu->removeProduct($itemToRemove['idProduto']);
                 } else {
-                    echo "O produto ao qual se refere não é uma Bebida, pode ser um Prato ou não está contido no cardápio";
+                    $_SESSION['error'] =  "O produto ao qual se refere não é uma Bebida, pode ser um Prato ou não está contido no cardápio";
                     $this->removeProductFail();
                 }
             }
         }
-        
-
-        echo "Tudo ocorreu bem";
-        header("Location: /Wep/home/remover-produto");
-            
+            $_SESSION['success'] =  "Produto removido com sucesso";
+            header("Location: /Wep/home/remover-produto");
     }
 
     private function removeProductFail()

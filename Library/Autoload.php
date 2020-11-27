@@ -5,7 +5,7 @@ namespace Library;
 /**
  * Carregamento automático de Classes
  *
- * @category Restaurant
+ * @category Wep
  * @package  Library
  *
 **/
@@ -24,7 +24,7 @@ class Autoload
      * @return retorna uma exceção caso o arquivo não seja encontrado, carrega o arquivo caso seja.
      *
     **/
-    private function load($nameSpace)
+    private function load($nameSpace) 
     {
         $nameSpaceInArray = explode('\\', $nameSpace);
         $className = array_pop($nameSpaceInArray);

@@ -48,7 +48,7 @@ class DataProcessing
 
     public function validateName($name)
     {
-        return preg_match("/^[a-zA-Z-' ]*$/",$name);
+        return preg_match("/^[a-zA-Z-0-9' ]*$/",$name);
     }
         
     public function ignoreNegative($data)

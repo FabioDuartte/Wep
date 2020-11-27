@@ -68,31 +68,7 @@
                     </form><!--fim form-->   
                 </div>
 
-                <li class="nav-link format-link">
-                    <div class="dropdown ">
-                        <span class="dropdown-toggle text-white" data-toggle="dropdown">
-                            <i class="far fa-user"></i> 
-                        </span>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a href="/Wep/home" class="dropdown-item nav-item format-link ">Home</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="/Wep/" class="dropdown-item nav-item format-link">Sair</a>
-                        </div>
-                    </div>
-                </li>
-              </ul>
-          </div>
-        </div>
-    </nav>
-</header><!--Fim Header-->
-
-    <section id="home" class="d-flex "> 
-        <div class="container align-self-center"  >
-          <div class="container">
-            <div class="row ">
-              <div class="col">
                 
-            </div>
     </section>
 
     <script src="./App/Templates/View/scripts/validaForm.js"></script>

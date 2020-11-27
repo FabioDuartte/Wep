@@ -11,8 +11,10 @@ session_start();
 class LoginController extends DataProcessing
 {
     public function login()
-    {
+    {   
+       
         if ($_POST) {
+            $_SESSION['error']='';
             $this->loginValidation();
         } else {
             ViewController::login();
@@ -24,7 +26,7 @@ class LoginController extends DataProcessing
         $userEmail = $this->validateEmail($this->cleanInput($_POST['email']));
         $userPassword = $_POST["password"];
         if (!$userEmail) {
-            // echo "Email invalido";
+            $_SESSION['error'] = "Email invalido";
             $this->loginFail();
 
         } else if (strpos($userEmail, '@caldeiraofurado.com')) {
@@ -32,7 +34,7 @@ class LoginController extends DataProcessing
             $user = $objEmployee->loginEmployee();
 
             if (!$user) {
-                // echo "Email incorreto";
+                $_SESSION['error'] = "Email incorreto" ;
                 $this->loginFail();
 
             } else {
@@ -41,7 +43,7 @@ class LoginController extends DataProcessing
                     header("Location: /Wep/home");
 
                 } else {
-                    // echo "Senha incorreta"
+                    $_SESSION['error'] = "Senha incorreta";
                     $this->loginFail();
                 }
             }
@@ -50,7 +52,7 @@ class LoginController extends DataProcessing
             $objCustomer = new Customer("", $userEmail, "", $userPassword);
             $user = $objCustomer->loginCustomer();
             if (!$user) {
-                // echo "Email incorreto";
+                $_SESSION['error'] = "Email incorreto";
                 $this->loginFail();
 
             } else {
@@ -59,7 +61,7 @@ class LoginController extends DataProcessing
                     header("Location: /Wep/home");
 
                 } else {
-                    // echo "Senha incorreta"
+                    $_SESSION['error'] = "Senha incorreta";
                     $this->loginFail();
                 }
 
