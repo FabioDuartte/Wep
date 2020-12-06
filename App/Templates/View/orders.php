@@ -48,7 +48,7 @@
      <nav class="class=navbar navbar-expand-sm navbar-warning nav-bg  nav-transparente">
      <div class="container">
        <!--Logo-->
-       <a  href="#" class="navbar-brand" style="color: white;">
+       <a  href="/Wep/home" class="navbar-brand" style="color: white;">
         <img src="/Wep/App/Templates/images/logo/logo-removebg-preview.png" alt="" width="120px" class="logo" >
        </a>
        <!--Menu Hamburguer-->
@@ -67,7 +67,7 @@
 
 
     <section id="home" class="d-flex "> 
-        <div class="container align-self-center"  >
+        <div class="container align-self-center">
           <div class="container">
             <div class="row ">
               <div class="col " >               
@@ -98,5 +98,6 @@
         </div>        
     </footer>
     <script src="/Wep/App/Templates/View/scripts/situationButton.js"> </script>
+
 </body>
 </html>

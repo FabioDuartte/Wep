@@ -13,7 +13,7 @@ class TrackOrderController
     {
         $_SESSION['orders-placed'] = array();
         $objBill = new Bill($_SESSION['id-user']);
-        $objOrder = new Order("", $_SESSION['cart-items'], $_SESSION['bill-amount']);
+        $objOrder = new Order('', $_SESSION['cart-items'], $_SESSION['bill-amount']);
         if ($_POST) {
             if (empty($_SESSION['cart-items'])) {
                 $this->trackOrderFail();

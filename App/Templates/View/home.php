@@ -81,6 +81,7 @@
     <?php include "./App/Templates/View/include/footer.inc.php" ?>
     <!-- FIM RODAPE-->
     
+    <script src="/Wep/App/Templates/View/scripts/search.js"> </script>
     
     
     

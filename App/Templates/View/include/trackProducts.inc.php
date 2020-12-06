@@ -7,6 +7,7 @@ if ($_SESSION['user-type'] === 'Cliente') {
                 <div>
                     <div>
                         <tr>
+
                             <td class="cart-price">#<?php echo $item['idPedido']; ?></td>
                             <td><?php echo $item['nomeProduto']; ?></td>
                             <td><?php echo $item['qtdItensPedidos']; ?></td>
@@ -27,7 +28,19 @@ if ($_SESSION['user-type'] === 'Cliente') {
         <?php
         }
     } else {
-        echo 'Não há nenhum pedido em aberto';
+    ?>
+   
+        <tr>
+        <th>
+            <div class="row justify-content-end" >
+                <div class="mr-5" style="order: 1px solid red"><img  class="mx-5"src="/Wep/App/Templates/images/background/emptyCart.png" alt="Carrinho vazio"></div>
+                <span class="row justify-content-end text-secondary"><br>Sua lista está vazia,<br><a class="mx-1"href="/Wep/home">clique aqui</a><br>para realizar um pedido</span>
+            </div>
+            </th>
+        </tr>
+       
+    <?php
+
     }
 } else {
     if (!empty($_SESSION['all-orders-open'])) {
@@ -53,9 +66,21 @@ if ($_SESSION['user-type'] === 'Cliente') {
     <?php
         }
     } else {
-        echo 'Não há nenhum pedido em aberto';
+        
 ?>
-<?php
+
+    
+<tr>
+        <th>
+            <div class="row justify-content-end" >
+                <div class="mr-5" style="order: 1px solid red"><img  class="mx-5"src="/Wep/App/Templates/images/background/cozinhaPedidos.png" alt="Carrinho vazio"></div>
+                <span class="row justify-content-end text-secondary mx-2"><br>lista está vazia, nenhum cliente realizou um pedido</span>
+            </div>
+            </th>
+        </tr>
+    <?php
+
+
     }
 }
 ?>

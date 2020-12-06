@@ -87,29 +87,31 @@
 
     <section id="home" class="d-flex "> 
         <div class="container align-self-center"  >
-          <div class="container">
-            <div class="row ">
-              <div class="col " >               
-              <form action="">
+          <div class="container" style="height:500px">
+            <div class="row">
+              <div class="col" >  
                 <h1 class="display-3  text-dark">Meus pedidos</h1>
                     <table class="table"> 
-                      <thead class="bg-dark text-white">
+                      <thead class="thead-dark text-white">                                        
                         <tr>
-                          <th>Id do pedido</th>                          
-                          <th>Nome do prato </th>
-                          <th>Quantidade</th>
-                          <th>Situação do pedido</th>
-                        </tr>                        
-                      </thead>
+                          <th scope="col">Id do pedido</th>                          
+                          <th scope="col">Nome do prato </th>
+                          <th scope="col">Quantidade</th>
+                          <th scope="col">Situação do pedido</th>
+                        </tr>                                            
+                      </thead>                      
+                      <tbody>
                         <?php
                         include './App/Templates/View/include/trackProducts.inc.php';
                         ?>
+                      <tbody>
                     </table>
-                  </form>
                </div>
       </section>
 
     <?php include "./App/Templates/View/include/footer.inc.php" ?>
     
+     
+    <script src="/Wep/App/Templates/View/scripts/search.js"> </script>
 </body>
 </html>

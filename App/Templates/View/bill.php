@@ -115,7 +115,7 @@
                    </div>
                   <div class="my-2">
                     <form method="POST" action="/Wep/home/minha-conta/acompanhar-pedidos">
-                        <button type="submit" name="orders" id="close" class="btn btn-block btn-lg btn-success  font-weight-bold">Efetuar pedido</button>
+                        <button type="submit" name="orders" id="close" class="btn btn-block btn-lg btn-success my-2 font-weight-bold">Efetuar pedido</button>
                     </form>
                     <form action="">
                         <button type="button" name="close" id="close" data-toggle="modal" data-target="#modal-finalizarCompra" class="btn btn-block btn-lg btn-warning font-weight-bold">Finalizar Conta</button>
@@ -183,6 +183,8 @@
 
 
         <?php include "./App/Templates/View/include/footer.inc.php" ?>
+         
+    <script src="/Wep/App/Templates/View/scripts/search.js"> </script>
 
 </body>
 </html>

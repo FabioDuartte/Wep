@@ -12,9 +12,9 @@
         <form action="/Wep/home/pratos"  method="GET">
         <div class="  mx-5 text-center pesquisa " style="width:550px; "><!--inicio pesquisa-->
         <div class="input-group">
-            <input name="search" class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" style="border-right: none;">
+            <input name="search" class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" id="input" style="border-right: none;">
             <div class="input-group-append">
-            <div class="input-group-text" ><button type="submit" class="btn btn-md btn-white"> <i class="fas fa-search"></i></button></div>
+            <div class="input-group-text" ><button type="submit" id="buttonSearch" class="btn btn-md btn-white"> <i class="fas fa-search"></i></button></div>
             </div>
         </div>
         </div><!--Fim  pesquisa-->
