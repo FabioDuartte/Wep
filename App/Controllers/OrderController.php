@@ -39,13 +39,15 @@ class OrderController
                 $_SESSION['bill-amount'] += $item['product-price'] * $item['product-quantity'];
             }
         }
-        
-        
         ViewController::bill();
     }
 
     public function viewOrders()
     {
+        if ($_GET) {
+            
+        }
+        
         $objOrder = new Order("", "", "",);
         $_SESSION['all-orders-open'] = $objOrder->getAllOrdersOpen();
         ViewController::orders();

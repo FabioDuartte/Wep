@@ -9,7 +9,7 @@
             <i class="fas fa-bars text-dark"></i>
         </button>
         <!--Navegação-->
-        <form action="/Wep/home/pratos"  method="POST">
+        <form action="/Wep/home/pratos"  method="GET">
         <div class="  mx-5 text-center pesquisa " style="width:550px; "><!--inicio pesquisa-->
         <div class="input-group">
             <input name="search" class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" style="border-right: none;">

@@ -74,11 +74,11 @@ class OrderDAO
     {
         try {
             $dbh = ConnectionDatabase::getConnection();
-            $query = $dbh->prepare('SELECT Pedidos.idPedido, Produtos.nomeProduto, ItensPedidosPeloCliente.qtdItensPedidos FROM Contas
+            $query = $dbh->prepare('SELECT Pedidos.idPedido, Pedidos.statusPedido, Produtos.nomeProduto, ItensPedidosPeloCliente.qtdItensPedidos FROM Contas
              INNER JOIN Pedidos ON Contas.idConta = Pedidos.Conta_idConta
               INNER JOIN ItensPedidosPeloCliente ON ItensPedidosPeloCliente.Pedido_idPedido = Pedidos.idPedido
                INNER JOIN Produtos ON ItensPedidosPeloCliente.Produto_idProduto = Produtos.idProduto
-                WHERE Pedidos.statusPedido = 1 AND Contas.Cliente_idCliente = :idCustomer');
+                WHERE Contas.Cliente_idCliente = :idCustomer');
             $query->bindParam("idCustomer", $idCustomer);
             $query->execute();
             return $query->fetchAll(PDO::FETCH_ASSOC);
@@ -94,7 +94,7 @@ class OrderDAO
     {
         try {
             $dbh = ConnectionDatabase::getConnection();
-            $query = $dbh->prepare('SELECT Contas.Cliente_idCliente, Produtos.nomeProduto, ItensPedidosPeloCliente.qtdItensPedidos FROM Contas
+            $query = $dbh->prepare('SELECT Contas.Cliente_idCliente, Produtos.nomeProduto, Pedidos.idPedido, ItensPedidosPeloCliente.qtdItensPedidos FROM Contas
             INNER JOIN Pedidos ON Contas.idConta = Pedidos.Conta_idConta
              INNER JOIN ItensPedidosPeloCliente ON ItensPedidosPeloCliente.Pedido_idPedido = Pedidos.idPedido
               INNER JOIN Produtos ON ItensPedidosPeloCliente.Produto_idProduto = Produtos.idProduto

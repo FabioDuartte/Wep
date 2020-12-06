@@ -1,37 +1,38 @@
 <?php 
 if ($_SESSION['user-type'] === 'Cliente') {
-    if (empty($_SESSION['order'])) {
-        echo 'Não há nenhum pedido em aberto';
-    } else {
-
-    foreach ($_SESSION['order'] as $item) {
-?>
-        <tbody>
-            <div>
+    if (!empty($_SESSION['order'])) {
+        foreach ($_SESSION['order'] as $item) {
+        ?>
+            <tbody>
                 <div>
-                    <tr>
-                        
-                        <td class="cart-price">#<?php echo $item['idPedido']; ?></td>
-                        <td><?php echo $item['nomeProduto']; ?></td>
-                        <td><?php echo $item['qtdItensPedidos']; ?></td>
-                        <td>
-                        <form action="#">
-                            <input type="submit" class="btn btn-md btn-warning font-weight-bold" id="change" onclick=changeStatus() value="Em aberto" style="width: 152px">
-                        </form>
-                        </td>
-                    </tr>
+                    <div>
+                        <tr>
+                            <td class="cart-price">#<?php echo $item['idPedido']; ?></td>
+                            <td><?php echo $item['nomeProduto']; ?></td>
+                            <td><?php echo $item['qtdItensPedidos']; ?></td>
+                            <td>
+                            <?php if ($item['statusPedido'] === '0') { ?>
+                                <input type="button" disabled="" class="btn btn-md btn-secondary font-weight-bold" value="Finalizado" style="width: 152px">
+                            <?php } else { ?>
+                                <form method="GET" action="/Wep/home/minha-conta/acompanhar-pedidos">
+                                <!--Tenho que fazer ainda-->
+                                    <input type="submit" name="customer-btn" class="btn btn-md btn-danger font-weight-bold" id="change" value="Cancelar" style="width: 152px">
+                                </form>
+                            <?php } ?>
+                            </td>
+                        </tr>
+                    </div>
                 </div>
-            </div>
-        </tbody>
-<?php
+            </tbody>
+        <?php
         }
+    } else {
+        echo 'Não há nenhum pedido em aberto';
     }
 } else {
-    if (empty($_SESSION['all-orders-open'])) {
-        echo 'Não há nenhum pedido em aberto';
-    } else {
-    foreach ($_SESSION['all-orders-open'] as $item) {
-?>
+    if (!empty($_SESSION['all-orders-open'])) {
+        foreach ($_SESSION['all-orders-open'] as $item) {
+    ?>
         <tbody>
             <div>
                 <div>
@@ -40,14 +41,22 @@ if ($_SESSION['user-type'] === 'Cliente') {
                         <td><?php echo $item['nomeProduto']; ?></td>
                         <td><?php echo $item['qtdItensPedidos']; ?></td>
                         <td>
-                            <button type="button" class="btn btn-md btn-warning font-weight-bold" id="change" onclick=changeStatus() value="Em aberto" style="width: 152px"></button>
+                            <form method="GET" action="/Wep/home/pedidos-feito">
+                                <input type="text" hidden name="id-pedido" value="<?php echo $item['idPedido']; ?>">
+                                <input type="submit" class="btn btn-md btn-success font-weight-bold" style="width: 152px" value="Fechar Pedido">
+                            </form>
                         </td>
                     </tr>
                 </div>
             </div>
         </tbody>
-<?php
+    <?php
         }
+    } else {
+        echo 'Não há nenhum pedido em aberto';
+?>
+<?php
     }
 }
 ?>
+
