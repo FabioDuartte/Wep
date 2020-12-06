@@ -137,11 +137,10 @@ a:link{
 /*Depoimentos*/
 
 #depoimentos {
-    background: url(/Wep/App/Templates/imagens/drink/drink.jpg) no-repeat;    
+    background: url(../imagens/drink/drink.jpg) no-repeat;    
     background-size: cover;
-   
-    
 }
+
 #depoimentos {
     font-family: 'Courgette', cursive;
     font-weight: bold;

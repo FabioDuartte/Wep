@@ -38,7 +38,6 @@
         /*background:#ffc107;*/
       }
     
-
     </style>
 
 </head>
@@ -74,27 +73,18 @@
               <div class="col " >               
               <form action="">
                 <h1 class="display-3  text-dark">Pedidos em Aberto</h1>
-                    <table class="table"> 
+                    <table class="table">
                       <thead class="bg-dark text-white">
                         <tr>
-                          <th>Id do pedido</th>                          
+                          <th>Id do cliente</th>                          
                           <th>Nome do prato </th>
-                          <th>Descrição</th>
+                          <th>Quantidade</th>
                           <th>Situação do pedido</th>
-                        </tr>                        
+                        </tr>
                       </thead>
-                      <tbody>
-                        <div>
-                          <div>
-                              <tr>
-                                  <td class="cart-price">#1</td>
-                                  <td>Omelete</td>                                
-                                  <td>Omelete de forno </td> 
-                                  <td><input type="button" class="btn btn-md btn-warning font-weight-bold" id="change" onclick=changeStatus() value="Em aberto" style="width: 152px"></button></td>
-                              </tr>
-                          </div>                     
-                        </div>
-                      </tbody>
+                      <?php
+                        include './App/Templates/View/include/trackProducts.inc.php';
+                        ?>
                     </table>
                   </form>
                </div>

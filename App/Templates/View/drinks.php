@@ -28,7 +28,7 @@
 
    <style>
       #depoimentos {
-          background: url(./App/Templates/imagens/drink/drink.jpg) no-repeat ;    
+          background: url(./App/Templates/imagens/drink/drink.jpg) no-repeat;    
           background-size: cover;
       }
    </style>

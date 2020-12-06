@@ -12,7 +12,6 @@ class LoginController extends DataProcessing
 {
     public function login()
     {   
-       
         if ($_POST) {
             $_SESSION['error']='';
             $this->loginValidation();
@@ -23,7 +22,7 @@ class LoginController extends DataProcessing
 
     public function loginValidation()
     {
-        $userEmail = $this->validateEmail($this->cleanInput($_POST['email']));
+        $userEmail = parent::validateEmail(parent::cleanInput($_POST['email']));
         $userPassword = $_POST["password"];
         if (!$userEmail) {
             $_SESSION['error'] = "Email invalido";
@@ -81,6 +80,7 @@ class LoginController extends DataProcessing
     {
         $_SESSION['id-user'] = $user['idFuncionario'];
         $_SESSION['user-name'] = $user['nomeFuncionario'];
+        $_SESSION['all-orders-open'] = array();
         $_SESSION['user-type'] = ($user['cargo'] === "Gerente") ? "Gerente" : "Funcionario";
     }
 
@@ -89,6 +89,10 @@ class LoginController extends DataProcessing
         $_SESSION['id-user'] = $user['idCliente'];
         $_SESSION['user-name'] = $user['nomeCliente'];
         $_SESSION['user-Bonus'] = $user['bonusCliente'];
+        $_SESSION['order'] = array();
+        $_SESSION['cart-items-quantity'] = 0;
+        $_SESSION['cart-items'] = array();
+        $_SESSION['bill-amount'] = 0;
         $_SESSION['user-type'] = "Cliente";
     }
 

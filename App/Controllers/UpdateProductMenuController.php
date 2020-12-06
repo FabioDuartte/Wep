@@ -22,10 +22,10 @@ class UpdateProductMenuController extends DataProcessing
 
     private function updateProductValidate()
     {
-        $currentProductName = $this->cleanInput($_POST['product-oldName']);
-        $newProductName = $this->cleanInput($_POST['product-newName']);
-        $newProductPrice = $this->formatDataMoney($this->cleanInput($_POST['product-price']));
-        $newProductImg = $this->cleanInput($_POST['product-src']);
+        $currentProductName = parent::cleanInput($_POST['product-oldName']);
+        $newProductName = parent::cleanInput($_POST['product-newName']);
+        $newProductPrice = parent::formatDataMoney(parent::cleanInput($_POST['product-price']));
+        $newProductImg = parent::cleanInput($_POST['product-src']);
 
         if (!$currentProductName) {
             $_SESSION['error'] = "Você precisa escolher qual produto será alterado";
@@ -33,7 +33,7 @@ class UpdateProductMenuController extends DataProcessing
         }
 
         if ($_POST['product-type'] === "mainCourseUpdate") {
-            $newIngredients = $this->cleanInput($_POST['food-ingredients']);
+            $newIngredients = parent::cleanInput($_POST['food-ingredients']);
             
             $objMenu = new MenuFoods("", "", "", "",);
 
@@ -47,7 +47,7 @@ class UpdateProductMenuController extends DataProcessing
             }
 
         } else {
-            $newProductSupplier = $this->cleanInput($_POST['drink-supplier']);
+            $newProductSupplier = parent::cleanInput($_POST['drink-supplier']);
             $objMenu = new MenuDrinks("", "", "", "",);
 
             $this->setObjToUpdate($objMenu, $currentProductName, $newProductName, $newProductPrice, $newProductImg);

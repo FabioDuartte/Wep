@@ -22,7 +22,7 @@ class RemoveProductMenuController extends DataProcessing
 
     private function removeProductValidate()
     {
-        $nameToRemove = $this->cleanInput($_POST['product-name']);
+        $nameToRemove = parent::cleanInput($_POST['product-name']);
         
         if (!$nameToRemove) {
             echo "Nome inválido!";

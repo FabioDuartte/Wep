@@ -10,7 +10,7 @@
         </button>
         <!--Navegação-->
         <form action="/Wep/home/pratos"  method="POST">
-        <div class="  mx-5 text-center pesquisa " style="width:650px; "><!--inicio pesquisa-->
+        <div class="  mx-5 text-center pesquisa " style="width:550px; "><!--inicio pesquisa-->
         <div class="input-group">
             <input name="search" class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" style="border-right: none;">
             <div class="input-group-append">

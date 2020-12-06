@@ -25,26 +25,26 @@ class UpdateRegisterController extends DataProcessing
         $oldPassword = $_POST['old-Password'];
 
         if (!$oldPassword) {
-            // echo 'É necessário passar a senha antiga para atualizar cadastro';
+            $_SESSION['error'] = 'É necessário passar a senha antiga para atualizar cadastro';
             $this->updateRegistrationFail();
         }
 
         if (strpos($newEmail, '@caldeiraofurado.com')) {
-            // echo 'Email invalido';
+            $_SESSION['error'] = 'Email invalido';
             $this->updateRegistrationFail();
         }
 
         if ($_POST['new-Password'] === $_POST['re-newPassword']) {
             $newPassword = $_POST['new-Password'];
         } else {
-            // echo "Senhas digitadas não são iguais";
+            $_SESSION['error'] = "Senhas digitadas não são iguais";
             $this->updateRegistrationFail();
         }
 
         $objCustomer = new Customer("", "", "", "");
         $objCustomer->setCustomerId($_SESSION['id-user']);
         if ($objCustomer->checkEmailInDB()) {
-            // echo "Email já cadastrado";
+            $_SESSION['error'] = "Email já cadastrado";
             $this->updateRegistrationFail();
         } else {
             $userPassword = $objCustomer->getPassword();
@@ -60,12 +60,12 @@ class UpdateRegisterController extends DataProcessing
                     $objCustomer->updateRegisterPasswordCustomer();
                 }
             } else {
-                // echo "A senha antiga não está correta";
+                $_SESSION['error'] = "A senha antiga não está correta";
                 $this->updateRegistrationFail();
             }
         }
 
-        // echo "Tudo ocorreu bem";
+        $_SESSION['success'] = "Dados alterados com sucesso";
         header('Location: /Wep/home/editar-cadastro');
     }
 

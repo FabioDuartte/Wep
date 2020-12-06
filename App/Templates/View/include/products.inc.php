@@ -3,7 +3,7 @@ if (isset($_SESSION['lista-item']) && !empty($_SESSION['lista-item'])) {
     foreach ($_SESSION['lista-item'] as $item) {
     $src = '/Wep/App/Templates/Gallery/' . $item['imgProduto'];
 ?>
-    <div class="card-deck my-5 col-md-4" >
+    <div class="card-deck my-5 col-md-6 col-sm-12" >
         <div class="card">
             <?php echo "<img class='card-img-top' src='$src' alt='Imagem de capa do card'>" ?>
             <div class="card-body">
@@ -17,12 +17,16 @@ if (isset($_SESSION['lista-item']) && !empty($_SESSION['lista-item'])) {
             </div>
             <p class="card-text description"> <?php if (isset($item['ingredientes'])) { echo "Ingredientes: " . $item['ingredientes']; } else { echo "Fornecedor: " . $item['fornecedor']; } ?> </p>
             <div>
-                <p class="h5 font-weight-bold text-dark">Preço: R$ <?php echo $item['precoProduto']; ?> </p>
+                <p class="h5 font-weight-bold text-dark">Preço: R$ <?php echo number_format($item['precoProduto'], 2, ',', '.'); ?> </p>
             </div>
             </div>
             <div class="card-footer">
-            <form method="GET">
-                <input name='idProduto' hidden value="<?php echo $item['idProduto']; ?>">
+                <form method="POST" action="/Wep/home/minha-conta">
+                <input name="product-id" hidden value="<?php echo $item['idProduto']; ?>">
+                <input name="product-name" hidden value="<?php echo $item['nomeProduto']; ?>">
+                <input name="product-price" hidden value="<?php echo $item['precoProduto']; ?>">
+                <input name="product-img" hidden value="<?php echo $item['imgProduto']; ?>">
+                <input name="product-description" hidden value="<?php if (isset($item['ingredientes'])) { echo "Ingredientes: " . $item['ingredientes']; } else { echo "Fornecedor: " . $item['fornecedor']; } ?>">
                 <button class="btn btn-success btn-lg btn-block" type="submit">Adicionar à comanda</button>
             </div>
             </form>

@@ -24,4 +24,3 @@ fieldDateCard.onkeyup = function(){
     if(validade.length == 2)
         fieldDateCard.value  +='/';
 }
-

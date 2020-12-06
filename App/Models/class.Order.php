@@ -2,37 +2,46 @@
 
 namespace App\Models;
 
+use App\Models\Database\OrderDAO;
+
 class Order
 {
-    
-
     private $orderID;
     private $totalOrderAmount;
     private $orderStatus;
-    private $orderBill;
+    private $idBill;
     private $orderItems;
-    private $noteAboutOrderItems;
 
-    public function __construct($orderID, $orderBill, $noteAboutOrderItems)
+    public function __construct($idBill, $orderItems, $totalOrderAmount)
     {
-        $this->orderID = $orderID;
-        $this->orderingCustomer = $orderBill;
-        $this->noteAboutOrderItems = $noteAboutOrderItems;
-        $this->$totalOrderAmount = 0;
-        $this->orderItems = array();
-        $this->orderStatus = true; // Coloquei um valor booleano para representar se está aberto ou fechado
+        $this->idBill = $idBill;
+        $this->orderItems = $orderItems;
+        $this->totalOrderAmount = $totalOrderAmount;
+        $this->orderStatus = 1;
     }
 
-    public function addFoodToOrder()
+    public function createOrder()
     {
-        $newFood = new MenuFoods();
-        $orderItems[] = $newFood;
+        $orderDAO = new OrderDAO();
+        return $orderDAO->createOrder($this);
     }
 
-    public function addDrinkToOrder()
+    public function createItemsOrder()
     {
-        $newDrink = new MenuDrinks();
-        $orderItems[] = $newDrink;
+        $orderDAO = new OrderDAO();
+        return $orderDAO->createItemsOrder($this);
+    }
+
+    public function selectItemsOrder($idCustomer)
+    {
+        $orderDAO = new OrderDAO();
+        return $orderDAO->selectItemsOrder($idCustomer);
+    }
+
+    public function getAllOrdersOpen()
+    {
+        $orderDAO = new OrderDAO();
+        return $orderDAO->getAllOrdersOpen();
     }
 
     public function getOrderID()
@@ -47,14 +56,7 @@ class Order
 
     public function getTotalOrderAmount()
     {
-        if (!$this->orderItems) {
-            return $this->totalOrderAmount;
-        } else {
-            foreach ($this->orderItems as $menuItems) {
-                $this->totalOrderAmount += (float)$menuItems->getMenuItemPrice();
-            }
-            return $this->totalOrderAmount;
-        }
+        return $this->totalOrderAmount;
     }
 
     public function setTotalOrderAmount($totalOrderAmount)
@@ -62,14 +64,14 @@ class Order
         $this->totalOrderAmount = $totalOrderAmount;
     }
 
-    public function getOrderBill()
+    public function getIdBill()
     {
-        return $this->orderBill;
+        return $this->idBill;
     }
 
-    public function setOrderBill($orderBill)
+    public function setIdBill($idBill)
     {
-        $this->orderBill = $orderBill;
+        $this->idBill = $idBill;
     }
 
     public function isOrderStatus()
@@ -90,16 +92,6 @@ class Order
     public function setOrderItems($orderItems)
     {
         $this->orderItems = $orderItems;
-    }
-
-    public function getNoteAboutOrderItems()
-    {
-        return $this->noteAboutOrderItems;
-    }
-
-    public function setNoteAboutOrderItems($noteAboutOrderItems)
-    {
-        $this->noteAboutOrderItems = $noteAboutOrderItems;
     }
     
 }

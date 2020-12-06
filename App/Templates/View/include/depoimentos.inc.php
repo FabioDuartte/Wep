@@ -1,5 +1,5 @@
 <section id="depoimentos" >
-        <div class="container  ">
+        <div class="container">
         <p class="text-center display-4 text-white">Depoimentos</p>
         <div class="row ">
             <div class="col-sm-12 my-4">           

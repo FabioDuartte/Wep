@@ -21,28 +21,28 @@ class RegisterProductController extends DataProcessing
 
     private function registerProducts()
     {
-        $menuItemName = $this->cleanInput($_POST['product-name']);
-        $menuItemImg = $this->cleanInput($_POST['product-src']);
-        $menuItemPrice = $this->formatDataMoney($this->cleanInput($_POST['product-price']));
+        $menuItemName = parent::cleanInput($_POST['product-name']);
+        $menuItemImg = parent::cleanInput($_POST['product-src']);
+        $menuItemPrice = parent::formatDataMoney(parent::cleanInput($_POST['product-price']));
         
         if (!$menuItemName || !$menuItemPrice || !$menuItemImg) {
             $_SESSION['error'] = "Preencha todos os campos disponíveis para cadastrar um produto no cardápio";
             $this->addMenuItemsFail();
         }
 
-        if (!$this->validateName($menuItemName)) {
+        if (!parent::validateName($menuItemName)) {
             $_SESSION['error'] = "Nome inválido! Tente um nome que esteja entre: [a-zA-Z-' ]";
             $this->addMenuItemsFail();
         }
 
 
-        if (!is_numeric($menuItemPrice) || !$this->validateFloat($menuItemPrice) || $menuItemPrice < 0) {
+        if (!is_numeric($menuItemPrice) || !parent::validateFloat($menuItemPrice) || $menuItemPrice < 0) {
             $_SESSION['error'] = "Preço inserido é invalido";
             $this->addMenuItemsFail();
         }
 
         if ($_POST['product-type'] === "mainCourse") {
-            $menuItemIngredients = $this->cleanInput($_POST['food-ingredients']);
+            $menuItemIngredients = parent::cleanInput($_POST['food-ingredients']);
             if (!$menuItemIngredients) {
                 $_SESSION['error'] = "Preencha todos os campos disponíveis para cadastrar um produto no cardápio";
                 $this->addMenuItemsFail();
@@ -50,7 +50,7 @@ class RegisterProductController extends DataProcessing
             $objMenu = new MenuFoods($menuItemName, $menuItemPrice, $menuItemImg, $menuItemIngredients);
             
         } else {
-            $menuItemSuppliers = $this->cleanInput($_POST['drink-supplier']);
+            $menuItemSuppliers = parent::cleanInput($_POST['drink-supplier']);
             if (!$menuItemSuppliers) {
                 $_SESSION['error'] = "Preencha todos os campos disponíveis para cadastrar um produto no cardápio";
                 $this->addMenuItemsFail();

@@ -41,22 +41,23 @@
               </button>
               <!--Navegação-->
          
-              <div class="  mx-5 text-center pesquisa "><!--inicio pesquisa-->
-                <div class="input-group">
-                  <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" style="border-right: none;">
-                  <div class="input-group-append">
-                    <div class="input-group-text" ><button type="submit" class="btn btn-md btn-white"> <i class="fas fa-search"></i></button></div>
-                  </div>
-                </div>
-
-              </div><!--Fim  pesquisa-->
+              <form action="/Wep/home/pratos"  method="POST">
+        <div class="  mx-5 text-center pesquisa " style="width:550px; "><!--inicio pesquisa-->
+        <div class="input-group">
+            <input name="search" class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" style="border-right: none;">
+            <div class="input-group-append">
+            <div class="input-group-text" ><button type="submit" class="btn btn-md btn-white"> <i class="fas fa-search"></i></button></div>
+            </div>
+        </div>
+        </div><!--Fim  pesquisa-->
+        </form>
               <div class="collapse navbar-collapse " id="nav-principal">              
                   <ul class="navbar-nav ml-auto   ">  
                     <li>
-                      <span class="text-warning font-weight-bold my-2 cashback">Bonus R$ <?php echo $_SESSION['user-Bonus']; ?></span>
+                      <span class="text-warning font-weight-bold my-2 cashback">Bonus R$ <?php echo number_format($_SESSION['user-Bonus'], 2, ',', '.'); ?></span>
                     </li> 
                     <li class="nav-item mx-4 bonus">
-                        <a href="bill.php" class="text-warning mx-2 my-2 cart"> <i class="fas fa-shopping-cart mx-2"></i><?php echo count($_SESSION['cart-values']); ?></a>
+                        <a href="/Wep/home/minha-conta" class="text-warning mx-2 my-2 cart"> <i class="fas fa-shopping-cart mx-2"></i><?php echo $_SESSION['cart-items-quantity']; ?></a>
                   </li>
                   
                     <li class="nav-link format-link">
@@ -66,13 +67,15 @@
                             </span>
                             <div class="dropdown-menu dropdown-menu-right">                                
                                 <a href="/Wep/home" class="dropdown-item nav-item format-link">Home</a>
-                                <div class="dropdown-divider"></div>                                
+                                <div class="dropdown-divider"></div>        
+                                <a href="/Wep/home/minha-conta/acompanhar-pedidos" class="dropdown-item nav-item format-link">Visualizar Pedidos</a>
+                                <div class="dropdown-divider"></div>                        
                                 <a href="/Wep/home/editar-cadastro" class="dropdown-item nav-item format-link">Editar Cadastro</a>
                                 <div class="dropdown-divider"></div>
                                 <a href="/Wep/" class="dropdown-item nav-item format-link">Sair</a>
-                            </div>                                                            
-                        </div>   
-                    </li>             
+                            </div>
+                        </div>
+                    </li>
                   </ul>
               </div>
             </div>
@@ -82,7 +85,7 @@
     <section id="home" class="d-flex my-5 "> 
         <div class="container align-self-center my-5"  >
             <div class="row">
-           <div class="container my-5">
+           <div class="container my-2" style="max-height:500px">
              <div class="row cart-items  ">
                <div class="col-md-9">
                 <table class="table table my-2 ">
@@ -103,29 +106,28 @@
                   </tbody >                  
                 </table>               
                </div>
-               <div class="col-md-3 mt-2">
+              <div class="col-md-3 mt-2">
                 <div class="total">
 
-                   <div class="my-2"> <span class="totalPrice font-weight-bold totalAPagar">Total R$ 28,00</span></div>
+                   <div class="my-2"> <span class="totalPrice font-weight-bold totalAPagar">Total R$ <?php echo number_format($_SESSION['bill-amount'], 2, ',', '.'); ?></span></div>
                    <div class="my-2">
                      <a href="/Wep/home"><button type="button" name="keep" id="keep" class="btn btn-block btn-lg btn-info font-weight-bold">Adicionar mais itens</button></a>
                    </div>
-                   <div class="my-2">
-                    <button type="button" name="close" id="close" class="btn btn-block btn-lg btn-success  font-weight-bold">Efetuar pedido</button>
-                    <button type="button" name="close" id="close" data-toggle="modal" data-target="#modal-finalizarCompra" class="btn btn-block btn-lg btn-warning font-weight-bold">Finalizar Conta</button>
+                  <div class="my-2">
+                    <form method="POST" action="/Wep/home/minha-conta/acompanhar-pedidos">
+                        <button type="submit" name="orders" id="close" class="btn btn-block btn-lg btn-success  font-weight-bold">Efetuar pedido</button>
+                    </form>
+                    <form action="">
+                        <button type="button" name="close" id="close" data-toggle="modal" data-target="#modal-finalizarCompra" class="btn btn-block btn-lg btn-warning font-weight-bold">Finalizar Conta</button>
+                    </form>
                   </div>
                 </div>
-              </div>             
-             </div>
-             <div>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1" class="font-weight-bold">Observações</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" style="width: 840px;" rows="3" placeholder="Nos informe caso tenha alguma restrição alimentar" ></textarea>
               </div>
+             </div>
+            <div>
             </div>
            </div>
-
-     
+    
     </section>
 
         <section>
@@ -182,7 +184,5 @@
 
         <?php include "./App/Templates/View/include/footer.inc.php" ?>
 
-    
-    <script src="./App/Templates/View/scripts/bill.js"></script>
 </body>
 </html>
