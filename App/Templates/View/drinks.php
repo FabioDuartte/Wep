@@ -28,7 +28,7 @@
 
    <style>
       #depoimentos {
-          background: url(./App/Templates/imagens/drink/drink.jpg) no-repeat ;    
+          background: url(./App/Templates/imagens/drink/drink.jpg) no-repeat;    
           background-size: cover;
       }
    </style>
@@ -79,5 +79,8 @@
     <!--INICIO RODAPÉ-->
     <?php include "./App/Templates/View/include/footer.inc.php" ?>
     <!-- FIM RODAPÉ-->
+
+     
+    <script src="/Wep/App/Templates/View/scripts/search.js"> </script>
 </body>
 </html>

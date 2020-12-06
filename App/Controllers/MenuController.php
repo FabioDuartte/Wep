@@ -13,7 +13,7 @@ class MenuController extends DataProcessing
     public function mainCourse()
     {
         if (isset($_POST['search']) && !empty($_POST['search'])) {
-            $nameToSearch = $this->cleanInput($_POST['search']);
+            $nameToSearch = parent::cleanInput($_POST['search']);
             $_SESSION['lista-item'] = array();
             $_SESSION['lista-item'] = MenuFoods::selectItemLikeName($nameToSearch);
         } else {

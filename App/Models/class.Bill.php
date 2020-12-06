@@ -2,33 +2,42 @@
 
 namespace App\Models;
 
+use App\Models\Database\BillDAO;
+
 class Bill
 {
     // Fazer algo que some todos os pedidos de um mesmo cliente que estão abertos
     private $customerOwnerBill;
-    private $orderBill = array();
+    private $billAmount;
     private $installments;
 
-    public function __construct($customerOwnerBill, $orderBill, $installments)
+    public function __construct($customerOwnerBill, $billAmount = 0, $installments = 1)
     {
-        $this->orderBill = $orderBill;
+        $this->BillAmount = $billAmount;
         $this->customerOwnerBill = $customerOwnerBill;
-        $this->installments = 1;
+        $this->installments = $installments;
     }
 
-    public function setCustomerBonusPercentage()
+    public function createBill()
     {
-        
+        $billDAO = new BillDAO();
+        return $billDAO->createBill($this);
     }
 
-    public function getOrderBill()
+    public function checkBillExists()
     {
-        return $this->orderBill;
+        $billDAO = new BillDAO();
+        return $billDAO->checkBillExists($this);
     }
 
-    public function setOrderBill($orderBill)
+    public function getBillAmount()
     {
-        $this->orderBill[] = $orderBill;
+        return $this->billAmount;
+    }
+
+    public function setBillAmount($billAmount)
+    {
+        $this->billAmount = $billAmount;
     }
 
     public function getCustomerOwnerBill()

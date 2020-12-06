@@ -22,13 +22,13 @@ class RegisterController extends DataProcessing
 
     public function registerValidate()
     {
-        $userName = $this->cleanInput($_POST['username']);
-        $userCardBrand = $this->cleanInput($_POST['card-brand']);
-        $userCardExpiry = $this->ignoreNegative($this->sanitizeInt($this->cleanInput($_POST['card-expiring'])));
-        $userCardNumber = $this->ignoreNegative($this->sanitizeInt($this->cleanInput($_POST['card-number'])));
-        $userCardCvv = $this->ignoreNegative($this->sanitizeInt($this->cleanInput($_POST['card-cvv'])));
-        $userCPF = $this->ignoreNegative($this->sanitizeInt($this->cleanInput($_POST['CPF'])));
-        $userEmail = $this->validateEmail($this->cleanInput($_POST['email']));
+        $userName = parent::cleanInput($_POST['username']);
+        $userCardBrand = parent::cleanInput($_POST['card-brand']);
+        $userCardExpiry = parent::ignoreNegative(parent::sanitizeInt(parent::cleanInput($_POST['card-expiring'])));
+        $userCardNumber = parent::ignoreNegative(parent::sanitizeInt(parent::cleanInput($_POST['card-number'])));
+        $userCardCvv = parent::ignoreNegative(parent::sanitizeInt(parent::cleanInput($_POST['card-cvv'])));
+        $userCPF = parent::ignoreNegative(parent::sanitizeInt(parent::cleanInput($_POST['CPF'])));
+        $userEmail = parent::validateEmail(parent::cleanInput($_POST['email']));
 
         if (!is_numeric($userCPF) || strlen($userCPF) != 11) {
             $_SESSION['error'] = "CPF invalido";            
@@ -62,12 +62,12 @@ class RegisterController extends DataProcessing
             $this->registerFail();
         }
 
-        if (!$this->validateName($userName)) {
+        if (!parent::validateName($userName)) {
             $_SESSION['error'] = "Nome inválido";
             $this->registerFail();
         }
 
-        $userPassword = $this->passwordToHash($userPassword);
+        $userPassword = parent::passwordToHash($userPassword);
         $objCustomer = new Customer($userName, $userEmail, $userCPF, $userPassword);
         
         $emailExists = $objCustomer->checkEmailInDB();

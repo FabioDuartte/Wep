@@ -33,6 +33,8 @@ class Router
         $this->routes['/Wep/home/minha-conta'] = array('controller' => 'OrderController', 'action' => 'customerOrders');
         $this->routes['/Wep/home/alterar-produto'] = array('controller' => 'UpdateProductMenuController', 'action' => 'updateProduct');
         $this->routes['/Wep/home/remover-produto'] = array('controller' => 'RemoveProductMenuController', 'action' => 'removeProduct');
+        $this->routes['/Wep/home/minha-conta/acompanhar-pedidos'] = array('controller' => 'TrackOrderController', 'action' => 'trackOrder');
+        $this->routes['/Wep/home/pagina-nao-encontrada'] = array('controller' => 'IndexController', 'action' => 'pageNotFound');
     }
 
     private function runRoute($url)

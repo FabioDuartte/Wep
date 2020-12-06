@@ -1,4 +1,4 @@
-<div class="container" style="width:550px; ">    
+<div class="container" style="width:550px;" >
     <div class="collapse navbar-collapse " id="nav-principal">
         <ul class="navbar-nav" style="width:390px; ">
         <li class="nav-item mx-4">

@@ -38,7 +38,6 @@
         /*background:#ffc107;*/
       }
     
-
     </style>
 
 </head>
@@ -49,7 +48,7 @@
      <nav class="class=navbar navbar-expand-sm navbar-warning nav-bg  nav-transparente">
      <div class="container">
        <!--Logo-->
-       <a  href="#" class="navbar-brand" style="color: white;">
+       <a  href="/Wep/home" class="navbar-brand" style="color: white;">
         <img src="/Wep/App/Templates/images/logo/logo-removebg-preview.png" alt="" width="120px" class="logo" >
        </a>
        <!--Menu Hamburguer-->
@@ -68,33 +67,24 @@
 
 
     <section id="home" class="d-flex "> 
-        <div class="container align-self-center"  >
+        <div class="container align-self-center">
           <div class="container">
             <div class="row ">
               <div class="col " >               
               <form action="">
                 <h1 class="display-3  text-dark">Pedidos em Aberto</h1>
-                    <table class="table"> 
+                    <table class="table">
                       <thead class="bg-dark text-white">
                         <tr>
-                          <th>Id do pedido</th>                          
+                          <th>Id do cliente</th>                          
                           <th>Nome do prato </th>
-                          <th>Descrição</th>
+                          <th>Quantidade</th>
                           <th>Situação do pedido</th>
-                        </tr>                        
+                        </tr>
                       </thead>
-                      <tbody>
-                        <div>
-                          <div>
-                              <tr>
-                                  <td class="cart-price">#1</td>
-                                  <td>Omelete</td>                                
-                                  <td>Omelete de forno </td> 
-                                  <td><input type="button" class="btn btn-md btn-warning font-weight-bold" id="change" onclick=changeStatus() value="Em aberto" style="width: 152px"></button></td>
-                              </tr>
-                          </div>                     
-                        </div>
-                      </tbody>
+                      <?php
+                        include './App/Templates/View/include/trackProducts.inc.php';
+                        ?>
                     </table>
                   </form>
                </div>
@@ -108,5 +98,6 @@
         </div>        
     </footer>
     <script src="/Wep/App/Templates/View/scripts/situationButton.js"> </script>
+
 </body>
 </html>

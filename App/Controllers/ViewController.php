@@ -63,13 +63,20 @@ class ViewController
     {
         require './App/Templates/View/registerProducts.php';
     }
+
     static public function updateProduct()
     {
         require './App/Templates/View/updateProduct.php';
     }
+
     static public function removeProduct()
     {
         require './App/Templates/View/removeProduct.php';
+    }
+
+    static public function trackOrder()
+    {
+        require './App/Templates/View/trackOrder.php';
     }
 
 
