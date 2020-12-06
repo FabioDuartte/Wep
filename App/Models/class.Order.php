@@ -44,6 +44,30 @@ class Order
         return $orderDAO->getAllOrdersOpen();
     }
 
+    public function changeStatus($idItem)
+    {
+        $orderDAO = new OrderDAO();
+        return $orderDAO->changeStatus($idItem);
+    }
+
+    public function removeOrder($idPedido)
+    {
+        $orderDAO = new OrderDAO();
+        return $orderDAO->removeOrder($idPedido);
+    }
+
+    public function removeItemOrder($idItemOrder)
+    {
+        $orderDAO = new OrderDAO();
+        return $orderDAO->removeItemOrder($idItemOrder);
+    }
+
+    public function verifyOrderHaveItems($idOrder)
+    {
+        $orderDAO = new OrderDAO();
+        return $orderDAO->verifyOrderHaveItems($idOrder);
+    }
+
     public function getOrderID()
     {
         return $this->orderID;

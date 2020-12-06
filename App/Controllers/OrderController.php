@@ -44,11 +44,12 @@ class OrderController
 
     public function viewOrders()
     {
+        $objOrder = new Order("", "", "",);
+
         if ($_GET) {
-            
+            $objOrder->changeStatus($_GET['id-item']);
         }
         
-        $objOrder = new Order("", "", "",);
         $_SESSION['all-orders-open'] = $objOrder->getAllOrdersOpen();
         ViewController::orders();
     }

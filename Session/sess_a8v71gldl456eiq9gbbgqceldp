@@ -1,1 +1,0 @@
-user-type|s:7:"Cliente";success|s:0:"";error|s:0:"";id-user|s:1:"1";user-name|s:5:"Fabio";user-Bonus|s:4:"0.00";order|a:1:{i:0;a:3:{s:8:"idPedido";s:2:"11";s:11:"nomeProduto";s:19:"Sanduiche de Ricota";s:15:"qtdItensPedidos";s:1:"1";}}cart-items-quantity|i:0;cart-items|a:0:{}bill-amount|i:0;lista-item|a:0:{}orders-placed|a:0:{}
