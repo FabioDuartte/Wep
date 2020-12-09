@@ -79,5 +79,10 @@ class ViewController
         require './App/Templates/View/trackOrder.php';
     }
 
+    static public function payment()
+    {
+        require './App/Templates/View/payment.php';
+    }
+
 
 }

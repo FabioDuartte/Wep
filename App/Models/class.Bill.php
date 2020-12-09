@@ -8,12 +8,12 @@ class Bill
 {
     // Fazer algo que some todos os pedidos de um mesmo cliente que estão abertos
     private $customerOwnerBill;
-    private $billAmount;
+    private $billTotalAmount;
     private $installments;
 
-    public function __construct($customerOwnerBill, $billAmount = 0, $installments = 1)
+    public function __construct($customerOwnerBill, $billTotalAmount = 0, $installments = 1)
     {
-        $this->BillAmount = $billAmount;
+        $this->BillTotalAmount = $billTotalAmount;
         $this->customerOwnerBill = $customerOwnerBill;
         $this->installments = $installments;
     }
@@ -30,14 +30,37 @@ class Bill
         return $billDAO->checkBillExists($this);
     }
 
-    public function getBillAmount()
+    public function getBillTotalAmountOnDB()
     {
-        return $this->billAmount;
+        $billDAO = new BillDAO();
+        return $billDAO->getBillTotalAmountOnDB($this);
     }
 
-    public function setBillAmount($billAmount)
+    public function getOrdersToPay()
     {
-        $this->billAmount = $billAmount;
+        $billDAO = new BillDAO();
+        return $billDAO->getOrdersToPay($this);
+    }
+
+    public function verifyBillHaveOrders($idCustomer)
+    {
+        $billDAO = new BillDAO();
+        return $billDAO->verifyBillHaveOrders($idCustomer);
+    }
+
+    public function closeBill($idCustomer) {
+        $billDAO = new BillDAO();
+        return $billDAO->closeBill($idCustomer);
+    }
+
+    public function getBillTotalAmount()
+    {
+        return $this->billTotalAmount;
+    }
+
+    public function setBillTotalAmount($billTotalAmount)
+    {
+        $this->billTotalAmount = $billTotalAmount;
     }
 
     public function getCustomerOwnerBill()

@@ -13,7 +13,7 @@ class TrackOrderController
     {
         $_SESSION['orders-placed'] = array();
         $objBill = new Bill($_SESSION['id-user']);
-        $objOrder = new Order('', $_SESSION['cart-items'], $_SESSION['bill-amount']);
+        $objOrder = new Order('', $_SESSION['cart-items']);
         if ($_POST) {
             if (empty($_SESSION['cart-items'])) {
                 $this->trackOrderFail();
@@ -27,10 +27,10 @@ class TrackOrderController
                 $objOrder->createItemsOrder();
                 $_SESSION['cart-items'] = array();
                 $_SESSION['cart-items-quantity'] = 0;
-                $_SESSION['bill-amount'] = 0;
+                $_SESSION['order-amount'] = 0;
             }
             $_POST = array();
-        } else if ($_GET) {
+        } else if (isset($_GET['cancel-order'])) {
             $objOrder->removeItemOrder($_GET['idItensPedidosPeloCliente']);
             if (!$objOrder->verifyOrderHaveItems($_GET['id-pedido'])) {
                 $objOrder->removeOrder($_GET['id-pedido']);
@@ -46,7 +46,7 @@ class TrackOrderController
     private function trackOrderFail()
     {
         $_POST = array();
-        header("Location: /Wep/home/minha-conta/acompanhar-pedidos");
+        header("Location: /Wep/home/minha-comanda");
         exit;
     }
 }

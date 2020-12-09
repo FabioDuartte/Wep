@@ -32,7 +32,6 @@ class DataProcessing
     public function formatDataMoney($data)
     {
         $data = str_replace(',', '.', $data);
-        $data = number_format((float) $data, 2);
         return (float) $data;
     }
 

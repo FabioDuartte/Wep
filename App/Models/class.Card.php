@@ -25,6 +25,12 @@ class Card
         return $cardDAO->insertIntoCard($this, $idCliente);
     }
 
+    public function selectCard($idCliente)
+    {
+        $cardDAO = new CardDAO();
+        return $cardDAO->selectCard($idCliente);
+    }
+
     public function getCardNumber()
     {
         return $this->cardNumber;

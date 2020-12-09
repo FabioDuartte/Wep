@@ -9,7 +9,7 @@ class IndexController
 
     public function index()
     {
-        $_SESSION = array(); 
+        $_SESSION = array();
         $_SESSION['user-type'] = '';
         ViewController::index();
     }

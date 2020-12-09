@@ -28,13 +28,8 @@ class OrderDAO
     {
         try {
             $dbh = ConnectionDatabase::getConnection();
-            $query = $dbh->prepare('INSERT INTO Pedidos (valorTotalDosItensPedido, statusPedido, Conta_idConta) 
-            VALUES (:valorTotalDosItensPedido, :statusPedido, :idConta)');
-            $valorTotalDosItensPedido = $objOrder->getTotalOrderAmount();
-            $statusPedido = $objOrder->isOrderStatus();
+            $query = $dbh->prepare('INSERT INTO Pedidos (Conta_idConta) VALUES (:idConta)');
             $idConta = $objOrder->getIdBill();
-            $query->bindParam("valorTotalDosItensPedido", $valorTotalDosItensPedido);
-            $query->bindParam("statusPedido", $statusPedido);
             $query->bindParam("idConta", $idConta);
             $query->execute();
             return $dbh->lastInsertId();
@@ -173,6 +168,23 @@ class OrderDAO
         $dbh = null;
     }
 
-    
+    public function removeItemByCustomerID($idCustomer)
+    {
+        try {
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare('DELETE ItensPedidosPeloCliente FROM Contas 
+             INNER JOIN Pedidos ON Contas.idConta = Pedidos.Conta_idConta 
+              INNER JOIN ItensPedidosPeloCliente ON Pedidos.idPedido = ItensPedidosPeloCliente.Pedido_idPedido 
+               WHERE ItensPedidosPeloCliente.statusItemPedido = 0 AND Contas.Cliente_idCliente = :idCustomer');
+            $query->bindParam('idCustomer', $idCustomer);
+            $query->execute();
+            return $query->rowCount();
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+            return null;
+        }
+
+        $dbh = null;
+    }
 
 }

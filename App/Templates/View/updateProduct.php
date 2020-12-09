@@ -120,7 +120,7 @@
             </div>
             <div class="form-group">
               <label for="fornecedor">Insira o novo preço do produto</label>
-                <input disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo: 00.00" name="product-price" type="text" value='' class="form-control" id="preco">
+                <input disabled placeholder="Insira um novo dado apenas se quiser mudar esse campo: 00000.00" name="product-price" type="text" value='' class="form-control" id="preco">
             </div>
             <div class="input-group mb-3">
               <div class="custom-file">

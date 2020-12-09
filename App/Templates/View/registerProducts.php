@@ -115,7 +115,7 @@
                   </div>
                   <div class="form-group">
                     <label for="fornecedor">Preço</label>
-                      <input disabled="" placeholder="00.00" name="product-price" type="text" value='' class="form-control" id="preco">
+                      <input disabled="" placeholder="Não use símbolo para separar milhar! Ex:00000.00" name="product-price" type="text" value='' class="form-control" id="preco">
                   </div>
                   <div class="input-group mb-3">
                     <div class="custom-file">

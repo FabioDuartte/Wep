@@ -12,20 +12,20 @@
                 <td class="cart-price">R$ <?php echo number_format($item['product-price'], 2, ',', '.')?></td>
                 <td>
                 <div class="d-flex">
-                    <form action="/Wep/home/minha-conta" method="POST">
+                    <form action="/Wep/home/minha-comanda" method="POST">
                         <button type="submit" id="decrease-quantity" name="decrease-quantity" class="btn btn-sm btn-danger font-weight-bold">-</button>
                         <input hidden type="text" name="product-id" value="<?php echo $item['product-id'] ?>">
                     </form>
 
                     <input disabled="" value="<?php echo $item['product-quantity']; ?>" id="product-quantity" name="product-quantity" min="1" max="200" class="cart-quantity" type="number">
                     
-                    <form action="/Wep/home/minha-conta" method="POST">
+                    <form action="/Wep/home/minha-comanda" method="POST">
                         <button type="submit" id="increase-quantity" name="increase-quantity" class="btn btn-sm btn-success font-weight-bold">+</button>
                         <input hidden type="text" name="product-id" value="<?php echo $item['product-id'] ?>">
                     </form>
                 </div>
                     <td class="text-right remove">
-                        <form method="POST" action="/Wep/home/minha-conta">
+                        <form method="POST" action="/Wep/home/minha-comanda">
                             <input hidden type="text" name="product-id" value="<?php echo $item['product-id'] ?>">
                             <button type="submit" name="remove-cart-item" class="btn btn-sm btn-danger font-weight-bold ">X</button>
                         </form>

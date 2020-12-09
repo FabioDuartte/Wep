@@ -14,10 +14,10 @@ if ($_SESSION['user-type'] === 'Cliente') {
                             <?php if ($item['statusItemPedido'] === '0') { ?>
                                 <input type="button" disabled="" class="btn btn-md btn-success font-weight-bold" value="Entregue" style="width: 152px">
                             <?php } else { ?>
-                                <form method="GET" action="/Wep/home/minha-conta/acompanhar-pedidos">
+                                <form method="GET" action="/Wep/home/acompanhar-pedidos">
                                     <input type="text" hidden name="id-pedido" value="<?php echo $item['idPedido']; ?>">
                                     <input type="text" hidden name="idItensPedidosPeloCliente" value="<?php echo $item['idItensPedidosPeloCliente']; ?>">
-                                    <input type="submit" class="btn btn-md btn-danger font-weight-bold" id="change" value="Cancelar" style="width: 152px">
+                                    <button type="submit" class="btn btn-md btn-danger font-weight-bold" id="change" name="cancel-order" style="width: 152px">Cancelar</button>
                                 </form>
                             <?php } ?>
                             </td>

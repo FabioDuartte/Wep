@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\SystemUsers;
+use App\Models\Database\CustomerDAO;
 use App\Models\Database\LoginDAO;
 use App\Models\Database\RegisterDAO;
 
@@ -10,7 +11,7 @@ class Customer extends SystemUsers
 {
     private $customerId;
     private $customerBonus = 0;
-    private $customerCards = array();
+    private $customerCards;
     private $customerCpf;
     
     public function __construct($userName, $userEmail, $customerCpf, $userPassword)
@@ -55,6 +56,12 @@ class Customer extends SystemUsers
         return $registerDAO->updateRegisterPasswordCustomer($this);
     }
 
+    public function updateCustomerBonus($idCustomer, $newBonus)
+    {
+        $customerDAO = new CustomerDAO();
+        return $customerDAO->updateCustomerBonus($idCustomer, $newBonus);
+    }
+
     public function getCustomerId()
     {
         return $this->customerId;
@@ -72,7 +79,7 @@ class Customer extends SystemUsers
 
     public function setCustomerCard($customerCard)
     {
-        $this->customerCards[] = $customerCard;
+        $this->customerCards = $customerCard;
     }
 
     public function getCustomerBonus()

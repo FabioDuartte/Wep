@@ -21,13 +21,23 @@ if (isset($_SESSION['lista-item']) && !empty($_SESSION['lista-item'])) {
             </div>
             </div>
             <div class="card-footer">
-                <form method="POST" action="/Wep/home/minha-conta">
+                <form method="POST" action="/Wep/home/minha-comanda">
                 <input name="product-id" hidden value="<?php echo $item['idProduto']; ?>">
                 <input name="product-name" hidden value="<?php echo $item['nomeProduto']; ?>">
                 <input name="product-price" hidden value="<?php echo $item['precoProduto']; ?>">
                 <input name="product-img" hidden value="<?php echo $item['imgProduto']; ?>">
                 <input name="product-description" hidden value="<?php if (isset($item['ingredientes'])) { echo "Ingredientes: " . $item['ingredientes']; } else { echo "Fornecedor: " . $item['fornecedor']; } ?>">
-                <button class="btn btn-success btn-lg btn-block" type="submit">Adicionar à comanda</button>
+                <?php
+                    if ($_SESSION['user-type'] === 'Cliente' ) { 
+                    ?>
+                     <button class="btn btn-success btn-lg btn-block" type="submit">Adicionar à comanda</button>
+                <?php
+                    } else {
+                ?>
+                   <button disabled class="btn btn-success btn-lg btn-block" type="submit">Adicionar à comanda</button>
+                <?php 
+                    }
+                ?>
             </div>
             </form>
         </div>

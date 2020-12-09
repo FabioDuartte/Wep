@@ -55,10 +55,10 @@
               <div class="collapse navbar-collapse " id="nav-principal">              
                   <ul class="navbar-nav ml-auto   ">  
                     <li>
-                      <span class="text-warning font-weight-bold my-2 cashback">Bonus R$ <?php echo $_SESSION['user-Bonus']; ?></span>
+                      <span class="text-warning font-weight-bold my-2 cashback">Bonus R$ <?php echo number_format($_SESSION['user-Bonus'], 2, ',', '.'); ?></span>
                     </li> 
                     <li class="nav-item mx-4 bonus">
-                        <a href="/Wep/home/minha-conta" class="text-warning mx-2 my-2 cart"> <i class="fas fa-shopping-cart mx-2"></i><?php echo $_SESSION['cart-items-quantity']; ?></a>
+                        <a href="/Wep/home/minha-comanda" class="text-warning mx-2 my-2 cart"> <i class="fas fa-shopping-cart mx-2"></i><?php echo $_SESSION['cart-items-quantity']; ?></a>
                   </li>
                   
                     <li class="nav-link format-link">
@@ -69,7 +69,7 @@
                             <div class="dropdown-menu dropdown-menu-right">                                
                                 <a href="/Wep/home" class="dropdown-item nav-item format-link">Home</a>
                                 <div class="dropdown-divider"></div>        
-                                <a href="/Wep/home/minha-conta/acompanhar-pedidos" class="dropdown-item nav-item format-link">Visualizar Pedidos</a>
+                                <a href="/Wep/home/acompanhar-pedidos" class="dropdown-item nav-item format-link">Visualizar Pedidos</a>
                                 <div class="dropdown-divider"></div>                        
                                 <a href="/Wep/home/editar-cadastro" class="dropdown-item nav-item format-link">Editar Cadastro</a>
                                 <div class="dropdown-divider"></div>
@@ -98,7 +98,7 @@
                           <th scope="col">Nome do prato </th>
                           <th scope="col">Quantidade</th>
                           <th scope="col">Situação do pedido</th>
-                        </tr>                                            
+                        </tr>              
                       </thead>                      
                       <tbody>
                         <?php
@@ -106,12 +106,21 @@
                         ?>
                       <tbody>
                     </table>
-               </div>
+                    <div class="col-md-3 mt-2">
+                <div class="total">
+                    
+                        <a href="/Wep/home/acompanhar-pedidos/realizar-pagamento"><button type="submit" name="payment" class="btn btn-block btn-lg btn-warning font-weight-bold" style="width: 1070px; margin-right:5px">Fechar conta</button></a>
+                  </div>
+                </div>
+              </div>
+             </div>
+            <div>
+            </div>
+           </div>
+          </div>
       </section>
-
     <?php include "./App/Templates/View/include/footer.inc.php" ?>
     
-     
     <script src="/Wep/App/Templates/View/scripts/search.js"> </script>
 </body>
 </html>

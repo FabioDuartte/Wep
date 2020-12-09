@@ -92,7 +92,13 @@ class LoginController extends DataProcessing
         $_SESSION['order'] = array();
         $_SESSION['cart-items-quantity'] = 0;
         $_SESSION['cart-items'] = array();
-        $_SESSION['bill-amount'] = 0;
+        $_SESSION['order-amount'] = 0;
+        $_SESSION['orders-to-pay'] = array();
+        $_SESSION['bill-total-amount'] = 0;
+        $_SESSION['bill-total-amount-with-bonus'] = 0;
+        $_SESSION['cashback'];
+        $_SESSION['bonus-apply'];
+        $_SESSION['customer-card'] = array();
         $_SESSION['user-type'] = "Cliente";
     }
 

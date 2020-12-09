@@ -57,7 +57,7 @@
                       <span class="text-warning font-weight-bold my-2 cashback">Bonus R$ <?php echo number_format($_SESSION['user-Bonus'], 2, ',', '.'); ?></span>
                     </li> 
                     <li class="nav-item mx-4 bonus">
-                        <a href="/Wep/home/minha-conta" class="text-warning mx-2 my-2 cart"> <i class="fas fa-shopping-cart mx-2"></i><?php echo $_SESSION['cart-items-quantity']; ?></a>
+                        <a href="/Wep/home/minha-comanda" class="text-warning mx-2 my-2 cart"> <i class="fas fa-shopping-cart mx-2"></i><?php echo $_SESSION['cart-items-quantity']; ?></a>
                   </li>
                   
                     <li class="nav-link format-link">
@@ -68,7 +68,7 @@
                             <div class="dropdown-menu dropdown-menu-right">                                
                                 <a href="/Wep/home" class="dropdown-item nav-item format-link">Home</a>
                                 <div class="dropdown-divider"></div>        
-                                <a href="/Wep/home/minha-conta/acompanhar-pedidos" class="dropdown-item nav-item format-link">Visualizar Pedidos</a>
+                                <a href="/Wep/home/acompanhar-pedidos" class="dropdown-item nav-item format-link">Visualizar Pedidos</a>
                                 <div class="dropdown-divider"></div>                        
                                 <a href="/Wep/home/editar-cadastro" class="dropdown-item nav-item format-link">Editar Cadastro</a>
                                 <div class="dropdown-divider"></div>
@@ -93,7 +93,7 @@
                     <tr class="thead-dark text-white">
                       <th scope="col">Item</th>
                       <th scope="col">Preço</th>
-                      <th scope="col">Quantidade</th>
+                      <th scope="col">Unidades</th>
                       <th></th>
                     </tr>
                   </thead>
@@ -109,16 +109,13 @@
               <div class="col-md-3 mt-2">
                 <div class="total">
 
-                   <div class="my-2"> <span class="totalPrice font-weight-bold totalAPagar">Total R$ <?php echo number_format($_SESSION['bill-amount'], 2, ',', '.'); ?></span></div>
+                   <div class="my-2"> <span class="totalPrice font-weight-bold totalAPagar">Total R$ <?php echo number_format($_SESSION['order-amount'], 2, ',', '.'); ?></span></div>
                    <div class="my-2">
                      <a href="/Wep/home"><button type="button" name="keep" id="keep" class="btn btn-block btn-lg btn-info font-weight-bold">Adicionar mais itens</button></a>
                    </div>
                   <div class="my-2">
-                    <form method="POST" action="/Wep/home/minha-conta/acompanhar-pedidos">
+                    <form method="POST" action="/Wep/home/acompanhar-pedidos">
                         <button type="submit" name="orders" id="close" class="btn btn-block btn-lg btn-success my-2 font-weight-bold">Efetuar pedido</button>
-                    </form>
-                    <form action="">
-                        <button type="button" name="close" id="close" data-toggle="modal" data-target="#modal-finalizarCompra" class="btn btn-block btn-lg btn-warning font-weight-bold">Finalizar Conta</button>
                     </form>
                   </div>
                 </div>
@@ -126,62 +123,8 @@
              </div>
             <div>
             </div>
-           </div>
-    
+           </div>    
     </section>
-
-        <section>
-           <!-- Modal -->
-              <div class="modal fade" id="modal-finalizarCompra" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title text-center letterSpacing ">CONTA</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <div>
-                        <h5 class="letterSpacing">Formas de pagamento</h5>
-                        <div class="form-check">
-                          <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="opcao1" aria-label="...">
-                          <img class="my-2" src="https://img.icons8.com/fluent/35/000000/visa.png"/>
-                          <span class="font-weight-bold">Crédito *** *** 1234 | 2x de R$ 14,00 </span>
-                          <a href="#"><i class=" mx-2 far fa-edit"></i></a>                          
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input position-static"  type="radio" name="blankRadio" id="blankRadio1" value="opcao1" aria-label="...">
-                          <img class="my-2" src="https://img.icons8.com/fluent/35/000000/mastercard.png"/>
-                          <span class="font-weight-bold">Débito *** *** 4598 | R$ 28,00</span>
-                          <a href="#"><i class=" mx-2 far fa-edit"></i></a>                          
-                        </div>
-                      </div>
-                      <div>
-                        <button class="btn btn-block btn-outline-warning font-weight-bold my-4">Adicionar outro cartão +</button>
-
-                      </div>
-                      <h5 class=" font-weight-bold mb-3 letterSpacing">Deseja aplicar seu bônus?</h5>                  
-                  <div class="input-group prepend">
-                    <input type="text" placeholder=" Aplicar bônus"  style="width: 360.9px;">
-                    <input type="submit" class="btn btn-primary btn-md font-weight-bold text-white space2 mx-1" value="APLICAR">
-                   </div> 
-                   <div class="my-2"> <span class="font-weight-bold totalAPagar ">Sub-Total R$ 28,00</span></div>
-                   <div class="my-2"> <span class="font-weight-bold totalAPagar ">Desconto R$ 00,00</span></div>
-                   <div class="my-2"> <span class="font-weight-bold totalAPagar ">Bônus Obtido R$ 2,80</span></div>
-                   <div class="my-2"> <span class="font-weight-bold totalAPagar ">Total R$ 28,00</span></div>
-                  
-                    </div>
-                    <div class="modal-footer">
-                      <a href="bill.php"><button type="button" class="btn btn-secondary font-weight-bold" data-target="">Fechar</button></a>
-                      <a href="pagelanding.php"><button type="button" class="btn btn-success font-weight-bold" >Pagar</button></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-           </section>
-
-
         <?php include "./App/Templates/View/include/footer.inc.php" ?>
          
     <script src="/Wep/App/Templates/View/scripts/search.js"> </script>

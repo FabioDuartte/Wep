@@ -2,6 +2,9 @@
 
 namespace App\Models\Database;
 
+use \PDO;
+use \PDOException;
+
 class CardDAO
 {
     public function insertIntoCard($objCard, $idCliente)
@@ -23,9 +26,25 @@ class CardDAO
             $lastID = $dbh->lastInsertId();
             return $lastID;
         } catch (PDOException $e) {
-            echo  "<script>alert('Erro');</script>";
-            return 0;
+            echo 'Connection failed: ' . $e->getMessage();
+            return null;
         }
+        $dbh = null;
+    }
+
+    public function selectCard($idCliente)
+    {
+        try {
+            $dbh = ConnectionDatabase::getConnection();
+            $query = $dbh->prepare('SELECT * FROM Cartoes WHERE Clientes_idCliente = :idCliente');
+            $query->bindParam('idCliente', $idCliente);
+            $query->execute();
+            return $query->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+            return null;
+        }
+
         $dbh = null;
     }
 }

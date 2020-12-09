@@ -1,4 +1,3 @@
-
 CREATE DATABASE IF NOT EXISTS `Restaurante` DEFAULT CHARACTER SET utf8 ;
 USE `Restaurante` ;
 
@@ -50,7 +49,6 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `Restaurante`.`Pedidos` (
   `idPedido` INT NOT NULL AUTO_INCREMENT,
-  `valorTotalDosItensPedido` DECIMAL(9,2) NOT NULL DEFAULT 0,
   `Funcionario_idFuncionario` INT,
   `Conta_idConta` INT NOT NULL,
   PRIMARY KEY (`idPedido`),
@@ -103,15 +101,6 @@ ENGINE = InnoDB;
 insert into Funcionarios Values (3939, 'Fogaça', 'focaca@caldeiraofurado.com', '$2y$10$X4hnuGxR9mEG3U0.sLad6uKgdf2l817ttt1Dc0isCcDp37LE6WMla', 'Gerente');
 insert into Funcionarios Values (888888, 'Jaquin', 'jacquin@caldeiraofurado.com', '$2y$10$EnR9VP/aGKxpS12oTinx.eB2XkoEfhyCO/oLPML.2Q/05LzU7L8Xu', 'cozinheiro');
 
-DESC pedidos;
-DESC Produtos;
-DESC Comidas;
-DESC Bebidas;
-DESC Clientes;
-DESC ItensPedidosPeloCliente; 
-DESC Funcionarios;
-DESC cartoes;
-DESC Contas;
 
-focaca@caldeiraofurado.com    | $password = "cdfunc"
-jacquin@caldeiraofurado.com   | $password = "tompero";
+-- focaca@caldeiraofurado.com    | $password = "cdfunc"
+-- jacquin@caldeiraofurado.com   | $password = "tompero";

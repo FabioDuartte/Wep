@@ -32,11 +32,11 @@ class OrderController
                 $_SESSION['cart-items'][$_POST['product-id']] += ["product-quantity" => $minValueItens];
                 $_POST = array();
             }
-            $_SESSION['bill-amount'] = 0;
+            $_SESSION['order-amount'] = 0;
             $_SESSION['cart-items-quantity'] = 0;
             foreach ($_SESSION['cart-items'] as $item) {
                 $_SESSION['cart-items-quantity'] += $item['product-quantity'];
-                $_SESSION['bill-amount'] += $item['product-price'] * $item['product-quantity'];
+                $_SESSION['order-amount'] += $item['product-price'] * $item['product-quantity'];
             }
         }
         ViewController::bill();

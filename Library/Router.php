@@ -30,10 +30,11 @@ class Router
         $this->routes['/Wep/home/cadastrar-produtos'] = array('controller' => 'RegisterProductController', 'action' => 'addMenuItems');
         $this->routes['/Wep/home/pedidos-feito'] = array('controller' => 'OrderController', 'action' => 'viewOrders');
         $this->routes['/Wep/home/editar-cadastro'] = array('controller' => 'UpdateRegisterController', 'action' => 'updateRegistration');
-        $this->routes['/Wep/home/minha-conta'] = array('controller' => 'OrderController', 'action' => 'customerOrders');
+        $this->routes['/Wep/home/minha-comanda'] = array('controller' => 'OrderController', 'action' => 'customerOrders');
         $this->routes['/Wep/home/alterar-produto'] = array('controller' => 'UpdateProductMenuController', 'action' => 'updateProduct');
         $this->routes['/Wep/home/remover-produto'] = array('controller' => 'RemoveProductMenuController', 'action' => 'removeProduct');
-        $this->routes['/Wep/home/minha-conta/acompanhar-pedidos'] = array('controller' => 'TrackOrderController', 'action' => 'trackOrder');
+        $this->routes['/Wep/home/acompanhar-pedidos'] = array('controller' => 'TrackOrderController', 'action' => 'trackOrder');
+        $this->routes['/Wep/home/acompanhar-pedidos/realizar-pagamento'] = array('controller' => 'PaymentController', 'action' => 'payment');
         $this->routes['/Wep/home/pagina-nao-encontrada'] = array('controller' => 'IndexController', 'action' => 'pageNotFound');
     }
 
