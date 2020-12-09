@@ -143,7 +143,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php include "./App/Templates/View/include/itensOnBill.inc.php" ?>
+                    <?php include "./App/Templates/View/include/itensOnBill.inc.php" ?>
                         <th colspan="4">Valor total da conta: R$ <?php echo number_format($_SESSION['bill-total-amount'], 2, ',', '.'); ?> </th>
                     </tr>
                     <tr>

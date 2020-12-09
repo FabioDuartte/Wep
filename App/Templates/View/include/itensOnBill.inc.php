@@ -11,7 +11,7 @@ foreach ($_SESSION['orders-to-pay'] as $item) {
 <?php
     }
 } else {
-    echo "Você ainda não criou um pedido";
+    // echo "Você ainda não criou um pedido";
 ?>
 <?php 
 }
