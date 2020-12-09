@@ -102,36 +102,4 @@ class BillDAO
         $dbh = null;
     }
 
-    public function verifyBillHaveOrders($idCustomer)
-    {
-        try {
-            $dbh = ConnectionDatabase::getConnection();
-            $query = $dbh->prepare('SELECT Cliente_idCliente FROM Contas WHERE Cliente_idCliente = :idCustomer');
-            $query->bindParam('idCustomer', $idCustomer);
-            $query->execute();
-            return $query->rowCount();
-        } catch (PDOException $e) {
-            echo 'Connection failed: ' . $e->getMessage();
-            return null;
-        }
-
-        $dbh = null;
-    }
-
-    public function closeBill($idCustomer)
-    {
-        try {
-            $dbh = ConnectionDatabase::getConnection();
-            $query = $dbh->prepare('DELETE FROM Contas Where Cliente_idCliente = :idCustomer');
-            $query->bindParam('idCustomer', $idCustomer);
-            $query->execute();
-            return $query->rowCount();
-        } catch (PDOException $e) {
-            echo 'Connection failed: ' . $e->getMessage();
-            return null;
-        }
-
-        $dbh = null;
-    }
-
 }

@@ -42,17 +42,6 @@ class Bill
         return $billDAO->getOrdersToPay($this);
     }
 
-    public function verifyBillHaveOrders($idCustomer)
-    {
-        $billDAO = new BillDAO();
-        return $billDAO->verifyBillHaveOrders($idCustomer);
-    }
-
-    public function closeBill($idCustomer) {
-        $billDAO = new BillDAO();
-        return $billDAO->closeBill($idCustomer);
-    }
-
     public function getBillTotalAmount()
     {
         return $this->billTotalAmount;

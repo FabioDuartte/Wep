@@ -93,10 +93,6 @@ class PaymentController extends DataProcessing
         }
         $objCustomer->setCustomerBonus($objCustomer->getCustomerBonus() + $_SESSION['cashback']);
         $objCustomer->updateCustomerBonus($objBill->getCustomerOwnerBill(), $objCustomer->getCustomerBonus());
-        if (!$objBill->verifyBillHaveOrders($objBill->getCustomerOwnerBill())) {
-            $objBill->closeBill($objBill->getCustomerOwnerBill());
-        }
-        
         $this->setNullBillSession();
     }
 
