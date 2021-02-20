@@ -14,7 +14,7 @@
 
     <!--login.css-->
 
-    <link rel="stylesheet"  href="../style/login.css">
+    <link rel="stylesheet"  href="/Wep/App/Templates/style/login.css">
 
     
 </head>
@@ -42,11 +42,10 @@
                           
                         </div>
                     <p class="my-3"><!--inicio botões-->
-                        <a href="./newPassword.php" type="submit" class="btn btn-primary btn-block bg-primary text-white  btn-weight">Enviar  </a>
-                        <a href="./login.php" type="submit" class="btn btn-primary btn-block bg-primary text-white   btn-weight"></i>Voltar</a>
+                        <a href="./comingSoon.php" class="btn btn-primary btn-block bg-primary text-white  btn-weight">Enviar  </a>
+                        <a href="/Wep/login" class="btn btn-primary btn-block bg-primary text-white   btn-weight"></i>Voltar</a>
                     </p><!--fim botões-->
 
-                    
                     <section>
            
                 </div>

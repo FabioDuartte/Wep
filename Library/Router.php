@@ -14,16 +14,36 @@ class Router
 
     private function initRoutes()
     {
-        $this->routes['/'] = array('controller' => 'IndexController', 'action' => 'index');
-        $this->routes['/lista-de-arquivo'] = array('controller' => 'IndexController', 'action' => 'lista');
+        $this->routes['/Wep/'] = 
+        array(
+            'controller' => 'IndexController'
+            , 'action' => 'index'
+        );
+
+        $this->routes['/Wep/login'] = array('controller' => 'LoginController', 'action' => 'login');
+        $this->routes['/Wep/login/nada-para-ver-aqui'] = array('controller' => 'IndexController', 'action' => 'soon');
+        $this->routes['/Wep/cadastro'] = array('controller' => 'RegisterController', 'action' => 'register');
+        $this->routes['/Wep/recuperar-senha'] = array('controller' => 'LoginController', 'action' => 'recovery');
+        $this->routes['/Wep/home'] = array('controller' => 'IndexController', 'action' => 'home');
+        $this->routes['/Wep/home/pratos'] = array('controller' => 'MenuController', 'action' => 'mainCourse');
+        $this->routes['/Wep/home/bebidas'] = array('controller' => 'MenuController', 'action' => 'drinks');
+        $this->routes['/Wep/home/cadastrar-produtos'] = array('controller' => 'RegisterProductController', 'action' => 'addMenuItems');
+        $this->routes['/Wep/home/pedidos-feito'] = array('controller' => 'OrderController', 'action' => 'viewOrders');
+        $this->routes['/Wep/home/editar-cadastro'] = array('controller' => 'UpdateRegisterController', 'action' => 'updateRegistration');
+        $this->routes['/Wep/home/minha-comanda'] = array('controller' => 'OrderController', 'action' => 'customerOrders');
+        $this->routes['/Wep/home/alterar-produto'] = array('controller' => 'UpdateProductMenuController', 'action' => 'updateProduct');
+        $this->routes['/Wep/home/remover-produto'] = array('controller' => 'RemoveProductMenuController', 'action' => 'removeProduct');
+        $this->routes['/Wep/home/acompanhar-pedidos'] = array('controller' => 'TrackOrderController', 'action' => 'trackOrder');
+        $this->routes['/Wep/home/acompanhar-pedidos/realizar-pagamento'] = array('controller' => 'PaymentController', 'action' => 'payment');
+        $this->routes['/Wep/home/pagina-nao-encontrada'] = array('controller' => 'IndexController', 'action' => 'pageNotFound');
     }
 
     private function runRoute($url)
     {
         if (array_key_exists($url, $this->routes)) {
-            $includeClass = "\\App\\Controllers\\" . $this->routes[$url]['controller'];
-            $controller = new $includeClass;
-            $action = $this->routes[$url]['action'];
+            $instanceClass = "\\App\\Controllers\\" . $this->routes[$url]['controller'];
+            $controller = new $instanceClass;
+            $action = $this->routes[$url]['action'];           
             $controller->$action();
         }
     }
@@ -33,45 +53,3 @@ class Router
         return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     }
 }
-
-/* class Router
-{
-
-    public function __construct()
-    {
-        $this->runRoute();
-    }
-
-    public function runRoute()
-    {
-        if (isset($_GET['url'])) {
-            $url = $_GET['url'];
-        }
-        if (!empty($url)) {
-            $url = explode('/', $url);
-            $controller = $url[0] . 'Controller';
-            $url = array_shift($url);
-        }
-
-        if (isset($url[0]) && !empty($url[0])) {
-            $method = $url[0];
-            $url = array_shift($url);
-        } else {
-            $method = 'index';
-        }
-
-        if (count($url) > 0) {
-            $params = $url;
-        } else {
-            $controller = 'IndexController';
-            $method = 'index';
-        }
-
-        $path = 'App/Controllers/' . $controller . 'php';
-
-        if (!(file_exists($path) && method_exists($controller, $method))) {
-            $controller = 'IndexController';
-            $method = 'index';
-        }
-    }
-} */

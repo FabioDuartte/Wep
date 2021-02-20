@@ -2,15 +2,25 @@
 
 namespace App\Controllers;
 
+session_start();
+
 class IndexController
 {
+
     public function index()
     {
-        echo "<h1>Estou na index/IndexController.php</h1>";
+        $_SESSION = array();
+        $_SESSION['user-type'] = '';
+        ViewController::index();
     }
 
-    public function lista()
+    public function home()
     {
-        echo "<h1>Estou na lista/IndexController.php</h1>";
+        ViewController::home();
+    }
+
+    public function soon()
+    {
+        ViewController::soon();
     }
 }

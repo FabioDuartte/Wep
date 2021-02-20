@@ -24,48 +24,53 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Estilo customizado -->
-    <link rel="stylesheet" type="text/css" href="../style/registerProducts.css">
+  <link rel="stylesheet" type="text/css" href="/Wep/App/Templates/style/registerProducts.css">
+    <style>
+     .format-link{
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+        color: white;
+      }
+      .format-link:hover{
+        color: #ffc107;    
+        /*background:#ffc107;*/
+      }
+    
+
+    </style>
+
 </head>
 
 <body>
-  <header ><!--Inicio Header-->
-    <nav class="navbar navbar-expand-sm navbar-warning nav-bg  nav-transparente">
+<header ><!--Inicio Header-->
+     
+        <nav class="class=navbar navbar-expand-sm navbar-warning nav-bg  nav-transparente">
         <div class="container">
           <!--Logo-->
           <a  href="#" class="navbar-brand" style="color: white;">
-           <img src="../images/logo/logo-removebg-preview.png" alt="" width="120px" class="logo" >
-          </a>    
+           <img src="/Wep/App/Templates/images/logo/logo-removebg-preview.png" alt="" width="120px" class="logo" >
+          </a>
           <!--Menu Hamburguer-->
           <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
             <i class="fas fa-bars text-dark"></i>
           </button>
           <!--Navegação-->
-          <div class="collapse navbar-collapse " id="nav-principal">              
-              <ul class="navbar-nav ml-auto   ">  
-                  
-                
-                <li class="nav-link format-link">
-                    <div class="dropdown ">
-                        <span class="dropdown-toggle text-white" data-toggle="dropdown">
-                            <i class="far fa-user"></i> 
-                        </span>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a href="./registerProducts.php" class="dropdown-item nav-item format-link ">Cadastrar produtos</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="./orders.php" class="dropdown-item nav-item format-link">Visualizar pedidos</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="./bill.php" class="dropdown-item nav-item format-link">Minha Comanda</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="./bill.php" class="dropdown-item nav-item format-link">Editar Cdastro</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="./login.php" class="dropdown-item nav-item format-link">Sair</a>
-                        </div>
-                    </div>
-                </li>
-              </ul>
+          <div class="collapse navbar-collapse " id="nav-principal">
+            <ul class="navbar-nav ml-auto">
+                <a href="/Wep/home" class=" nav-link nav-item format-link" >Home</a>
+                <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>                 
+                <a href="/Wep/home/cadastrar-produtos" class=" nav-link nav-item format-link">Adicionar produto ao cardápio</a>                
+                <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>
+                <a href="/Wep/home/alterar-produto" class=" nav-link nav-item format-link">Alterar produto do cardápio</a>                  
+                <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>
+                <a href="/Wep/home/remover-produto" class=" nav-link nav-item format-link">Remover produto do cardápio</a>                  
+                <a href="" class=" nav-link nav-item format-link text-decoration-none" >|</a>
+                <a href="/Wep/" class=" nav-link nav-item format-link">Sair</a>
+            </ul>            
           </div>
-        </div>
-    </nav>        
+        </nav>
+    </div>
 </header><!--Fim Header-->
 
     <section id="home" class="d-flex "> 
@@ -74,63 +79,81 @@
             <div class="row ">
               <div class="col">
                 
-                <form>
-                <h1 class="display-3  text-dark">Cadastro de produtos</h1>
-                
+                <form method="POST" action="/Wep/home/cadastrar-produtos">
+                <h1 class="display-3  text-dark my-2" style="padding-top:25px">Cadastrar produtos</h1>
+                <?php if (isset($_SESSION['error']) && !empty($_SESSION['error'])) { ?>
+                            <div id="info"class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                                <strong > <?php echo $_SESSION['error']; ?> </strong>                                
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php
+                        } else if (isset($_SESSION['success']) && !empty($_SESSION['success'])) { ?>
+                            <div id="info"class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                                <strong > <?php echo $_SESSION['success']; ?> </strong>                                
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php
+                        }
+                        $_SESSION['success'] = "";
+                        $_SESSION['error'] = "";
+                        ?> 
                   <div class="form-group">
                     <label for="tipo">Tipo do produto</label>
-                    <select class="form-control" id="tipo">
-                      <option value="">Selecione o tipo do produto</option>
-                      <option value="1">Café</option>
-                      <option value="2">Almoço</option>
-                      <option value="3">Jantar</option>
-                      <option value="4">Bebida</option>
-                   
+                    <select name="product-type" class="form-control" id="tipo" onchange="disableInput()">
+                    <option value="">Selecione uma opção</option>
+                      <option value="mainCourse">Adicionar Prato</option>
+                      <option value="drink">Adicionar Bebida</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="fornecedor ">Nome</label>
-                      <input type="text" class="form-control" id="fornecedor">
+                    <label for="fornecedor">Nome</label>
+                      <input disabled="" name="product-name" type="text" value='' class="form-control" id="nome">
                   </div>
                   <div class="form-group">
-                    <label for="fornecedor ">Fornecedor</label>
-                      <input type="text" class="form-control" id="fornecedor">
+                    <label for="fornecedor">Preço</label>
+                      <input disabled="" placeholder="Não use símbolo para separar milhar! Ex:00000.00" name="product-price" type="text" value='' class="form-control" id="preco">
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="custom-file">
+                      <label class="custom-file-label" for="addImg" aria-describedby="addImg">Adcionar imagem do produto</label>
+                      <input type="file" name="product-src" value='' class="custom-file-input" id="addImg">               
+                    </div>                   
                   </div>
                   <div class="form-group">
-                    <label for="descricao">Descrição</label>
-                    <textarea class="form-control" id="descricao" ></textarea>
+                    <label for="fornecedor">Fornecedor</label>
+                      <input disabled="" name="drink-supplier" type="text" value='' class="form-control" id="fornecedor">
                   </div>
+                  <div class="form-group">
+                    <label for="descricao">Ingredientes</label>
+                    <textarea disabled="" placeholder="Adicione os ingredientes separados por virgula" value='' name="food-ingredients" class="form-control" id="ingredientes" ></textarea>
+                  </div>
+                  <input disabled="" id="submit" type="submit" class="btn btn-lg btn-block font-weight-bold" value="Adicionar item ao cardápio" style="background: green; color:white">
+                  <input type="reset" class="btn  btn-lg cancel btn-block font-weight-bold" value="Cancelar">
                 </form>
-
                 <div>
-                  <input type="submit" class="btn btn-lg enter  btn-block " value="Salvar Cadastro">
-                  <input type="reset" class="btn  btn-lg cancel btn-block " value="Cancelar">
+                  
                 </div>
-                
-              
               </div>
-              
             </div>
     </section>
+
     <footer class="rodape my-5 ">
       <div class="container">
         <div class="row">
           <div class="col-md-12 ">
             <ul class="nav justify-content-center ">
               <li class="  nav-item">
-                <a class="nav-link " href="pagelanding.php">Home</a>
-              </li>
-              <li class="  nav-item">
-                <a class="nav-link" href="breakfest.php">Café</a>
+                <a class="nav-link " href="/Wep/home">Home</a>
               </li>
               <li class=" nav-item">
-                <a class="nav-link" href="lunch.php">Almoço</a>
+                <a class="nav-link " href="/Wep/home/pratos">Pratos</a>
               </li>
               <li class=" nav-item">
-                <a class="nav-link " href="dinner.php">Jantar</a>
-              </li>
-              <li class=" nav-item">
-                <a class="nav-link " href="drink.php">Bebidas</a>
+                <a class="nav-link " href="/Wep/home/bebidas">Bebidas</a>
               </li>
             </ul>
           </div> 
@@ -146,10 +169,8 @@
         </div>
         
     </footer>
-    
 
-
-    
+    <script src="/Wep/App/Templates/View/scripts/disableButtons.js"> </script>
     
 </body>
 </html>

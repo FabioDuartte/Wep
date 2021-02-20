@@ -2,36 +2,44 @@
 
 namespace App\Models;
 
-class Employee extends SystemUser
+use App\Models\Database\LoginDAO;
+
+class Employee extends SystemUsers
 {
-    private $employeeIdentifierNumber;
-    private $manager;
+    private $position;
+    private $IdEmployee;
 
-    public function __construct($userName, $userEmail, $userPassword, $userPhoneNumber, $employeeIdentifierNumber)
+    public function __construct($userName, $userEmail, $IdEmployee, $userPassword, $position)
     {
-        parent::__construct($userName, $userEmail, $userPassword, $userPhoneNumber);
-        $this->employeeIdentifierNumber = $employeeIdentifierNumber;
-        $this->manager = false;
+        parent::__construct($userName, $userEmail, $userPassword);
+        $this->IdEmployee = $IdEmployee;
+        $this->position = $position;
     }
 
-    public function getEmployeeIndeterminateNumber()
+    public function loginEmployee()
     {
-        return $this->employeeIdentifierNumber;
+        $loginDAO = new LoginDAO();
+        return $loginDAO->checkLoginEmployee($this);
     }
 
-    public function setEmployeeIdentifierNumber($employeeIdentifierNumberNumber)
+    public function getPosition()
     {
-        $this->employeeIdentifierNumberNumber = $employeeIdentifierNumberNumber;
+        return $this->position;
     }
 
-    public function isManager()
+    public function setPosition($position)
     {
-        return $this->manager;
+        $this->position = $position;
     }
 
-    public function setManager($manager)
+    public function getIdEmployee()
     {
-        $this->manager = $manager;
+        return $this->IdEmployee;
+    }
+
+    public function setIdEmployee($IdEmployee)
+    {
+        $this->IdEmployee = $IdEmployee;
     }
 
 }
